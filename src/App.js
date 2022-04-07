@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "./components/Layouts";
+import MainLayout from "./components/Layouts/MainLayout";
 
 function App() {
   return (
-    <Layout>
+    <MainLayout>
       <div classNameName="p-5">
         <section className="bg-white py-8">
           <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
@@ -183,7 +183,7 @@ function App() {
             </div>
           </section>
       </div>
-    </Layout>
+    </MainLayout>
   );
 }
 

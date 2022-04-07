@@ -1,10 +1,10 @@
 import { memo } from "react";
-import Nav from "../Nav";
+import MainNav from "../Nav/MainNav";
 
 const Header = () => {
   return (
 
-    <Nav/>
+    <MainNav/>
 
   )
 }
