@@ -1,6 +1,6 @@
 import { Children } from "react"
-import Footer from "../Common/Footer"
-import Header from "../Common/Header"
+import Footer from "../Commons/Footer"
+import Header from "../Commons/Header"
 
 const MainLayout = ({children}) =>{
   return (
