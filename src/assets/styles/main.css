@@ -529,8 +529,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0px;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .block {
@@ -676,8 +676,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 0.25rem;
 }
 
-.font-peyda-regular {
-  font-family: peyda_regular;
+.font-ir-yekan {
+  font-family: IRANYekanRegular, IRANYekanBold;
 }
 
 .text-xl {
@@ -741,27 +741,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @font-face {
-  font-family: 'peyda_black';
+  font-family: 'IRANYekanBold';
 
-  src: url(../fonts/PeydaWeb-Black.eot?3e8de118c6247b464ee797a9af6bd49c);
+  src: url(../fonts/IRANYekanBold/IRANYekanBold.eot?0e86ddd369295a55bc54370f06a3ad5d);
 
-  src: url(../fonts/Peyda-Black.ttf?f2c7090d938c2602ccd987081a1fe6fb) format("truetype");
+  src: url(../fonts/IRANYekanBold/IRANYekanBold.ttf?f159c5f311fcdeaead0ce97f22ead010) format("truetype");
 
-  src: url(../fonts/PeydaWeb-Black.woff?95c2eef42ef1dfa0c066cdc96d92fac2) format('woff');
-
-  font-weight: normal;
-
-  font-style: normal
-}
-
-@font-face {
-  font-family: 'peyda_bold';
-
-  src: url(../fonts/PeydaWeb-Bold.eot?0e86ddd369295a55bc54370f06a3ad5d);
-
-  src: url(../fonts/Peyda-Bold.ttf?f159c5f311fcdeaead0ce97f22ead010) format("truetype");
-
-  src: url(../fonts/PeydaWeb-Bold.woff?468454e6fb70673595c3878904274540) format('woff');
+  src: url(../fonts/IRANYekanBold/IRANYekanBold.woff?468454e6fb70673595c3878904274540) format('woff');
 
   font-weight: normal;
 
@@ -769,13 +755,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @font-face {
-  font-family: 'peyda_regular';
+  font-family: 'IRANYekanRegular';
 
-  src: url(../fonts/PeydaWeb-Regular.eot?c457224120828f17add51a39543f4b15);
+  src: url(../fonts/IRANYekanRegular/IRANYekanRegular.eot?c457224120828f17add51a39543f4b15);
 
-  src: url(../fonts/Peyda-Regular.ttf?4eb6621b1ab1548aa8dc34d7f05c48a7) format("truetype");
+  src: url(../fonts/IRANYekanRegular/IRANYekanRegular.ttf?4eb6621b1ab1548aa8dc34d7f05c48a7) format("truetype");
 
-  src: url(../fonts/PeydaWeb-Regular.woff?e1f298caefd1d1727ef6bc64b4ca0234) format('woff');
+  src: url(../fonts/IRANYekanRegular/IRANYekanRegular.woff?e1f298caefd1d1727ef6bc64b4ca0234) format('woff');
 
   font-weight: normal;
 

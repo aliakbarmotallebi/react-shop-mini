@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'peyda-regular': ['peyda_regular'],
+        'ir-yekan': ['IRANYekanRegular', 'IRANYekanBold'],
       }
     },
   },
