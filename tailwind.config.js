@@ -3,7 +3,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'peyda-regular': ['peyda_regular'],
+      }
+    },
   },
   plugins: [],
 }
