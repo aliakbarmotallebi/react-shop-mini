@@ -1,4 +1,4 @@
-import AboutUs from "@components/About/About";
+import AboutUs from "@components/client/About/About";
 
 const about = () =>{
     return <AboutUs/>

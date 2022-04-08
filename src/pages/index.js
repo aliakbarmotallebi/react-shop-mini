@@ -1,4 +1,4 @@
-import Products from "../components/Products/Products";
+import Products from "../components/client/Products/Products";
 import React from "react";
 
 const Home = ()=> {

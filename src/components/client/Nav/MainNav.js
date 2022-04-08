@@ -18,19 +18,19 @@ const MainNav = () => {
                     <nav>
                         <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                             <li>
-                                <Link href={'shop'}>
+                                <Link href={'/shop'}>
                                     <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
                                     >فروشگاه</a>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={'about'}>
+                                <Link href={'/about'}>
                                     <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">درباره
                                         ما</a>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={'login'}>
+                                <Link href={'/login'}>
                                     <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">ورود</a>
                                 </Link>
                             </li>
@@ -39,18 +39,14 @@ const MainNav = () => {
                 </div>
 
                 <div className="order-1 md:order-2">
-                    <Link href={'/'}>
-                        <a className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl"
-                        >
-                            <svg className="fill-current text-gray-800 ml-2" xmlns="http://www.w3.org/2000/svg"
-                                 width="24"
-                                 height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M5,22h14c1.103,0,2-0.897,2-2V9c0-0.553-0.447-1-1-1h-3V7c0-2.757-2.243-5-5-5S7,4.243,7,7v1H4C3.447,8,3,8.447,3,9v11 C3,21.103,3.897,22,5,22z M9,7c0-1.654,1.346-3,3-3s3,1.346,3,3v1H9V7z M5,10h2v2h2v-2h6v2h2v-2h2l0.002,10H5V10z"/>
-                            </svg>
-                            فروشگاه انلاین
-                        </a>
-                    </Link>
+                    <div className="pt-2 relative mx-auto text-gray-600">
+                        <form action="">
+                            <input
+                                className="border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none"
+                                type="search" name="search" placeholder="Search" />
+                                <button type="submit" className="absolute right-0 top-0 mt-5 mr-4" />
+                        </form>
+                    </div>
                 </div>
 
                 <div className="order-2 md:order-3 flex items-center" id="nav-content">
@@ -77,7 +73,7 @@ const MainNav = () => {
                 </div>
             </div>
         </nav>
-    )
+)
 }
 
 export default MainNav;
