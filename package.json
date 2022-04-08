@@ -6,20 +6,20 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
-    "next" : "latest",
+    "axios": "^0.26.1",
+    "next": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "tailwind:css":
-      "tailwind build -i src/assets/styles/tailwind.css -o src/assets/styles/main.css --watch",
+    "tailwind:css": "tailwind build -i src/assets/styles/tailwind.css -o src/assets/styles/main.css --watch",
     "start": "npm run tailwind:css && next start",
     "build": "npm run tailwind:css && next build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev" : "next dev"
+    "dev": "next dev"
   },
   "eslintConfig": {
     "extends": [
