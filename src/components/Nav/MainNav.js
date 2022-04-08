@@ -29,6 +29,11 @@ const MainNav = () => {
                                         ما</a>
                                 </Link>
                             </li>
+                            <li>
+                                <Link href={'login'}>
+                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">ورود</a>
+                                </Link>
+                            </li>
                         </ul>
                     </nav>
                 </div>
