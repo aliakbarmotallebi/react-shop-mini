@@ -1,8 +1,10 @@
+import Products from "../components/Products/Products";
+import React from "react";
+
 const Home = ()=> {
     return (
         <>
-            <h1>well come home</h1>
-            <p>salam halet chetore ?</p>
+            <Products/>
         </>
     )
 }
