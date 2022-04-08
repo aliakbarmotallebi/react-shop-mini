@@ -1,19 +1,18 @@
 import {useRouter} from "next/router";
 import Image from "next/image";
 import React from "react";
+import Config from "@utils/Config";
 
-import {AxiosInstance} from "../../../utils/http/index"
+import {AxiosInstance} from "@utils/http/index"
 
-const product = ({data}) => {
-    const router = useRouter()
-    const {id, slug} = router.query
+const product = ({product}) => {
     return (
         <>
             <div className="flex flex-col lg:flex-row justify-around items-center lg:mx-10 py-8">
                 <div className="w-1/2">
                     <Image
                         className="hover:grow hover:shadow-lg rounded-md"
-                        src="https://shopjozi.ir/images/products/66.jpg"
+                        src={product.Image}
                         layout='responsive'
                         width={300}
                         height={300}
@@ -26,7 +25,7 @@ const product = ({data}) => {
                         rerum.
                     </small>
                     <h2 className=" font-bold text-lg lg:text-4xl my-2 ">
-                        {console.log(data)}
+                        {product.Name}
                     </h2>
                     <p className="d text-base lg:w-3/4 text-gray-800 mt-2 mr-2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
@@ -39,18 +38,27 @@ const product = ({data}) => {
 
     )
 }
-const fetchData = async () => await AxiosInstance.get('products/bAAPOw52ckh4UB4O')
+const fetchData = async (params) => await AxiosInstance.get(params)
     .then(res => ({
-        data: res.data,
+        product: res.data['data'],
     }))
     .catch((error) => (
             console.log(error)
         ),
     );
 
-export async function getServerSideProps() {
-    const data = await fetchData();
-    return {props: data};
+export async function getServerSideProps(context) {
+    const { erpcode } = context.query;
+    console.log( context.query)
+    const {product_page} = Config.services.product
+    const product = await fetchData(`${product_page}${erpcode}`);
+    if (!product) {
+        return {
+            notFound: true,
+        }
+    }
+    return {props: product};
+
 }
 
 export default product;
