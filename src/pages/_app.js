@@ -6,9 +6,8 @@ function App({Component, pageProps}) {
     return (
         <MainLayout>
             <div className="p-5">
-                <section className="bg-white py-8">
+                <section className="bg-white">
                     <Component {...pageProps} />
-
                 </section>
             </div>
         </MainLayout>
