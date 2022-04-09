@@ -1,7 +1,7 @@
 import React from "react";
 import Config from "@utils/Config";
-import {AxiosInstance} from "@utils/http";
 import Card from "@components/client/card/card";
+import {fetchShopProduct} from "@utils/Services";
 
 const Shop = ({products}) => {
     return (
@@ -14,19 +14,11 @@ const Shop = ({products}) => {
         </div>
     )
 }
-const fetchData = async (params) => await AxiosInstance
-    .get(`${params}?count=10`, {})
-    .then(res => ({
-        products: res.data['data'],
-    }))
-    .catch((error) => (
-            console.log(error)
-        ),
-    );
+
 
 export async function getServerSideProps() {
     const {shop} = Config.services.shop
-    const products = await fetchData(`${shop}`);
+    const products = await fetchShopProduct(`${shop}`);
     if (!products) {
         return {
             notFound: true,

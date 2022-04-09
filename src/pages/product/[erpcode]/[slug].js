@@ -1,9 +1,7 @@
-import {useRouter} from "next/router";
 import Image from "next/image";
 import React from "react";
 import Config from "@utils/Config";
-
-import {AxiosInstance} from "@utils/http/index"
+import {fetchProduct} from "@utils/Services";
 
 const product = ({product}) => {
     return (
@@ -31,19 +29,12 @@ const product = ({product}) => {
 
     )
 }
-const fetchData = async (params) => await AxiosInstance.get(params)
-    .then(res => ({
-        product: res.data['data'],
-    }))
-    .catch((error) => (
-            console.log(error)
-        ),
-    );
+
 
 export async function getServerSideProps(context) {
-    const { erpcode } = context.query;
+    const {erpcode} = context.query;
     const {product_page} = Config.services.product
-    const product = await fetchData(`${product_page}${erpcode}`);
+    const product = await fetchProduct(`${product_page}${erpcode}`);
     if (!product) {
         return {
             notFound: true,
