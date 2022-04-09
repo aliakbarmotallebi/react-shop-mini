@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Link from "next/link";
 import {AxiosInstance} from "@utils/http/index"
+import textToSlug from "../../../helpers/textToSlug";
 import Image from "next/image";
 
 const Products = () => {
@@ -51,7 +52,7 @@ const Products = () => {
             {
                 products.map((product) => (
                     <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                        <Link href={`/product/${product.ErpCode}/${product.Name}`}>
+                        <Link href={`/product/${product.ErpCode}/${textToSlug(product.Name)}`}>
                             <a>
                                 <Image
                                     className="hover:grow hover:shadow-lg rounded-md"
