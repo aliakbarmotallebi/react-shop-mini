@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
-import {Swiper, SwiperSlide , Navigation} from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import {AxiosInstance} from "@utils/http/index"
 import Config from "@utils/Config";
 import SliderItem from "@components/client/slider/sliderItem";
@@ -29,9 +31,11 @@ const Slider = ({sort, count}) => {
     }, [])
     return (
         <Swiper
-            modules={Navigation}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
             slidesPerView={5}
             navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
         >
             {
                 products.map((product) => (

@@ -6,5 +6,8 @@ export default {
         slider: {
             "slider": 'products'
         },
+        shop: {
+            "shop": 'products'
+        },
     }
 }

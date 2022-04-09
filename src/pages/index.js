@@ -5,8 +5,9 @@ import Slider from "@components/client/slider/slider";
 const Home = ()=> {
     return (
         <>
-            <Products/>
+            <Slider sort={1} count={10} />
             <Slider sort={2} count={10} />
+            <Slider sort={3} count={10} />
         </>
     )
 }
