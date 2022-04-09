@@ -16,7 +16,7 @@
   "scripts": {
     "tailwind:css": "tailwind build -i src/assets/styles/tailwind.css -o src/assets/styles/main.css --watch",
     "start": "npm run tailwind:css && next start",
-    "build": "npm run tailwind:css && next build",
+    "build": "next build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "next dev"
