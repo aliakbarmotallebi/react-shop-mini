@@ -3,9 +3,10 @@ import React from "react";
 import textToSlug from "../../../helpers/textToSlug";
 import Link from "next/link";
 
-const Card  = ({product}) => {
+const Card = ({product}) => {
     return (
-        <div className="w-full p-6 flex flex-col border border-2 border-gray-200 rounded-md hover:shadow-md transition transition-all">
+        <div
+            className="h-full w-full p-6 flex flex-col border border-2 border-gray-200 rounded-md hover:shadow-md transition transition-all">
             <Link href={`/product/${product.ErpCode}/${textToSlug(product.Name)}`}>
                 <a>
                     <Image
