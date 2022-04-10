@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import textToSlug from "../../../helpers/textToSlug";
+import textToSlug from "@helpers/textToSlug";
 import Link from "next/link";
 
 const Card = ({product}) => {

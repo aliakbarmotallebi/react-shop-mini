@@ -532,6 +532,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   order: 2;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;

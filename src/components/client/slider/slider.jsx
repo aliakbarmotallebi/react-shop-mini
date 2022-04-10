@@ -38,7 +38,6 @@ const Slider = ({sort, count}) => {
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 slidesPerView={5}
                 navigation
-                pagination={{clickable: true}}
                 scrollbar={{draggable: true}}
                 className="h-full"
             >
