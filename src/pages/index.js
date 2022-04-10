@@ -5,14 +5,15 @@ const Home = () => {
     return (
         <>
             <div className="h-96  w-full">
-                <Slider sort={1} count={10}/>
+                <Slider sort={3} count={15}/>
             </div>
             <div className="h-96  w-full">
-                <Slider sort={2} count={10}/>
+                <Slider sort={2} count={15}/>
             </div>
             <div className="h-96  w-full">
-                <Slider sort={3} count={10}/>
+                <Slider sort={1} count={15}/>
             </div>
+
         </>
     )
 }
