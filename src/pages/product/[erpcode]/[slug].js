@@ -21,7 +21,7 @@ const product = ({product}) => {
                         {product.Name}
                     </h2>
                     <p className="d text-base lg:w-3/4 text-green-500 mt-2 mr-2">
-                        {product.SellPrice + ' تومان '}
+                        {product.SellPrice + ' تومانننننن '}
                     </p>
                 </div>
             </div>
