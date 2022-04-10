@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CategoryNav from "@components/client/Category/categoryNav";
 
 const MainNav = () => {
     return (
@@ -78,6 +79,7 @@ const MainNav = () => {
 
                 </div>
             </div>
+            <CategoryNav />
         </nav>
 )
 }

@@ -9,5 +9,8 @@ export default {
         shop: {
             "shop": 'products'
         },
+        mainCategory: {
+            "mainCategory": 'categories'
+        }
     }
 }
