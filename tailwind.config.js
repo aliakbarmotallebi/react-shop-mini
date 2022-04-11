@@ -5,7 +5,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'ir-yekan': ['IRANYekanRegular', 'IRANYekanBold'],
+        'yekan-regular': ['IRANYekanRegular'],
+        'yekan-thin': ['IRANYekanThin'],
+        'yekan-light': ['IRANYekanLight'],
+        'yekan-bold': ['IRANYekanBold']
       }
     },
   },

@@ -6,7 +6,7 @@ function App({Component, pageProps}) {
     return (
         <MainLayout>
             <div className="p-5">
-                <section className="bg-white">
+                <section>
                     <Component {...pageProps} />
                 </section>
             </div>

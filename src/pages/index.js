@@ -5,17 +5,23 @@ import BigSlider from "@components/client/slider/bigSlider/bigSlider";
 const Home = () => {
     return (
         <>
-            <div className="w-1/2 block m-auto">
+            <div className="flex">
                 <BigSlider/>
+                <div className="rounded-lg w-3/5 bg-[#ff971d]/80 flex items-center justify-center">
+                    <span className="text-2xl text-black ">
+                        شهروند مهاجران
+                    </span>
+                </div>
+            </div>
+
+            <div className="h-96  w-full">
+                <Slider label="محصولات ویژه" sort={3} count={15}/>
             </div>
             <div className="h-96  w-full">
-                <Slider sort={3} count={15}/>
+                <Slider label="پرفروش ترین" sort={2} count={15}/>
             </div>
             <div className="h-96  w-full">
-                <Slider sort={2} count={15}/>
-            </div>
-            <div className="h-96  w-full">
-                <Slider sort={1} count={15}/>
+                <Slider label="پربازدیدترین" sort={1} count={15}/>
             </div>
 
         </>
