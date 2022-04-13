@@ -1,4 +1,5 @@
 import {useState} from "react"
+import Router, {useRouter} from 'next/router'
 import {AxiosInstance} from "@utils/http";
 import MessageSent from "@components/client/Login/AuthComponent/messageSent";
 import Config from "@utils/Config";
@@ -8,6 +9,7 @@ const AuthBox = () => {
     const [messageSent, setMessageSent] = useState(false)
     const [hasError, setHasError] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
+    const router = useRouter()
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,6 +26,10 @@ const AuthBox = () => {
                     'Content-Type': 'application/json',
                 }
             }).then((response) => {
+                Router.push({
+                    pathname: "/login",
+                    query: {"phonenumber": "09223899180"}
+                })
                 setMessageSent(true)
             }).catch((error) => console.log(error))
         }
@@ -36,7 +42,7 @@ const AuthBox = () => {
                 ورود به حساب کاربری
             </h1>
             <div className="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
-                {messageSent ? <MessageSent userNumber={userNumber}/> :
+                {router.query.phonenumber ? <MessageSent userNumber={userNumber}/> :
                     <form onSubmit={handleSubmit}>
                         <div className="px-5 py-7">
                             <label className="font-semibold text-sm text-gray-600 pb-1 block">
@@ -46,7 +52,7 @@ const AuthBox = () => {
                                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"/>
                             <button type="submit"
                                     className="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
-                                <span className="inline-block ml-2">ورود</span>
+                                <span className="inline-block ml-2">در خواست کد یکبار مصرف</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke="currentColor" className="w-4 h-4 inline-block">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
