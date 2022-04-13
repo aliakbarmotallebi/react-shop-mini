@@ -7,7 +7,7 @@ import Config from "@utils/Config";
 const AuthBox = () => {
     const [userNumber, setUserNumber] = useState("")
     const [messageSent, setMessageSent] = useState(false)
-    const [hasError, setHasError] = useState(false)
+    const [otpVerify, setOtpVerify] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     const router = useRouter()
 
@@ -30,6 +30,7 @@ const AuthBox = () => {
                     pathname: "/login",
                     query: {"otp": true}
                 })
+                setOtpVerify(true)
                 setMessageSent(true)
             }).catch((error) => console.log(error))
         }
@@ -42,7 +43,7 @@ const AuthBox = () => {
                 ورود به حساب کاربری
             </h1>
             <div className="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
-                {router.query.otp ? <MessageSent userNumber={userNumber}/> :
+                {router.query.otp && userNumber && otpVerify ? <MessageSent userNumber={userNumber}/> :
                     <form onSubmit={handleSubmit}>
                         <div className="px-5 py-7">
                             <label className="font-semibold text-sm text-gray-600 pb-1 block">
