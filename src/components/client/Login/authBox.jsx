@@ -28,7 +28,7 @@ const AuthBox = () => {
             }).then((response) => {
                 Router.push({
                     pathname: "/login",
-                    query: {"phonenumber": "09223899180"}
+                    query: {"otp": true}
                 })
                 setMessageSent(true)
             }).catch((error) => console.log(error))
@@ -42,7 +42,7 @@ const AuthBox = () => {
                 ورود به حساب کاربری
             </h1>
             <div className="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
-                {router.query.phonenumber ? <MessageSent userNumber={userNumber}/> :
+                {router.query.otp ? <MessageSent userNumber={userNumber}/> :
                     <form onSubmit={handleSubmit}>
                         <div className="px-5 py-7">
                             <label className="font-semibold text-sm text-gray-600 pb-1 block">
