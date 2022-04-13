@@ -6,6 +6,9 @@
 .pnp.js
 .next
 
+#style
+/src/assets/styles/main.css
+
 # testing
 /coverage
 

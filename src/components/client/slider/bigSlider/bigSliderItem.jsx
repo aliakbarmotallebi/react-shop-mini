@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 const BigSliderItem = ({slide}) => {
     return (
-        <div className="w-full">
-            <Image src={slide.Image} width={400} height={300} />
+        <div className="min-w-full rounded-md">
+            <Image src={slide.Image} width={800} height={400} />
         </div>
     )
 };

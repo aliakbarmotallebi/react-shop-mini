@@ -5,34 +5,56 @@ import Link from "next/link";
 
 const Card = ({product}) => {
     return (
-        <div
-            className="h-full w-full p-6 flex flex-col border border-2 border-gray-200 rounded-md hover:shadow-md transition transition-all">
-            <Link href={`/product/${product.ErpCode}/${textToSlug(product.Name)}`}>
-                <a>
-                    <Image
-                        className="hover:grow hover:shadow-lg rounded-md"
-                        src={product.Image}
-                        layout='responsive'
-                        width={300}
-                        height={300}
-                    />
-
-                    <div className="pt-3 flex items-center justify-between">
-                        <p className="">
-                            {product.Name}
-                        </p>
-                        <svg className="h-6 w-6 fill-current text-gray-500 hover:text-black"
-                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path
-                                d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"/>
+        <div className="relative mx-auto w-full">
+            <Link href={`/product/${product.ErpCode}/${textToSlug(product.Name)}`}
+            className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+            >
+            <div className="shadow p-4 rounded-lg bg-white">
+                <div className="absolute top-0 left-0 mt-2 ml-2 p-4 z-20 flex justify-between">
+                    <button className="group hover:bg-transparent bg-white border-gary-500 border rounded w-7 h-7">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="group-hover:bg-transparent w-4 text-gary-500 m-auto"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        >
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                         </svg>
+                    </button>
+	          </div>
+                    <div className="flex justify-center relative rounded-lg overflow-hidden h-52">
+                        <div className="relative after:w-full after:h-full after:inset-0 after:absolute after:bg-gray-800 after:opacity-10 transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
+                            <Image
+                                className="absolute inset-0"
+                                src={product.Image}
+                                layout='responsive'
+                                width={300}
+                                height={300}
+                            />
+                        </div>
+
+                        <div className="absolute flex justify-center bottom-0 mb-3">
+                            <div className="flex bg-white px-4 py-1 space-x-5 rounded-lg overflow-hidden shadow">
+                                <p className="flex items-center font-medium text-gray-800">
+                                    20,000 تومان
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <p className="pt-1 text-gray-900">
-                        20,000 تومان
-                    </p>
-                </a>
+                    <div className="mt-3 text-center">
+                        <h5 className="text-sm">{product.Name}</h5>
+                    </div>
+
+                </div>
             </Link>
         </div>
+
     )
 }
 export default Card

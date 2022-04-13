@@ -18,15 +18,13 @@ const CategoryNav = () => {
     }, [])
 
     return (
-
-        <div className="shadow-lg lg:shadow-none nav-pills relative mb-10 bg-gray-100">
-            <ul className="flex-col lg:flex lg:flex-row lg:items-center lg:-mx-2">
+        <div className="shadow-lg lg:shadow-none border-y">
+            <ul className="flex-col lg:flex lg:flex-row lg:items-center">
                 {categories.map((category) => (
                     <CategoryNavItem category={category}/>
                 ))}
             </ul>
         </div>
-
     )
 }
 export default CategoryNav

@@ -31,11 +31,11 @@ const BigSlider = () => {
             navigation
             pagination={{clickable: true}}
             scrollbar={{draggable: true}}
-            className="h-full"
+            className="h-full w-full"
         >
             {
                 (sliders.map((slide) => (
-                    <SwiperSlide className="text-center p-2 h-full">
+                    <SwiperSlide className="p-2 h-full w-full">
                         <BigSliderItem slide={slide}/>
                     </SwiperSlide>
                 )))
