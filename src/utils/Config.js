@@ -14,6 +14,13 @@ export default {
         },
         mainCategory: {
             "mainCategory": 'categories'
+        },
+        //auth
+        loginAuth: {
+            "loginAuth": 'auth/login'
+        },
+        loginAuthVerify: {
+            "loginAuthVerify": "/auth/verify"
         }
     }
 }

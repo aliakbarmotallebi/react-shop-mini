@@ -1,6 +1,7 @@
-import LoginComponent from "@components/client/Login/Login"
+import React from "react"
+import AuthBox from "@components/client/Login/authBox";
 
 const Login = () => {
-    return <LoginComponent/>
+    return <AuthBox/>
 }
 export default Login
