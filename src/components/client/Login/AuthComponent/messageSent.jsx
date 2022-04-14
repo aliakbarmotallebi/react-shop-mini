@@ -44,7 +44,7 @@ const MessageSent = ({userNumber}) => {
                 </div>
             </form>
             <div className="text-center">
-                <Timer initialMinute={0} initialSeconds={10}/>
+                <Timer initialMinute={2} initialSeconds={0}/>
             </div>
 
         </>
