@@ -5,7 +5,7 @@ import "../assets/styles/main.css"
 function App({Component, pageProps}) {
     return (
         <MainLayout>
-            <div className="p-5">
+            <div className="p-5 relative">
                 <section>
                     <Component {...pageProps} />
                 </section>
