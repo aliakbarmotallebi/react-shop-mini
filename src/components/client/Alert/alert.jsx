@@ -30,11 +30,9 @@ const Alert = ({type, message}) => {
         setClose(true)
     }
     return (
-        (close ? "" :
+        (close ? null :
                 <div className="fixed bottom-10 right-10 z-50 min-w-full">
-
-                    <div
-                        className="flex items-center justify-between max-w-xs p-4 bg-white border rounded-md shadow-sm">
+                    <div className="flex items-center justify-between max-w-xs p-4 bg-white border rounded-md shadow-sm mb-2">
 
                         <div className="flex items-center">
                             {customType[type].icon}

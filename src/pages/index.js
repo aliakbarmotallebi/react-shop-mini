@@ -1,15 +1,11 @@
 import React from "react";
 import Slider from "@components/client/slider/slider";
 import BigSlider from "@components/client/slider/bigSlider/bigSlider";
-import Alert from "@components/client/Alert/alert";
+import Timer from "@components/client/Commons/timer";
 
 const Home = () => {
     return (
         <>
-            <Alert type="success" message="نوشابه گازدار میوه ای انگور قرمز فرشی دی"/>
-            <Alert type="danger" message="نوشابه گازدار میوه ای انگور قرمز فرشی دی"/>
-            <Alert type="info" message="نوشابه گازدار میوه ای انگور قرمز فرشی دی"/>
-            <Alert type="warning" message="نوشابه گازدار میوه ای انگور قرمز فرشی دی"/>
             <div className="flex">
                 <BigSlider/>
                 <div className="rounded-lg w-3/5 bg-[#ff971d]/80 flex items-center justify-center">
