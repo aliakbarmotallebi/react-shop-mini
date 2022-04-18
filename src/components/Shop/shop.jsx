@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { AxiosInstance } from '@utils/http'
 import ProductItem from '@components/client/Products/productItem'
+import Loading from '@components/client/Commons/loading'
 
 
 export default function ShopJozi() {
@@ -15,7 +16,7 @@ export default function ShopJozi() {
     if (observe.current) observe.current.disconnect()
     observe.current = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && hasMore) {
-        setSkip(skip += 10)
+        setSkip(skip += 12)
       }
     })
     if (node) observe.current.observe(node)
@@ -24,7 +25,7 @@ export default function ShopJozi() {
   useEffect(() => {
     setLoading(true)
     AxiosInstance({
-      url: "products",
+      url: "products/category/bBADfg==",
       params: {
         count: 12,
         skip
@@ -51,7 +52,7 @@ export default function ShopJozi() {
           })
         }
       </div>
-      <div className='w-full bg-rose-600 p-4'>{loading && 'loading'}</div>
+      {loading && <Loading />}
     </>
   )
 }
