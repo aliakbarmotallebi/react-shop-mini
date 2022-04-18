@@ -42,7 +42,7 @@ const Card = ({product}) => {
                         <div className="absolute flex justify-center bottom-0 mb-3">
                             <div className="flex bg-white px-4 py-1 space-x-5 rounded-lg overflow-hidden shadow">
                                 <p className="flex items-center font-medium text-gray-800">
-                                    20,000 تومان
+                                    {product.SellPrice} تومان
                                 </p>
                             </div>
                         </div>

@@ -47,10 +47,10 @@ const MainNav = () => {
 
                 <div className="order-1 md:order-2">
                     <div className="pt-2 relative mx-auto text-gray-600">
-                        <form action="">
+                        <form action="/search">
                             <input
                                 className="border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none"
-                                type="search" name="search" placeholder="Search" />
+                                type="search" name="q" placeholder="جستجوی محصولات" />
                                 <button type="submit" className="absolute right-0 top-0 mt-5 mr-4" />
                         </form>
                     </div>
