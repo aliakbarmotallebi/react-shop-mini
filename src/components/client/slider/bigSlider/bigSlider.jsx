@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Config from "@utils/Config";
-import {AxiosInstance} from "@utils/http";
-import {A11y, Navigation, Pagination, Scrollbar} from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { AxiosInstance } from "@utils/http";
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,7 +12,7 @@ const BigSlider = () => {
     const [sliders, setSlider] = useState([])
 
     const fetchBigSlider = () => {
-        const {bigSlider} = Config.services.bigSlider
+        const { bigSlider } = Config.services.bigSlider
 
         AxiosInstance.get(bigSlider)
             .then((res) => {
@@ -29,14 +29,14 @@ const BigSlider = () => {
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             slidesPerView={1}
             navigation
-            pagination={{clickable: true}}
-            scrollbar={{draggable: true}}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
             className="h-full w-full"
         >
             {
-                (sliders.map((slide) => (
-                    <SwiperSlide className="p-2 h-full w-full">
-                        <BigSliderItem slide={slide}/>
+                (sliders.map((slide, id) => (
+                    <SwiperSlide key={id} className="p-2 h-full w-full">
+                        <BigSliderItem slide={slide} />
                     </SwiperSlide>
                 )))
             }

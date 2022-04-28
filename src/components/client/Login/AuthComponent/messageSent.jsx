@@ -8,11 +8,9 @@ import AuthContext from 'src/context/authContext';
 const MessageSent = ({ userNumber }) => {
     const [code, setCode] = useState("")
     const { user, setUser } = useContext(AuthContext)
+
     // redirecting 
     const router = useRouter()
-    useEffect(() => {
-        router.push('/')
-    }, [user]);
 
     const handleSendCodeSubmit = (event) => {
         event.preventDefault();
@@ -29,7 +27,7 @@ const MessageSent = ({ userNumber }) => {
             }
         }).then((response) => {
             setUser({ user: response.data.data.user })
-
+            router.push('/')
         }).catch((error) => console.log(error))
     }
 

@@ -32,7 +32,8 @@ export default function ShopJozi({ query }) {
       url: "products",
       params: {
         count: 15,
-        q : query ? query.q : '',
+        // q : query ? query.q : '',
+        // TODO : solve this 
         skip, 
       }
     }).then(result => {
