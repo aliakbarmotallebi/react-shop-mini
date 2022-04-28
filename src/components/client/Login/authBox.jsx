@@ -3,7 +3,6 @@ import Router, {useRouter} from 'next/router'
 import {AxiosInstance} from "@utils/http";
 import MessageSent from "@components/client/Login/AuthComponent/messageSent";
 import Config from "@utils/Config";
-import Timer from "@components/client/Commons/timer";
 
 
 const AuthBox = () => {
