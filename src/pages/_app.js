@@ -7,7 +7,7 @@ function App({ Component, pageProps }) {
     return (
         <AuthProvider>
             <MainLayout>
-                <div className="p-5 relative">
+                <div className="p-5 relative w-full">
                     <section>
                         <Component {...pageProps} />
                     </section>

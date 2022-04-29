@@ -47,11 +47,12 @@ const Slider = ({ label, sort, count }) => {
                         </a>
                     </div>
                 </header>
+
                 <Swiper
-                    spaceBetween={20}
+                    spaceBetween={10}
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    slidesPerView={5}
                     navigation
+                    slidesPerView={5}
                     scrollbar={{ draggable: true }}
                     className="h-full"
                 >
@@ -63,6 +64,7 @@ const Slider = ({ label, sort, count }) => {
                         ))
                     }
                 </Swiper>
+
             </section>
         )
         )

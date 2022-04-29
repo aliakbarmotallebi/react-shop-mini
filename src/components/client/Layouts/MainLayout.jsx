@@ -6,7 +6,7 @@ const MainLayout = ({children}) => {
     return (
         <div className="font-yekan-regular text-gray-600 work-sans leading-normal text-base tracking-normal bg-gray-100">
             <Header/>
-            <div className="container min-h-full">
+            <div className="min-h-full w-full">
                 {children}
             </div>
             <Footer/>

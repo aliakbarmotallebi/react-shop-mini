@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Card = ({ product }) => {
     return (
-        <div className="relative mx-auto w-full">
+        <div className="relative mx-auto w-full my-2">
             <Link href={`/product/${product.ErpCode}/${textToSlug(product.Name)}`}
                 className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                 <a>
@@ -22,8 +22,14 @@ const Card = ({ product }) => {
                                 />
                             </div>
 
-
                         </div>
+                        {product?.Few <= 0 &&
+                            (<div className="absolute top-0 left-0 mt-2 ml-1 p-2 z-20 flex justify-between">
+                                <span className="group hover:bg-transparent bg-rose-100 text-rose-600 rounded rounded-sm p-2 text-sm">
+                                    ناموجود
+                                </span>
+                            </div>)
+                        }
                         <div className="mt-3 mb-1">
                             <h5 className="text-md text-gray-900">{product.Name}</h5>
                         </div>
@@ -59,7 +65,7 @@ const Card = ({ product }) => {
                             </div>
                             <div className="flex">
                                 <div className="flex justify-between bg-white space-x-5 rounded-lg overflow-hidden ">
-                                    <div><span class="text-gray-900 ml-3 text-xl">{product.SellPrice.toLocaleString("fa-ir")} <span className="text-gray-400 text-sm"> تومان</span></span></div>
+                                    <div><span class="text-emerald-400 ml-3 text-xl">{product.SellPrice.toLocaleString("fa-ir")} <span className="text-gray-400 text-sm"> تومان</span></span></div>
                                 </div>
                             </div>
                         </div>
