@@ -1,11 +1,13 @@
 import React from "react";
 import ShopJozi from "@components/Shop/shop";
-import { useRouter } from "next/router";
 
-const Shop = () => {
+const Shop = ({ query }) => {
     return (
-        <ShopJozi/>
+        <ShopJozi query={query} />
     )
+}
+Shop.getInitialProps = ({ query }) => {
+    return { query }
 }
 
 export default Shop;
