@@ -5,7 +5,7 @@ import AuthContext from "src/context/authContext";
 const MainNav = () => {
     return (
         <AuthContext.Consumer>
-            {({user,logoutuser}) => (
+            {({ user, logoutuser }) => (
                 <nav id="header" className="w-full z-30 bg-white sticky top-0">
                     <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
 
@@ -68,7 +68,7 @@ const MainNav = () => {
                             <div className="pt-2 relative mx-auto text-gray-600">
                                 <form action="/search">
                                     <input
-                                        className="border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none"
+                                        className=" bg-gray-100 h-10 px-5 rounded-lg text-sm focus:outline-none"
                                         type="search" name="q" placeholder="جستجوی محصولات" />
                                     <button type="submit" className="absolute right-0 top-0 mt-5 mr-4" />
                                 </form>

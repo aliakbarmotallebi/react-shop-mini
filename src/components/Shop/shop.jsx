@@ -24,7 +24,6 @@ export default function ShopJozi({ query }) {
     if (node) observe.current.observe(node)
   }, [hasMore, loading])
 
-
   useEffect(() => {
     setLoading(true)
     AxiosInstance({
@@ -40,6 +39,7 @@ export default function ShopJozi({ query }) {
       setLoading(false)
     })
   }, [skip])
+
 
 
   return (
