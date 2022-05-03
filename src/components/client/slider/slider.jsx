@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Loading from "@components/client/Commons/loading";
+import CartContext from "src/context/cartContext";
 
 
 const Slider = ({ label, sort, count }) => {
@@ -34,12 +35,14 @@ const Slider = ({ label, sort, count }) => {
         fetchProducts();
     }, [])
     return (
+
         (isLoading ? <Loading /> : (
             <section className="pt-3">
                 <header className="flex items-center">
                     <h2 className="font-semibold text-xl pt-5 py-2 mb-3">
                         {label}
                     </h2>
+                   
                     <div className="mr-auto">
                         <a href="#"
                             className="border border-[#dfdfdf] rounded text-xs py-1 px-3 tracking-tight hover:bg-gray-300 text-black hover:text-gary-700">
