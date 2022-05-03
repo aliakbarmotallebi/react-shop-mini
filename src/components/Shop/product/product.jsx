@@ -5,12 +5,12 @@ import CartContext from 'src/context/cartContext';
 
 
 export default function Product({ product }) {
-    const { total, setTotal } = useContext(CartContext)
+    const { cart, setCart } = useContext(CartContext)
     const add = (product) => {
-        setTotal({ product, type: 'add' });
+        setCart({ product, type: 'add' });
     }
     const remove = (product) => {
-        setTotal({ product, type: 'remove' });
+        setCart({ product, type: 'remove' });
     }
     return (
         <div class="py-3 bg-white">
