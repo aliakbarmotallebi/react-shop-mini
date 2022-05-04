@@ -1,12 +1,7 @@
-import EmptyCart from "@components/Shop/cart/emptyCart"
-import { useContext } from "react"
-import CartContext from "src/context/cartContext"
+import React from "react"
+import Cart from "@components/Shop/cart/cart";
 
-export default function Cart() {
-    const { total } = useContext(CartContext)
-    return (
-        total <= 0 && <EmptyCart />
-    )
+const CartPage = () => {
+    return <Cart/>
 }
-
-
+export default CartPage
