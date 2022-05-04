@@ -39,13 +39,13 @@ const Card = ({ product }) => {
                                         stroke="currentColor"
                                         strokeWidth="2"
                                         strokeLinecap="round"
-                                        strokeLinejoin="round"><path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z" class="svgShape"></path></svg>
+                                        strokeLinejoin="round"><path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z" className="svgShape"></path></svg>
                                 </button>
                                
                             </div>
                             <div className="flex">
                                 <div className="flex justify-between bg-white space-x-5 rounded-lg overflow-hidden ">
-                                    <div><span class="text-blue-600 ml-3 text-xl font-bold">{product.SellPrice.toLocaleString("fa-ir")} <span className="text-gray-300 text-xs"> تومان</span></span></div>
+                                    <div><span className="text-blue-600 ml-3 text-xl font-bold">{product.SellPrice.toLocaleString("fa-ir")} <span className="text-gray-300 text-xs"> تومان</span></span></div>
                                 </div>
                             </div>
                         </div>

@@ -4,23 +4,7 @@ import CartContext from 'src/context/cartContext'
 function cartReducer(cart, action) {
     switch (action.type) {
         case 'add':
-            const cartIndex = cart.findIndex(cartItem => cartItem.product.ErpCode === action.product.product.ErpCode)
-            if (cartIndex < 0) {
-                return [...cart, action.product]
-            }
-            return [...cart]
-
-
-        case 'remove':
-            const productItem = cart.findIndex(cartItem => cartItem.Name === action.product.Name)
-            if (productItem < 0) {
-                return cart;
-            }
-            const update = [...cart];
-            update.splice(productItem, 1)
-            return update
-        default:
-            return console.log("hichiii")
+            return [...cart, action]
     }
 }
 
@@ -30,6 +14,7 @@ function CartProvider({ children }) {
 
     React.useEffect(() => {
         setTotal(cart.length)
+        console.log(total)
     })
 
     return (
