@@ -9,7 +9,7 @@ const MainNav = () => {
             <AuthContext.Consumer>
                 {({ user, logoutuser }) => (
                     <nav id="header" className="w-full z-30 bg-white sticky top-0">
-                       
+
                         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
 
                             <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
@@ -98,11 +98,19 @@ const MainNav = () => {
                                         <circle cx="10.5" cy="18.5" r="1.5" />
                                         <circle cx="17.5" cy="18.5" r="1.5" />
                                     </svg>
-                                    <CartContext.Consumer>
-                                        {({ total }) => (
-                                            <span className="w-4 h-4 bg-rose-400 text-white text-center absolute -top-2 -right-2 leading-4 rounded-full">{total}</span>
+                                    {/* <CartContext.Consumer>
+                                        {({ total, cart }) => (
+                                            <>
+                                                <span className="w-4 h-4 bg-rose-400 text-white text-center absolute -top-2 -right-2 leading-4 rounded-full">{total}</span>
+                                                <ul>
+                                                    {cart.map((cartItem) => (
+                                                        <li>{cartItem.product.Name}</li>
+                                                    )
+                                                    )}
+                                                </ul>
+                                            </>
                                         )}
-                                    </CartContext.Consumer>
+                                    </CartContext.Consumer> */}
                                 </a>
 
                             </div>
