@@ -37,7 +37,7 @@ const Slider = ({ label, sort, count }) => {
     return (
 
         (isLoading ? <Loading /> : (
-            <section className="pt-3">
+            <section className="pt-2">
                 <header className="flex items-center">
                     <h2 className="font-semibold text-xl pt-5 py-2 mb-3">
                         {label}

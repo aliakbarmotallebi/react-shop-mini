@@ -2,7 +2,7 @@ const { createContext } = require("react");
 
 const AuthContext = createContext({
     user: null,
-    setUser: () => {}
+    setUser: () => { }
 })
 
 export default AuthContext;

@@ -1,16 +1,17 @@
 import React from 'react'
-import Link from "next/link";
-import textToSlug from "@helpers/textToSlug";
+import ProductLinker from '@components/client/Commons/productLinker';
 
 export default function CartItem({ cartItem }) {
     return (
         <tr>
             <td className="hidden pb-4 md:table-cell">
-                <Link href={`/product/${cartItem.product.ErpCode}/${textToSlug(cartItem.product.Name)}`}>
-                    <a >
-                        <img src={cartItem.product.Image} className="w-20 m-auto block rounded" alt="Thumbnail" />
-                    </a>
-                </Link>
+                <ProductLinker
+                    productErpCode={cartItem.product.ErpCode}
+                    productName={cartItem.product.Name} >
+
+                    <img src={cartItem.product.Image} className="w-20 m-auto block rounded" alt="Thumbnail" />
+
+                </ProductLinker>
             </td>
             <td>
                 <a href="#">
@@ -43,6 +44,6 @@ export default function CartItem({ cartItem }) {
                     {(cartItem.product.SellPrice * cartItem.quantity).toLocaleString("fa-ir")}
                 </span>
             </td>
-        </tr>
+        </tr >
     )
 }

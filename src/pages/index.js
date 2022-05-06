@@ -6,7 +6,7 @@ import Timer from "@components/client/Commons/timer";
 const Home = () => {
     return (
         <>
-         
+
             <div className="flex">
                 <BigSlider />
                 <div className="rounded-lg w-3/5 bg-[#ff971d]/80 flex items-center justify-center">
@@ -16,13 +16,13 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="h-96  w-full">
+            <div className="min-h-96  w-full">
                 <Slider label="محصولات ویژه" sort={3} count={15} />
             </div>
-            <div className="h-96  w-full">
+            <div className="min-h-96  w-full">
                 <Slider label="پرفروش ترین" sort={2} count={15} />
             </div>
-            <div className="h-96  w-full">
+            <div className="min-h-96  w-full">
                 <Slider label="پربازدیدترین" sort={1} count={15} />
             </div>
 

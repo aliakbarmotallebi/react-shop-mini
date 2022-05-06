@@ -1,14 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import textToSlug from "@helpers/textToSlug";
 import Link from "next/link";
 import OutOfStock from "../Commons/outOfStock";
+import ProductLinker from "../Commons/productLinker";
 
 const Card = ({ product }) => {
     return (
         <div className="relative mx-auto w-full my-2">
-            <Link href={`/product/${product.ErpCode}/${textToSlug(product.Name)}`}
-                className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
+            <ProductLinker
+                productName={product.Name}
+                productErpCode={product.ErpCode}
+                style={"relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"} >
                 <a>
                     <div className="shadow p-2 rounded-lg bg-white">
 
@@ -41,7 +43,7 @@ const Card = ({ product }) => {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"><path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z" className="svgShape"></path></svg>
                                 </button>
-                               
+
                             </div>
                             <div className="flex">
                                 <div className="flex justify-between bg-white space-x-5 rounded-lg overflow-hidden ">
@@ -52,7 +54,7 @@ const Card = ({ product }) => {
 
                     </div>
                 </a>
-            </Link>
+            </ProductLinker>
         </div>
 
     )
