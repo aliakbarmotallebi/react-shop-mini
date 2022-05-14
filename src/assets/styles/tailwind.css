@@ -88,6 +88,28 @@ body {
   animation-delay: 1s;
 }
 
+.swiper-button-prev {
+  right: 17px !important;
+}
+
+.swiper-button-next {
+  left: 17px !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  transform: scale(.6);
+}
+
 @keyframes dotFlashing {
   0% {
     background-color: #9880ff;

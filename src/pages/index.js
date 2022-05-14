@@ -9,7 +9,7 @@ const Home = () => {
             <div className="flex gap-5">
                 <BigSlider />
 
-                <div className="rounded-lg w-3/5  ">
+                <div className="rounded-lg w-3/5 py-5 ">
                     <h1 className="text-4xl font-yekan-bold text-gray-900 text-center">فروشگاه آنلاین شهروند مهاجر</h1>
                     <p className="text-slate-600 text-justify text-sm my-4 leading-7 font-yekan-bold">شهروند مهاجر جهت تسریع و تسهیل فرایند خرید اینترنتی و خدمت‌رسانی به همشهریان عزیز شهر مهاجران، بیش از ۵۰۰۰ کالای متنوع در دسته‌بند‌ی‌های گوناگون نظیر لبنیات، خواربار، میوه و سبزیجات تازه، نان، مواد پروتئینی، لوازم بهداشتی و آرایشی ... را به صورت آنلاین عرضه می‌کند </p>
                     <p className="text-sm text-gray-600 mt-5 flex  items-center">
