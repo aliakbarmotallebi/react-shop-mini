@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import AuthContext from "../../../context/authContext"
+import Checkout from '@components/Shop/cart/checkout/checkout';
 
 function checkout() {
 
@@ -13,7 +14,7 @@ function checkout() {
     }
 
     return (
-        <h1>checkout</h1>
+        <Checkout user={user} />
     )
 }
 

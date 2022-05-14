@@ -9,7 +9,7 @@ const MainNav = () => {
             <AuthContext.Consumer>
                 {({ user, logoutuser }) => (
                     <nav id="header" className="w-full z-30 bg-white sticky top-0">
-                        
+
                         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
 
                             <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
@@ -90,9 +90,9 @@ const MainNav = () => {
 
                                 </a>
                                 <Link href={"/cart/checkout"}>
-                                        <a>
-                                            تسویه حساب
-                                        </a>
+                                    <a>
+                                        تسویه حساب
+                                    </a>
                                 </Link>
                                 <Link href={"/cart"}>
 
