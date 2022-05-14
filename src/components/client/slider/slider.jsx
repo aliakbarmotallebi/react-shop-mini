@@ -36,13 +36,13 @@ const Slider = ({ label, sort, count }) => {
     }, [])
     return (
 
-        (isLoading ? <Loading /> : (
-            <section className="pt-2">
+        (isLoading ? <div className="w-full h-96"><Loading /></div> : (
+            <section className="pt-2 h-full">
                 <header className="flex items-center">
                     <h2 className="font-semibold text-xl pt-5 py-2 mb-3">
                         {label}
                     </h2>
-                   
+
                     <div className="mr-auto">
                         <a href="#"
                             className="border border-[#dfdfdf] rounded text-xs py-1 px-3 tracking-tight hover:bg-gray-300 text-black hover:text-gary-700">

@@ -15,14 +15,13 @@ const Home = () => {
                     </span>
                 </div>
             </div>
-
-            <div className="min-h-96 h-96  w-full">
+            <div className="min-h-96  w-full">
                 <Slider label="محصولات ویژه" sort={3} count={15} />
             </div>
-            <div className="min-h-96 h-96  w-full">
+            <div className="min-h-96  w-full">
                 <Slider label="پرفروش ترین" sort={2} count={15} />
             </div>
-            <div className="min-h-96 h-96  w-full">
+            <div className="min-h-96  w-full">
                 <Slider label="پربازدیدترین" sort={1} count={15} />
             </div>
 
