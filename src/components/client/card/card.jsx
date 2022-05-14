@@ -31,7 +31,7 @@ const Card = ({ product }) => {
                             <h5 className="text-md text-gray-800 font-yekan-bold">{product.Name}</h5>
                         </div>
                         <div className="flex justify-between w-full py-2">
-                            <div className="flex gap-1">
+                            <div className="flex gap-1 items-center">
                                 <button className="group hover:shadow transition duration-100 ease-in-out bg-red-700 bg-opacity-10 rounded w-7 h-7 p-1">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +46,14 @@ const Card = ({ product }) => {
 
                             </div>
                             <div className="flex">
-                                <div className="flex justify-between bg-white space-x-5 rounded-lg overflow-hidden ">
-                                    <div><span className="text-blue-600 ml-3 text-xl font-bold">{product.SellPrice.toLocaleString("fa-ir")} <span className="text-gray-300 text-xs"> تومان</span></span></div>
+                                <div className="justify-between bg-white space-x-5 rounded-lg overflow-hidden ">
+                                    <span className="text-sm text-gray-400 text-center block line-through">{product.SellPrice.toLocaleString("fa-ir")}</span>
+                                    <div>
+                                        <span className="text-blue-600  text-xl font-bold">
+                                            {product.LastBuyPrice.toLocaleString("fa-ir")}
+                                            <span className="text-gray-300 text-xs"> تومان</span>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

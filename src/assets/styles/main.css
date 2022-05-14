@@ -1506,6 +1506,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
+.line-through {
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
+
 .no-underline {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
