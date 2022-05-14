@@ -66,32 +66,7 @@ const Footer = () => {
 
                     <div className="flex w-full lg:w-1/2 lg:justify-start lg:text-right">
                         <div className="px-3 md:px-0">
-                            <ul className="flex list-reset items-center pt-3 m-0 text-right">
-                                <li>
-                                    <a className="ml-6 inline-block no-underline hover:text-black hover:underline py-1 text-xs font-semibold text-black font-yekan-bold"
-                                       href="#">
-                                        قوانین و مقرارت
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="ml-6 inline-block no-underline hover:text-black hover:underline py-1 text-xs font-semibold font-yekan-bold text-black"
-                                       href="#">
-                                        استخدام
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="ml-6 inline-block no-underline hover:text-black hover:underline py-1 text-xs font-semibold font-yekan-bold text-black"
-                                       href="#">
-                                        تماس با ما
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="ml-6 inline-block no-underline hover:text-black hover:underline py-1 text-xs font-semibold font-yekan-bold text-black"
-                                       href="#">
-                                        درباره ما
-                                    </a>
-                                </li>
-                            </ul>
+                            
                             <div className="pt-[10px] text-xs font-yekan-light">
                             شهرمهاجران، خیابان ملاصدرا، بازارچه شرقی، پاساژ تبارک، طبقه اول، فروشگاه شهروند مهاجر
                             </div>
