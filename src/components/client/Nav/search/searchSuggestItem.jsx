@@ -1,7 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ProductLinker from '@components/client/Commons/productLinker';
+
 export default function SearchSuggestItem({ searchedItem }) {
+
 
     return (
         <li className='text-sm border-b p-2 flex items-center'>
@@ -11,11 +14,13 @@ export default function SearchSuggestItem({ searchedItem }) {
                 height={35}
                 className={'self-center'}
             />
-            <Link href="">
+            <ProductLinker
+                productErpCode={searchedItem.ErpCode}
+                productName={searchedItem.Name} >
                 <a className='pr-2'>
                     {searchedItem.Name}
                 </a>
-            </Link>
+            </ProductLinker>
         </li>
     )
 }
