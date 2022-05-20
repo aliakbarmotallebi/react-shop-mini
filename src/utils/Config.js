@@ -21,6 +21,9 @@ export default {
         },
         loginAuthVerify: {
             "loginAuthVerify": "/auth/verify"
+        },
+        search: {
+            "search": "products"
         }
     }
 }

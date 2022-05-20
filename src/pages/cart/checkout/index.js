@@ -9,9 +9,9 @@ function checkout() {
     const router = useRouter()
 
     // checking user
-    // if (!user) {
-    //     router.push('/');
-    // }
+    if (!user) {
+        router.push('/');
+    }
 
     return (
         <Checkout user={user} />

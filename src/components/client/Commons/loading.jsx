@@ -1,9 +1,9 @@
 import React from "react";
 
-const Loading = () => {
+const Loading = ({ padding }) => {
 
     return (
-        <div className="grid h-full place-content-center">
+        <div className={`grid h-full place-content-center ${padding}`}>
             <div>
                 <div className="snippet" data-title=".dot-flashing">
                     <div className="stage">

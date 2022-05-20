@@ -22,7 +22,7 @@ const Home = () => {
                     </p>
                     <p className="text-sm text-gray-600 mt-5 flex items-center">
                         <span className="bg-white p-2 rounded-md ml-4">
-                            <svg xmlns="http://www.w3.org/2000/svg"  class="h-6 w-6 text-slate-400 " xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" width={256} height={256} viewBox="0 0 256 256" xmlSpace="preserve">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400 " xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" width={256} height={256} viewBox="0 0 256 256" xmlSpace="preserve">
                                 <desc>Created with Fabric.js 1.7.22</desc>
                                 <defs>
                                 </defs>
