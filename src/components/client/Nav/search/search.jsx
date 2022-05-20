@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import SearchSuggest from './searchSuggest'
 import { AxiosInstance } from '@utils/http'
 import Config from "@utils/Config"
-import Loading from '@components/client/Commons/loading'
 import SearchLoadin from '@components/client/Commons/searchLoadin'
 
 export default function Search() {
     const [searchedQuery, setSearchedQuery] = useState('')
     const [searchedItems, setSearchedItems] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    console.log(searchedQuery)
+
     useEffect(() => {
         const { search } = Config.services.search
+        if (searchedQuery.length <= 2) return
         setIsLoading(true)
         AxiosInstance.get(search, {
             params: {
@@ -20,6 +20,7 @@ export default function Search() {
             }
         }).then((response) => {
             setSearchedItems(response.data['data'])
+            console.log(response)
             setIsLoading(false)
         }).catch(err => console.log(err))
     }, [searchedQuery])
@@ -32,11 +33,9 @@ export default function Search() {
                 </i>
                 <input
                     className=" bg-gray-50 border border-gray-100 h-10 px-5 rounded-lg text-xs focus:outline-none w-full pr-9"
-                    type="search" name="q" placeholder="جستجوی محصولات" value={searchedQuery.value} onChange={event => setSearchedQuery(event.target.value)} />
+                    name="q" placeholder="جستجوی محصولات" value={searchedQuery.value} onChange={event => setSearchedQuery(event.target.value)} />
                 <button type="submit" className="absolute right-0 top-0 mt-5 mr-4" />
-                {isLoading ? <SearchLoadin /> : (searchedItems.map((searchedItem, id) => (
-                    <SearchSuggest searchedItems={searchedItems} searchedQuery={searchedQuery} />
-                )))}
+                {isLoading ? <SearchLoadin /> : <SearchSuggest searchedItems={searchedItems} searchedQuery={searchedQuery} />}
             </form>
         </>
     )
