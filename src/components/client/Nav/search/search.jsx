@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import SearchSuggest from './searchSuggest'
 import { AxiosInstance } from '@utils/http'
 import Config from "@utils/Config"
 import SearchLoadin from '@components/client/Commons/searchLoadin'
+import SearchContext from 'src/context/searchContext'
+
 
 export default function Search() {
-    const [searchedQuery, setSearchedQuery] = useState('')
+    const { searchedQuery, setSearchedQuery } = useContext(SearchContext)
     const [searchedItems, setSearchedItems] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+
 
 
 
@@ -27,6 +30,9 @@ export default function Search() {
         }).catch(err => console.log(err))
     }, [searchedQuery])
 
+
+
+
     return (
         <>
             <form action="/search" className='relative'>
@@ -45,5 +51,6 @@ export default function Search() {
                 {isLoading ? <SearchLoadin /> : <SearchSuggest searchedItems={searchedItems} searchedQuery={searchedQuery} />}
             </form>
         </>
+
     )
 }

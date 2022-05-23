@@ -1,12 +1,14 @@
 import React from "react"
 
 export default function Custom404() {
+
     return (
+
         <div className="flex items-center justify-center min-h-screen bg-white py-12">
             <div className="flex flex-col">
                 <span className="text-center font-bold opacity-30">
-            <hr className="my-4"/>
-        </span>
+                    <hr className="my-4" />
+                </span>
                 <div className="flex flex-col items-center">
                     <div className="text-indigo-500 font-bold text-7xl">
                         404
@@ -22,6 +24,5 @@ export default function Custom404() {
                 </div>
             </div>
         </div>
-
     )
 }
