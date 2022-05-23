@@ -12,16 +12,14 @@ export default function Search() {
     const [isLoading, setIsLoading] = useState(false)
 
 
-
-
     useEffect(() => {
-        const { search } = Config.services.search
+        const { search, search_count } = Config.services.search
         if (searchedQuery.length <= 2) return
         setIsLoading(true)
         AxiosInstance.get(search, {
             params: {
                 q: searchedQuery,
-                count: 3
+                count: search_count
             }
         }).then((response) => {
             setSearchedItems(response.data['data'])

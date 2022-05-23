@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Config from "@utils/Config";
 import { AxiosInstance } from "@utils/http";
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -24,23 +24,31 @@ const BigSlider = () => {
         fetchBigSlider();
     }, [])
     return (
+        
+            
+                <Swiper
+                    modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                    slidesPerView={1}
+                    navigation
+                    loop={true}
+                    autoplay={{
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{ clickable: true }}
+                    scrollbar={{ draggable: true }}
+                    className="h-full w-full"
+                >
+                    {
+                        (sliders.map((slide, id) => (
+                            <SwiperSlide key={id} className="p-2 h-full w-full">
+                                <BigSliderItem slide={slide} />
+                            </SwiperSlide>
+                        )))
+                    }
+                </Swiper>
+            
 
-        <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-            className="h-full w-full"
-        >
-            {
-                (sliders.map((slide, id) => (
-                    <SwiperSlide key={id} className="p-2 h-full w-full">
-                        <BigSliderItem slide={slide} />
-                    </SwiperSlide>
-                )))
-            }
-        </Swiper>
 
 
     )

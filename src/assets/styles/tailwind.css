@@ -58,6 +58,13 @@ body {
   animation-delay: .5s;
 }
 
+.one {
+  background-image: radial-gradient(hsla(209, 100%, 47%, 1.00) 5%, transparent 0);
+  background-size: 30px 30px;
+  width: 200px;
+  height: 200px
+}
+
 .dot-flashing::before,
 .dot-flashing::after {
   content: '';

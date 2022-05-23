@@ -67,7 +67,7 @@ const Slider = ({ label, sort, count }) => {
                     }
                 </Swiper>
 
-            </section>
+            </section >
         )
         )
     )

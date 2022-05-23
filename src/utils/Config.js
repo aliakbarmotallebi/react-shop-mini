@@ -23,7 +23,9 @@ export default {
             "loginAuthVerify": "/auth/verify"
         },
         search: {
-            "search": "products"
+            "search": "products",
+            "search_count" : 3
+
         }
     }
 }

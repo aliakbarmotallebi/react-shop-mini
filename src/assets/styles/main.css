@@ -534,6 +534,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 0px;
 }
 
+.-bottom-10 {
+  bottom: -2.5rem;
+}
+
+.-right-10 {
+  right: -2.5rem;
+}
+
 .bottom-10 {
   bottom: 2.5rem;
 }
@@ -576,6 +584,38 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .left-0 {
   left: 0px;
+}
+
+.-bottom-1 {
+  bottom: -0.25rem;
+}
+
+.-bottom-12 {
+  bottom: -3rem;
+}
+
+.-right-12 {
+  right: -3rem;
+}
+
+.-bottom-6 {
+  bottom: -1.5rem;
+}
+
+.-right-6 {
+  right: -1.5rem;
+}
+
+.-bottom-4 {
+  bottom: -1rem;
+}
+
+.-right-8 {
+  right: -2rem;
+}
+
+.-right-9 {
+  right: -2.25rem;
 }
 
 .z-50 {
@@ -817,6 +857,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-height: 100%;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .w-3\/5 {
   width: 60%;
 }
@@ -827,10 +871,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-10 {
   width: 2.5rem;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .w-4 {
@@ -1724,6 +1764,13 @@ body {
           animation: dotFlashing 1s infinite linear alternate;
   -webkit-animation-delay: .5s;
           animation-delay: .5s;
+}
+
+.one {
+  background-image: radial-gradient(hsla(209, 100%, 47%, 1.00) 5%, transparent 0);
+  background-size: 30px 30px;
+  width: 200px;
+  height: 200px
 }
 
 .dot-flashing::before,
