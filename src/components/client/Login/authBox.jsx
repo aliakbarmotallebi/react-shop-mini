@@ -4,13 +4,14 @@ import { AxiosInstance } from "@utils/http";
 import MessageSent from "@components/client/Login/AuthComponent/messageSent";
 import Config from "@utils/Config";
 import AuthContext from "src/context/authContext";
+import AlertContext from "src/context/alertContext";
 
 
 const AuthBox = () => {
     const [userNumber, setUserNumber] = useState("")
     const [messageSent, setMessageSent] = useState(false)
     const [otpVerify, setOtpVerify] = useState(false)
-    const [errorMessage, setErrorMessage] = useState("")
+    const alert = useContext(AlertContext)
     const { user, setUser } = useContext(AuthContext)
     const router = useRouter()
 
@@ -20,7 +21,7 @@ const AuthBox = () => {
         event.preventDefault();
         if (!messageSent) {
             if (userNumber === "" || userNumber.length < 10) {
-                setErrorMessage("شماره نا معتبر است")
+                alert.warning('شماره وارد شده صحیح نمی باشد')
                 return;
             }
             const { loginAuth } = Config.services.loginAuth
