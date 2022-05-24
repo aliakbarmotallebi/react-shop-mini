@@ -4,8 +4,6 @@ import { AxiosInstance } from '@utils/http'
 import ProductItem from '@components/client/Products/productItem'
 import Loading from '@components/client/Commons/loading'
 import Filter from './filter/filter'
-import CustomHead from '@components/client/header/customHead'
-import Titles from '@utils/Titles'
 
 
 export default function ShopJozi({ query }) {
@@ -47,7 +45,6 @@ export default function ShopJozi({ query }) {
 
   return (
     <>
-      <CustomHead title={Titles.titles.shop} />
       <div className="grid grid-cols-4">
         <div>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia dolorum nihil eos ratione quam minus, ea fuga voluptate aspernatur, atque nobis non illum vitae pariatur amet voluptatum facere? Quisquam, possimus.
