@@ -21,7 +21,7 @@ const AuthBox = () => {
         event.preventDefault();
         if (!messageSent) {
             if (userNumber === "" || userNumber.length < 10) {
-                alert.warning('شماره وارد شده صحیح نمی باشد')
+                alert.warning('شماره وارد شده صحیح نمی باشد' , 1)
                 return;
             }
             const { loginAuth } = Config.services.loginAuth

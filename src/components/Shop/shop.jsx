@@ -47,7 +47,7 @@ export default function ShopJozi({ query }) {
     <>
       <div className="grid grid-cols-4">
         <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia dolorum nihil eos ratione quam minus, ea fuga voluptate aspernatur, atque nobis non illum vitae pariatur amet voluptatum facere? Quisquam, possimus.
+          {/* TODO : something here  */}
         </div>
         <div className='grid col-span-3 grid-cols-4'>
           <Filter />

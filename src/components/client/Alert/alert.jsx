@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 import IconInfo from "@components/client/Alert/icons/iconInfo";
 import IconSuccess from "@components/client/Alert/icons/iconSuccess";
 import IconDanger from "@components/client/Alert/icons/iconDanger";
@@ -25,9 +26,7 @@ const Alert = ({ type, message }) => {
 
         },
     }
-    const CloseAlert = () => {
-        setClose(true)
-    }
+
     return (
 
         <div className="fixed bottom-10 right-10 z-50 min-w-full">
@@ -36,7 +35,7 @@ const Alert = ({ type, message }) => {
 
                 <div className="flex items-center">
                     {customType[type]?.icon}
-                    <p className={`ml-3 text-sm font-bold text-${customType.hasOwnProperty(type) ? customType[type].color : "gray"}-600`}>{message}</p>
+                    <p className={`mr-1 text-sm font-yekan-bold text-${customType.hasOwnProperty(type) ? customType[type].color : "gray"}-600`}>{message}</p>
                 </div>
 
             </div>
