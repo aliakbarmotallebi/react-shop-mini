@@ -13,7 +13,6 @@ function checkout() {
     const router = useRouter()
 
     // checking user
-    
     if (!user) {
         router.push('/login');
         alert.info('ابتدا وارد حساب کاربری خود شوید', 5)

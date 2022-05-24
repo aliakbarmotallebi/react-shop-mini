@@ -1,27 +1,39 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useRef, useEffect } from "react"
 import Router, { useRouter } from 'next/router'
+
 import { AxiosInstance } from "@utils/http";
+
 import MessageSent from "@components/client/Login/AuthComponent/messageSent";
 import Config from "@utils/Config";
+
 import AuthContext from "src/context/authContext";
 import AlertContext from "src/context/alertContext";
 
 
 const AuthBox = () => {
+
+    const inputReference = useRef(null);
     const [userNumber, setUserNumber] = useState("")
     const [messageSent, setMessageSent] = useState(false)
     const [otpVerify, setOtpVerify] = useState(false)
     const alert = useContext(AlertContext)
-    const { user, setUser } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const router = useRouter()
 
-    if (user) router.push('/')
+    if (user) {
+        router.push('/')
+        alert.info('شما قبلا وارد شدید')
+    }
+
+    useEffect(() => {
+        inputReference.current.focus();
+    }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!messageSent) {
             if (userNumber === "" || userNumber.length < 10) {
-                alert.warning('شماره وارد شده صحیح نمی باشد' , 1)
+                alert.warning('شماره وارد شده صحیح نمی باشد', 1)
                 return;
             }
             const { loginAuth } = Config.services.loginAuth
@@ -56,7 +68,7 @@ const AuthBox = () => {
                             <label className="font-semibold text-sm text-gray-600 pb-1 block">
                                 شماره تلفن همراه
                             </label>
-                            <input type="text" name="phoneNumber" onChange={e => setUserNumber(e.target.value)}
+                            <input ref={inputReference} type="text" name="phoneNumber" onChange={e => setUserNumber(e.target.value)}
                                 className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
                             <button type="submit"
                                 className="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
