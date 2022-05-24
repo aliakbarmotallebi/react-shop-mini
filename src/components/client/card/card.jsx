@@ -37,7 +37,7 @@ const Card = ({ product }) => {
                                 <div className="flex gap-1 items-center">
                                     <Link href="">
                                         <a className="text-gray-400">
-                                            <span className="text-xs font-yekan-regular">{TextLimit(product.SideGroupName , 20)}</span>
+                                            <span className="text-xs font-yekan-regular">{TextLimit(product.SideGroupName, 20)}</span>
                                         </a>
                                     </Link>
                                 </div>

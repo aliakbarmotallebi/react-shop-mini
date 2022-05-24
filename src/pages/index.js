@@ -1,11 +1,16 @@
 import React from "react";
 import Link from "next/link"
+
+
+import CustomHead from "@components/client/header/customHead";
 import Slider from "@components/client/slider/slider";
 import BigSlider from "@components/client/slider/bigSlider/bigSlider";
+import Titles from '@utils/Titles'
 const Home = () => {
     return (
         <>
 
+            <CustomHead title={Titles.titles.home} />
             <div className="container">
                 <div className="w-full relative">
                     <div className="one absolute -bottom-4 -right-9"></div>
