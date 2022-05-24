@@ -1,8 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+
 import OutOfStock from "../Commons/outOfStock";
 import ProductLinker from "../Commons/productLinker";
+import TextLimit from "@helpers/textLimit";
 
 const Card = ({ product }) => {
     return (
@@ -35,7 +37,7 @@ const Card = ({ product }) => {
                                 <div className="flex gap-1 items-center">
                                     <Link href="">
                                         <a className="text-gray-400">
-                                            <span className="text-xs font-yekan-regular">{product.SideGroupName}</span>
+                                            <span className="text-xs font-yekan-regular">{TextLimit(product.SideGroupName , 20)}</span>
                                         </a>
                                     </Link>
                                 </div>
