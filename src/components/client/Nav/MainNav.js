@@ -110,7 +110,7 @@ const MainNav = () => {
 
                                 </div>
                             </div>
-                        <CategoryNav />
+                        {/* <CategoryNav /> */}
                     </nav>
                 )}
 

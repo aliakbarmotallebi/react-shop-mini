@@ -45,7 +45,7 @@ export default function Product({ product }) {
             </div>
 
             <div className=" mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-                <div className="flex flex-col md:flex-row -mx-4">
+                <div className="flex justify-between flex-col md:flex-row -mx-4">
                     <div className="w-1/3">
                         <div className="m-auto block w-3/4">
                             <Image
