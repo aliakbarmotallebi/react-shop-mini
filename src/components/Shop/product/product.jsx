@@ -5,6 +5,7 @@ import Link from 'next/link'
 import CartContext from 'src/context/cartContext';
 import CustomHead from '@components/client/header/customHead';
 import ProductPrice from './productPrice';
+import AlertContext from 'src/context/alertContext';
 
 function itemNumberReducer(itemnumber, action) {
     switch (action.type) {
@@ -22,9 +23,11 @@ function itemNumberReducer(itemnumber, action) {
 export default function Product({ product }) {
     const { setCart } = useContext(CartContext)
     const [itemnumber, ItemDispatch] = useReducer(itemNumberReducer, 1)
+    const alert = useContext(AlertContext);
 
     const handleAddToCart = (product) => {
         setCart({ product, quantity: itemnumber, type: "add" })
+        alert.success('به سبد خرید اضافه شد')
     }
 
     return (
@@ -46,7 +49,7 @@ export default function Product({ product }) {
                                 </div>
                             </div>
                             <div className="px-4 w-1/3">
-                                <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-800  text-xl border-b-[1px] pb-3">{product.Name}</h2>
+                                <h2 className="mb-2 leading-tight tracking-tight font-bold text-slate-500  text-xl border-b-[1px] pb-3">{product.Name}</h2>
                                 <ul role="list" className="my-7">
                                     <li className="flex space-x-3">
                                         <svg class="w-6 h-6 text-green-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
