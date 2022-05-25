@@ -6,30 +6,21 @@ import ProductLinker from '@components/client/Commons/productLinker';
 export default function CartItem({ cartItem }) {
     return (
         <tr>
-            <td className="pb-4">
+
+            <td>
                 <ProductLinker
                     productErpCode={cartItem.product.ErpCode}
                     productName={cartItem.product.Name} >
-
-                    <Image
-                        width={70}
-                        height={70}
-                        src={cartItem.product.Image}
-                        className={"w-20 rounded"}
-                        alt={cartItem.product}
-                    />
+                    <p className="mb-2 font-yekan-bold  md:ml-4">{cartItem.product.Name}</p>
 
                 </ProductLinker>
-            </td>
-            <td>
-                <a href="#">
-                    <p className="mb-2 font-yekan-bold  md:ml-4">{cartItem.product.Name}</p>
-                    <form action="" method="POST">
-                        <button type="submit" className="text-gray-700 md:ml-4">
-                            <small className='bg-red-100  text-red-700 px-3 py-1 rounded-sm text-xs'>حذف محصول</small>
-                        </button >
-                    </form>
-                </a>
+
+                <form action="" method="POST">
+                    <button type="submit" className="text-gray-700 md:ml-4">
+                        <small className='bg-red-100  text-red-700 px-3 py-1 rounded-sm text-xs'>حذف محصول</small>
+                    </button >
+                </form>
+
             </td>
             <td className="justify-center md:justify-start md:flex mt-6">
                 <div className="w-20 h-10">
