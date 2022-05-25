@@ -20,7 +20,9 @@ const Home = () => {
                         <Detail />
                     </div>
                 </div>
-                
+                <div className="min-h-96  w-full">
+                    <Slider label="محصولات ویژه" sort={3} count={15} />
+                </div>
                 <div className="min-h-96  w-full">
                     <Slider label="پرفروش ترین" sort={2} count={15} />
                 </div>

@@ -1,15 +1,23 @@
 import React from 'react'
+import Image from 'next/image'
+
 import ProductLinker from '@components/client/Commons/productLinker';
 
 export default function CartItem({ cartItem }) {
     return (
         <tr>
-            <td className="hidden pb-4 md:table-cell">
+            <td className="pb-4">
                 <ProductLinker
                     productErpCode={cartItem.product.ErpCode}
                     productName={cartItem.product.Name} >
 
-                    <img src={cartItem.product.Image} className="w-20 m-auto block rounded" alt="Thumbnail" />
+                    <Image
+                        width={70}
+                        height={70}
+                        src={cartItem.product.Image}
+                        className={"w-20 rounded"}
+                        alt={cartItem.product}
+                    />
 
                 </ProductLinker>
             </td>
