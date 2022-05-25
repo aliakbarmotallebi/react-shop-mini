@@ -9,6 +9,9 @@ export default {
         bigSlider: {
             "bigSlider": 'sliders'
         },
+        sliderCategory: {
+            sliderCategory: 'products/category/'
+        },
         shop: {
             "shop": 'products'
         },
@@ -24,7 +27,7 @@ export default {
         },
         search: {
             "search": "products",
-            "search_count" : 3
+            "search_count": 3
 
         }
     }

@@ -11,18 +11,20 @@ import 'swiper/css/navigation';
 import Loading from "@components/client/Commons/loading";
 
 
-const Slider = ({ label, sort, count }) => {
+const Slider = ({ label, sort, count, category }) => {
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
     const fetchProducts = () => {
         const { slider } = Config.services.slider
+        const { sliderCategory } = Config.services.sliderCategory
+
+        const sliderUrl = category ? `${sliderCategory}${category}` : slider
+        const params = sort ? { sort, count } : { category, count }
         setIsLoading(true);
-        AxiosInstance.get(slider, {
-            params: {
-                sort,
-                count
-            }
+
+        AxiosInstance.get(sliderUrl, {
+            params
         }
         ).then((res) => {
             setProducts(res.data['data']);

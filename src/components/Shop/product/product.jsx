@@ -6,6 +6,7 @@ import CartContext from 'src/context/cartContext';
 import CustomHead from '@components/client/header/customHead';
 import ProductPrice from './productPrice';
 import AlertContext from 'src/context/alertContext';
+import Slider from '@components/client/slider/slider';
 
 function itemNumberReducer(itemnumber, action) {
     switch (action.type) {
@@ -33,12 +34,12 @@ export default function Product({ product }) {
     return (
         <>
             <CustomHead title={product.Name} />
-            <div className="py-3 bg-white">
-                <div className='container'>
-                    <div className=" mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-                        <div className="flex  flex-col md:flex-row -mx-4">
-                            <div className="w-1/3">
-                                <div className="m-auto block w-3/4">
+            <div className='container'>
+                <div className="pt-3 pb-12 border-b-[1px]">
+                    <div className=" mx-auto mt-6 ">
+                        <div className="flex  flex-col md:flex-row ">
+                            <div className="w-1/3 ">
+                                <div className="m-auto block w-3/4 bg-white">
                                     <Image
                                         className="w-full "
                                         src={product.Image}
@@ -60,7 +61,7 @@ export default function Product({ product }) {
                                 </ul>
 
                             </div>
-                            <div className="p-4 w-1/3 border-[1px]  rounded-md flex gap-3 justify-between flex-col">
+                            <div className="p-4 w-1/3 border-[1px]  rounded-md flex gap-3 justify-between flex-col bg-white">
                                 <div className='w-full'>
                                     <div className='flex justify-between w-full border-b-[1px] border-slate-100 py-4'>
                                         <span className='font-yekan-bold text-slate-500 self-center'>قیمت</span>
@@ -101,6 +102,11 @@ export default function Product({ product }) {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className='container'>
+                <div className="min-h-96  w-full">
+                    <Slider label="محصولات مرتبط" category={product.MainGroupErpCode} count={15} />
                 </div>
             </div>
         </>

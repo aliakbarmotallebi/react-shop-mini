@@ -661,6 +661,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.75rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -907,6 +912,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-24 {
   width: 6rem;
+}
+
+.w-1\/5 {
+  width: 20%;
 }
 
 .min-w-full {
@@ -1412,6 +1421,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .text-center {
