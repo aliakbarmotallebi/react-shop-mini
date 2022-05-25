@@ -5,6 +5,7 @@ import Link from "next/link";
 import OutOfStock from "../Commons/outOfStock";
 import ProductLinker from "../Commons/productLinker";
 import TextLimit from "@helpers/textLimit";
+import ProductPrice from "@components/Shop/product/productPrice";
 
 const Card = ({ product }) => {
     return (
@@ -42,17 +43,7 @@ const Card = ({ product }) => {
                                     </Link>
                                 </div>
                                 {product?.Few <= 0 ? <OutOfStock /> : (
-                                    <div className="flex">
-                                        <div className="justify-between bg-white space-x-5 rounded-lg overflow-hidden ">
-                                            <div>
-                                                <span className="text-blue-600  text-xl font-bold">
-                                                    {product.LastBuyPrice.toLocaleString("fa-ir")}
-                                                    <span className="text-gray-300 text-xs"> تومان</span>
-                                                </span>
-                                            </div>
-                                            <span className="text-sm text-gray-400 text-center block line-through">{product.SellPrice.toLocaleString("fa-ir")}</span>
-                                        </div>
-                                    </div>
+                                    <ProductPrice lastBuyPrice={product.LastBuyPrice} sellPrice={product.SellPrice} />
                                 )}
                             </div>
                         </div>
