@@ -1,31 +1,19 @@
 import React from "react";
-import Config from "@utils/Config";
-import Card from "@components/client/card/card";
-import {fetchShopProduct} from "@utils/Services";
+import ShopJozi from "@components/Shop/shop";
+import CustomHead from "@components/client/header/customHead";
+import Titles from "@utils/Titles";
 
-const Shop = ({products}) => {
+const Shop = ({ query }) => {
     return (
-        <div className='grid grid-cols-5 gap-2 w-full'>
-            {
-                products.map((product) => (
-                    <Card product={product}/>
-                ))
-            }
-        </div>
+        <>
+            <CustomHead title={Titles.titles.shop} />
+            <ShopJozi query={query} />
+        </>
+
     )
 }
-
-
-export async function getServerSideProps() {
-    const {shop} = Config.services.shop
-    const products = await fetchShopProduct(`${shop}`);
-    if (!products) {
-        return {
-            notFound: true,
-        }
-    }
-    return {props: products};
-
+Shop.getInitialProps = ({ query }) => {
+    return { query }
 }
 
 export default Shop;

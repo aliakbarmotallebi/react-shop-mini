@@ -1,38 +1,60 @@
 import Image from "next/image";
 import React from "react";
-import textToSlug from "../../../helpers/textToSlug";
 import Link from "next/link";
 
-const Card = ({product}) => {
-    return (
-        <div
-            className="h-full w-full p-6 flex flex-col border border-2 border-gray-200 rounded-md hover:shadow-md transition transition-all">
-            <Link href={`/product/${product.ErpCode}/${textToSlug(product.Name)}`}>
-                <a>
-                    <Image
-                        className="hover:grow hover:shadow-lg rounded-md"
-                        src={product.Image}
-                        layout='responsive'
-                        width={300}
-                        height={300}
-                    />
+import OutOfStock from "../Commons/outOfStock";
+import ProductLinker from "../Commons/productLinker";
+import TextLimit from "@helpers/textLimit";
+import ProductPrice from "@components/Shop/product/productPrice";
 
-                    <div className="pt-3 flex items-center justify-between">
-                        <p className="">
-                            {product.Name}
-                        </p>
-                        <svg className="h-6 w-6 fill-current text-gray-500 hover:text-black"
-                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path
-                                d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"/>
-                        </svg>
+const Card = ({ product }) => {
+    return (
+        <div className="relative mx-auto w-full my-2 h-96">
+            <ProductLinker
+                productName={product.Name}
+                productErpCode={product.ErpCode}
+                style={"relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"} >
+                <div className="shadow p-2 rounded-lg bg-white h-full">
+
+                    <div className="flex justify-center relative rounded-lg overflow-hidden h-56">
+                        <div className="relative after:w-full after:h-full after:inset-0 after:absolute  transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
+                            <Image
+                                className="absolute inset-0"
+                                alt={product.Name}
+                                src={product.Image}
+                                layout='fill'
+                                width={300}
+                                height={300}
+                            />
+                        </div>
+
                     </div>
-                    <p className="pt-1 text-gray-900">
-                        20,000 تومان
-                    </p>
-                </a>
-            </Link>
+                    <div className="h-32">
+                        <div className="flex flex-col justify-between h-full">
+                            <div className="mt-3 mb-1">
+                                <h5 className="text-md text-gray-800 font-yekan-bold">{product.Name}</h5>
+                            </div>
+                            <div className="flex justify-between w-full py-2">
+                                <div className="flex gap-1 items-center">
+                                    <Link href="">
+                                        <a className="text-gray-400">
+                                            <span className="text-xs font-yekan-regular">{TextLimit(product.SideGroupName, 20)}</span>
+                                        </a>
+                                    </Link>
+                                </div>
+                                {product?.Few <= 0 ? <OutOfStock /> : (
+                                    <ProductPrice lastBuyPrice={product.LastBuyPrice} sellPrice={product.SellPrice} />
+                                )}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </ProductLinker>
         </div>
+
     )
 }
 export default Card

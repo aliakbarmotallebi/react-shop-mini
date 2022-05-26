@@ -1,6 +1,14 @@
-import LoginComponent from "@components/client/Login/Login"
+import React from "react"
+import AuthBox from "@components/client/Login/authBox";
+import CustomHead from "@components/client/header/customHead";
 
 const Login = () => {
-    return <LoginComponent/>
+    return (
+        <>
+            <CustomHead title='ورود' />
+            <AuthBox />
+        </>
+    )
+
 }
 export default Login

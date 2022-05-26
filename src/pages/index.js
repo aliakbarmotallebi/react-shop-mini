@@ -1,18 +1,36 @@
 import React from "react";
-import Slider from "@components/client/slider/slider";
+import Link from "next/link"
 
+
+import CustomHead from "@components/client/header/customHead";
+import Slider from "@components/client/slider/slider";
+import BigSlider from "@components/client/slider/bigSlider/bigSlider";
+import Titles from '@utils/Titles'
+import Detail from "@components/client/HomePage/detail";
 const Home = () => {
     return (
         <>
-            <div className="h-96  w-full">
-                <Slider sort={1} count={10}/>
+
+            <CustomHead title={Titles.titles.home} />
+            <div className="container">
+                <div className="w-full relative">
+                    <div className="one absolute -bottom-4 -right-9"></div>
+                    <div className="flex gap-5">
+                        <BigSlider />
+                        <Detail />
+                    </div>
+                </div>
+                <div className="min-h-96  w-full">
+                    <Slider label="محصولات ویژه" sort={3} count={15} />
+                </div>
+                <div className="min-h-96  w-full">
+                    <Slider label="پرفروش ترین" sort={2} count={15} />
+                </div>
+                <div className="min-h-96  w-full">
+                    <Slider label="پربازدیدترین" sort={1} count={15} />
+                </div>
             </div>
-            <div className="h-96  w-full">
-                <Slider sort={2} count={10}/>
-            </div>
-            <div className="h-96  w-full">
-                <Slider sort={3} count={10}/>
-            </div>
+
         </>
     )
 }
