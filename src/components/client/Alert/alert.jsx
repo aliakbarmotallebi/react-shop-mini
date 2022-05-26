@@ -29,7 +29,7 @@ const Alert = ({ type, message }) => {
 
     return (
 
-        <div className="fixed bottom-10 right-10 z-50 min-w-full ">
+        <div className="fixed md:bottom-10 md:right-10 bottom-3 right-3 z-50 min-w-full ">
 
             <div className="flex items-center justify-between max-w-xs p-4 bg-white border rounded-md shadow-sm mb-2 shadow-lg">
 

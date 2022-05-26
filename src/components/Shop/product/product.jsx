@@ -8,23 +8,27 @@ import ProductPrice from './productPrice';
 import AlertContext from 'src/context/alertContext';
 import Slider from '@components/client/slider/slider';
 
-function itemNumberReducer(itemnumber, action) {
-    switch (action.type) {
-        case "INCREAMENT":
-            return itemnumber += 1
-        case "DECREAMENT":
-            return itemnumber -= 1
-        default:
-            return itemnumber
+export default function Product({ product }) {
+
+    const itemNumberReducer = (itemnumber, action) => {
+        switch (action.type) {
+            case "INCREAMENT":
+                return itemnumber += 1
+            case "DECREAMENT":
+                if (itemnumber < 2) {
+                    alert.warning('تعداد نمی تواند کمتر از یک باشد')
+                    return itemnumber
+                }
+                return itemnumber -= 1
+            default:
+                return itemnumber
+        }
+
     }
 
-
-}
-
-export default function Product({ product }) {
     const { setCart } = useContext(CartContext)
-    const [itemnumber, ItemDispatch] = useReducer(itemNumberReducer, 1)
     const alert = useContext(AlertContext);
+    const [itemnumber, ItemDispatch] = useReducer(itemNumberReducer, 1)
 
     const handleAddToCart = (product) => {
         setCart({ product, quantity: itemnumber, type: "add" })
@@ -38,7 +42,7 @@ export default function Product({ product }) {
                 <div className="pt-3 pb-12 border-b-[1px]">
                     <div className=" mx-auto mt-6 ">
                         <div className="flex  flex-col md:flex-row ">
-                            <div className="w-1/3 ">
+                            <div className="md:w-1/3 ">
                                 <div className="m-auto block w-3/4 bg-white">
                                     <Image
                                         className="w-full "
@@ -49,8 +53,8 @@ export default function Product({ product }) {
                                     />
                                 </div>
                             </div>
-                            <div className="px-4 w-1/3">
-                                <h2 className="mb-2 leading-tight tracking-tight font-bold text-slate-500  text-xl border-b-[1px] pb-3">{product.Name}</h2>
+                            <div className="md:px-4 md:w-1/3">
+                                <h2 className="md:mb-2 my-2 leading-tight tracking-tight font-yekan-bold text-slate-500  text-xl border-b-[1px] pb-3">{product.Name}</h2>
                                 <ul role="list" className="my-7">
                                     <li className="flex space-x-3">
                                         <svg class="w-6 h-6 text-green-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -61,7 +65,7 @@ export default function Product({ product }) {
                                 </ul>
 
                             </div>
-                            <div className="p-4 w-1/3 border-[1px]  rounded-md flex gap-3 justify-between flex-col bg-white">
+                            <div className="p-4 md:w-1/3 border-[1px]  rounded-md flex gap-3 justify-between flex-col bg-white">
                                 <div className='w-full'>
                                     <div className='flex justify-between w-full border-b-[1px] border-slate-100 py-4'>
                                         <span className='font-yekan-bold text-slate-500 self-center'>قیمت</span>

@@ -1,5 +1,6 @@
 import React, { useContext, useState, useRef, useEffect } from "react"
 import Router, { useRouter } from 'next/router'
+import Link from 'next/link'
 
 import { AxiosInstance } from "@utils/http";
 
@@ -98,7 +99,11 @@ const AuthBox = () => {
                                     d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                             </svg>
                             <span className="inline-block ml-1">
-                                بازگشت به صفحه اصلی
+                                <Link href={'/'}>
+                                    <a>
+                                        بازگشت به صفحه اصلی
+                                    </a>
+                                </Link>
                             </span>
                         </button>
                     </div>
