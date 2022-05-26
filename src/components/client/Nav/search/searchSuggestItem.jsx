@@ -11,7 +11,7 @@ export default function SearchSuggestItem({ searchedItem }) {
         <SearchContext.Consumer >
             {({ removeSearchedBox }) => (
                 <li
-                    className='text-sm border-b p-2 flex items-center'
+                    className='md:text-sm text-xs border-b p-2 flex items-center'
                     onClick={removeSearchedBox}>
                     <Image
                         src={searchedItem.Image}

@@ -13,6 +13,10 @@ export default function Product({ product }) {
     const itemNumberReducer = (itemnumber, action) => {
         switch (action.type) {
             case "INCREAMENT":
+                if (itemnumber + 1 > product.Few) {
+                    alert.warning(`   از این محصول تنها  ${product.Few} موجود می باشد ` , 2)
+                    return itemnumber
+                }
                 return itemnumber += 1
             case "DECREAMENT":
                 if (itemnumber < 2) {
