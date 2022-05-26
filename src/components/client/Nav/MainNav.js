@@ -92,6 +92,7 @@ const MainNav = () => {
                                             <CartContext.Consumer>
                                                 {({ total }) => (
                                                     <>
+                                                        {total > 0 && (<span className="w-4 h-4 bg-rose-400 text-white text-center absolute -top-2 -right-2 leading-4 rounded-full animate-ping"></span>)}
                                                         <span className="w-4 h-4 bg-rose-400 text-white text-center absolute -top-2 -right-2 leading-4 rounded-full">{total}</span>
                                                     </>
                                                 )}
