@@ -40,7 +40,7 @@ export default function Search() {
                 <input
                     autoComplete="off"
                     type='search'
-                    className=" bg-gray-50 border border-gray-100 h-10 px-5 rounded-lg text-xs focus:outline-none w-full pr-9"
+                    className=" bg-gray-50 border border-gray-100 h-10   rounded-lg text-xs focus:outline-none w-full pr-9"
                     name="q" placeholder="جستجوی محصولات"
                     value={searchedQuery.value}
                     onChange={event => setSearchedQuery(event.target.value)}

@@ -14,8 +14,8 @@ const Home = () => {
             <CustomHead title={Titles.titles.home} />
             <div className="container">
                 <div className="w-full relative">
-                    <div className="one absolute -bottom-4 -right-9"></div>
-                    <div className="flex gap-5">
+                    <div className="md:block hidden one absolute -bottom-4 -right-9"></div>
+                    <div className="md:flex  gap-5">
                         <BigSlider />
                         <Detail />
                     </div>

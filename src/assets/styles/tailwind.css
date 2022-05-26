@@ -127,3 +127,18 @@ body {
     background-color: #ebe6ff;
   }
 }
+
+@media only screen and (max-width: 768px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    transform: scale(.4);
+  }
+
+}

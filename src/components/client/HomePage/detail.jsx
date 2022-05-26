@@ -4,10 +4,10 @@ import Link from 'next/link'
 export default function Detail() {
     return (
         
-            <div className="rounded-lg w-3/5 py-5 ">
-                <h1 className="text-4xl font-yekan-bold text-gray-900 text-center">فروشگاه آنلاین شهروند مهاجر</h1>
-                <p className="text-slate-600 text-justify text-sm my-4 leading-7 font-yekan-bold">شهروند مهاجر جهت تسریع و تسهیل فرایند خرید اینترنتی و خدمت‌رسانی به همشهریان عزیز شهر مهاجران، بیش از ۵۰۰۰ کالای متنوع در دسته‌بند‌ی‌های گوناگون نظیر لبنیات، خواربار، میوه و سبزیجات تازه، نان، مواد پروتئینی، لوازم بهداشتی و آرایشی ... را به صورت آنلاین عرضه می‌کند </p>
-                <p className="text-sm text-gray-600 mt-5 flex  items-center">
+            <div className="rounded-lg md:w-3/5 md:py-5 py-1">
+                <h1 className="md:text-4xl text-2xl font-yekan-bold text-gray-900 text-center">فروشگاه آنلاین شهروند مهاجر</h1>
+                <p className="text-slate-600 text-justify md:text-sm text-xs md:my-4 my-1 leading-7 font-yekan-bold">شهروند مهاجر جهت تسریع و تسهیل فرایند خرید اینترنتی و خدمت‌رسانی به همشهریان عزیز شهر مهاجران، بیش از ۵۰۰۰ کالای متنوع در دسته‌بند‌ی‌های گوناگون نظیر لبنیات، خواربار، میوه و سبزیجات تازه، نان، مواد پروتئینی، لوازم بهداشتی و آرایشی ... را به صورت آنلاین عرضه می‌کند </p>
+                <p className="md:text-sm text-xs text-gray-600 mt-5 flex  items-center">
                     <span className="bg-white p-2 rounded-md ml-4">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-slate-400 " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76"></path>
@@ -15,7 +15,7 @@ export default function Detail() {
                     </span>
                     شهرمهاجران، خیابان ملاصدرا، بازارچه شرقی، پاساژ تبارک، طبقه اول، فروشگاه شهروند مهاجر
                 </p>
-                <p className="text-sm text-gray-600 mt-5 flex items-center">
+                <p className="md:text-sm text-xs text-gray-600 mt-5 flex items-center">
                     <span className="bg-white p-2 rounded-md ml-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400 " xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" width={256} height={256} viewBox="0 0 256 256" xmlSpace="preserve">
                             <desc>Created with Fabric.js 1.7.22</desc>

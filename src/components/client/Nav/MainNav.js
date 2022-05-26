@@ -11,7 +11,7 @@ const MainNav = () => {
                 {({ user, logoutuser }) => (
                     <nav id="header" className="w-full z-30 bg-white sticky top-0">
                         <div className="container">
-                            <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+                            <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 md:px-6 px-1 py-3">
                                 <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
                                     <svg className="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20"
                                         height="20" viewBox="0 0 20 20">
@@ -61,7 +61,7 @@ const MainNav = () => {
                                     </nav>
                                 </div>
 
-                                <div className="basis-1/3 order-1 md:order-2">
+                                <div className="md:basis-1/3 basis-2/3 order-1 md:order-2">
                                     <div className="pt-2 relative mx-auto text-gray-600 w-full">
                                         <Search />
                                     </div>
