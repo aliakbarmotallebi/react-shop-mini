@@ -34,7 +34,7 @@ export default function Detail() {
                 <div className="flex justify-between border-t-[1px] border-b-[1px] border-slate-200 py-4 mt-5">
                     <div className="flex items-center">
                         <div>
-                            <h4 className="text-sm text-blue-600 font-yekan-bold">
+                            <h4 className="md:text-sm text-xs text-blue-600 font-yekan-bold">
                                 تو اپلیکیشن چه خبره ؟
 
                             </h4>

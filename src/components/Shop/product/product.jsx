@@ -14,7 +14,7 @@ export default function Product({ product }) {
         switch (action.type) {
             case "INCREAMENT":
                 if (itemnumber + 1 > product.Few) {
-                    alert.warning(`   از این محصول تنها  ${product.Few} موجود می باشد ` , 2)
+                    alert.warning(`   از این محصول تنها  ${product.Few} موجود می باشد `, 2)
                     return itemnumber
                 }
                 return itemnumber += 1
@@ -78,11 +78,11 @@ export default function Product({ product }) {
                                     <div className='flex justify-between w-full border-b-[1px] border-slate-100 py-4'>
                                         <span className='font-yekan-bold text-slate-500'>دسته بندی</span>
                                         <Link href={'/'}>
-                                            <span className='w-24 text-center text-slate-400 text-sm'>
-                                                <a>
+                                            <a>
+                                                <span className='w-24 text-center text-slate-400 text-sm'>
                                                     {product.SideGroupName}
-                                                </a>
-                                            </span>
+                                                </span>
+                                            </a>
                                         </Link>
                                     </div>
                                 </div>
@@ -101,9 +101,8 @@ export default function Product({ product }) {
                                         </button>
                                     </div>
 
-                                    <button onClick={() => handleAddToCart(product)} type="button" className="text-blue-600 bg-white border-2 border-blue-600 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md transition duration-150 ease-all text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-white ">
+                                    <button onClick={() => handleAddToCart(product)} type="button" className="text-blue-600 bg-white border-2 border-blue-600 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 md:font-sm font-xs rounded-md transition duration-150 ease-all text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-white ">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-7 h-7" viewBox="0 0 512 512"><title>Cart</title><circle cx={176} cy={416} r={16} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /><circle cx={400} cy={416} r={16} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} d="M48 80h64l48 272h256" /><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /></svg>
-                                        {/* TODO : prevent add to cart when product is out of stock  */}
                                         افزودن به سبد خرید
                                     </button>
                                 </div>
