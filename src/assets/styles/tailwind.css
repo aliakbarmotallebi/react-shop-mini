@@ -43,6 +43,10 @@
     url("../fonts/IRANYekan/ttf/iranyekanwebregular(fanum).ttf") format("truetype");
 }
 
+* {
+  scrollbar-color: #334155 #F8FAFC;
+}
+
 body {
   direction: rtl;
 }
@@ -115,6 +119,11 @@ body {
 .swiper-button-next::after,
 .swiper-button-prev::after {
   transform: scale(.6);
+}
+
+nav#header {
+  box-shadow: 0 2px 15px rgb(0 0 0/8%);
+
 }
 
 @keyframes dotFlashing {

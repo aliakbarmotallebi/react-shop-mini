@@ -1161,11 +1161,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(224 231 255 / var(--tw-bg-opacity));
 }
 
-.bg-slate-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -1184,6 +1179,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-rose-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 228 230 / var(--tw-bg-opacity));
+}
+
+.bg-slate-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -1618,6 +1618,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
+.text-slate-900 {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+
 .line-through {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
@@ -1760,6 +1765,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     url("../fonts/IRANYekan/ttf/iranyekanwebregular(fanum).ttf") format("truetype");
 }
 
+* {
+  scrollbar-color: #334155 #F8FAFC;
+}
+
 body {
   direction: rtl;
 }
@@ -1839,6 +1848,10 @@ body {
 .swiper-button-prev::after {
   -webkit-transform: scale(.6);
           transform: scale(.6);
+}
+
+nav#header {
+  box-shadow: 0 2px 15px rgb(0 0 0/8%);
 }
 
 @-webkit-keyframes dotFlashing {

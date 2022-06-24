@@ -16,7 +16,7 @@ const BigSliderItem = ({ slide }) => {
         `data:image/gif;base64,R0lGODlhAQABAPAA${triplet(0, r, g) + triplet(b, 255, 255)
         }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
     return (
-        <div className="w-full rounded-md">
+        <div className=" rounded-md">
             <Image
                 src={slide.Image}
                 alt={slide.Name}
@@ -24,7 +24,7 @@ const BigSliderItem = ({ slide }) => {
                 placeholder='blur'
                 blurDataURL={rgbDataURL(241, 245, 249)}
                 height={400}
-                layout={'responsive'} />
+                layout='responsive' />
         </div>
     )
 };

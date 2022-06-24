@@ -43,7 +43,7 @@ export default function Product({ product }) {
         <>
             <CustomHead title={product.Name} />
             <div className='container'>
-                <div className="pt-3 pb-12 border-b-[1px]">
+                <div className="pt-3 pb-12 border-b-[1px] ">
                     <div className=" mx-auto mt-6 ">
                         <div className="flex  flex-col md:flex-row ">
                             <div className="md:w-1/3 ">
@@ -69,7 +69,7 @@ export default function Product({ product }) {
                                 </ul>
 
                             </div>
-                            <div className="p-4 md:w-1/3 border-[1px]  rounded-md flex gap-3 justify-between flex-col bg-white">
+                            <div className="p-4 md:w-1/3  bg-slate-50 border-slate-200 border-[1px]  rounded-md flex gap-3 justify-between flex-col">
                                 <div className='w-full'>
                                     <div className='flex justify-between w-full border-b-[1px] border-slate-100 py-4'>
                                         <span className='font-yekan-bold text-slate-500 self-center'>قیمت</span>

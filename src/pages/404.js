@@ -5,7 +5,6 @@ export default function Custom404() {
 
     return (
         <>
-            
             <div className="flex items-center justify-center min-h-screen bg-white py-12">
                 <div className="flex flex-col">
                     <span className="text-center font-bold opacity-30">

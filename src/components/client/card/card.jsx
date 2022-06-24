@@ -14,7 +14,7 @@ const Card = ({ product }) => {
                 productName={product.Name}
                 productErpCode={product.ErpCode}
                 style={"relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"} >
-                <div className="shadow p-2 rounded-lg bg-white h-full">
+                <div className="border p-2 rounded-lg bg-white h-full">
 
                     <div className="flex justify-center relative rounded-lg overflow-hidden h-56">
                         <div className="relative after:w-full after:h-full after:inset-0 after:absolute  transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">

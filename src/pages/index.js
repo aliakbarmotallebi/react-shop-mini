@@ -6,9 +6,7 @@ import BigSlider from "@components/client/slider/bigSlider/bigSlider";
 import Titles from '@utils/Titles'
 import Detail from "@components/client/HomePage/detail";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'keen-slider/keen-slider.min.css'
 
 const Home = () => {
     return (

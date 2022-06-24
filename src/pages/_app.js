@@ -3,7 +3,6 @@ import MainLayout from "@components/client/Layouts/MainLayout"
 import "../assets/styles/main.css"
 import AuthProvider from "src/providers/authProvider";
 import CartProvider from "src/providers/cartProvider";
-import Search from "@components/client/Nav/search/search";
 import SearchProvider from "src/providers/searchProvider";
 import AlertProvider from "src/providers/alertProvider";
 

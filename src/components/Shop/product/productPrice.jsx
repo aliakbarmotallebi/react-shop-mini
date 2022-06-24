@@ -4,7 +4,7 @@ export default function ProductPrice({ lastBuyPrice, sellPrice }) {
     return (
 
         <div className="flex">
-            <div className="justify-between bg-white space-x-5 rounded-lg overflow-hidden ">
+            <div className="justify-between  space-x-5 rounded-lg overflow-hidden ">
                 <div>
                     <span className="text-blue-600  text-xl font-yekan-bold">
                         {lastBuyPrice.toLocaleString("fa-ir")}

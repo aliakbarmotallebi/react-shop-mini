@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import { AxiosInstance } from "@utils/http";
 import Config from "@utils/Config";
@@ -30,7 +33,7 @@ const BigSlider = () => {
             navigation
             loop={true}
             autoplay={{
-                delay: 3500,
+                delay: 10000,
                 disableOnInteraction: false,
             }}
             pagination={{ clickable: true }}

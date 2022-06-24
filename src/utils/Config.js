@@ -4,7 +4,7 @@ export default {
             "product_page": 'products/'
         },
         slider: {
-            "slider": 'products'
+            "smallSlider": 'products'
         },
         bigSlider: {
             "bigSlider": 'sliders'

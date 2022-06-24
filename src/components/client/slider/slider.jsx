@@ -3,22 +3,19 @@ import React, { useEffect, useState } from "react";
 import { AxiosInstance } from "@utils/http/index"
 import Config from "@utils/Config";
 import SliderItem from "@components/client/slider/sliderItem";
-
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 import Loading from "@components/client/Commons/loading";
 
+import { useKeenSlider } from 'keen-slider/react'
 
 const Slider = ({ label, sort, count, category }) => {
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
     const fetchProducts = () => {
-        const { slider } = Config.services.slider
+        const { smallSlider } = Config.services.slider
         const { sliderCategory } = Config.services.sliderCategory
 
-        const sliderUrl = category ? `${sliderCategory}${category}` : slider
+        const sliderUrl = category ? `${sliderCategory}${category}` : smallSlider
         const params = sort ? { sort, count } : { category, count }
         setIsLoading(true);
 
@@ -31,15 +28,37 @@ const Slider = ({ label, sort, count, category }) => {
         }).catch((err) => console.log(err));
     }
 
-    useEffect(() => {
-        fetchProducts();
-    }, [])
+    const [refCallback] = useKeenSlider(
+        {
+            loop: true,
+            mode: "free-snap",
+            rtl: true,
+            breakpoints: {
+
+                "(min-width: 481px)": {
+                    slides: { perView: 3, spacing: 15 },
+                },
+                "(min-width: 769px)": {
+                    slides: { perView: 5, spacing: 15 },
+                }
+            },
+            slides: {
+                perView: 2,
+                spacing: 10
+            }
+        })
+
+        useEffect(() => {
+            fetchProducts();
+        }, [])
+    
+
     return (
 
         (isLoading ? <div className="w-full h-96"><Loading /></div> : (
             <section className="pt-2 h-full">
                 <header className="flex items-center">
-                    <h2 className="font-semibold text-xl pt-5 py-2 mb-3">
+                    <h2 className="font-yekan-bold text-xl pt-5 py-2 mb-3">
                         {label}
                     </h2>
 
@@ -51,22 +70,17 @@ const Slider = ({ label, sort, count, category }) => {
                     </div>
                 </header>
 
-                <Swiper
-                    spaceBetween={10}
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    navigation
-                    slidesPerView={5}
-                    scrollbar={{ draggable: true }}
-                    className="h-full"
-                >
+
+                <div ref={refCallback} className="keen-slider">
                     {
                         products.map((product, id) => (
-                            <SwiperSlide key={id}>
+                            <div className="keen-slider__slide" key={id}>
                                 <SliderItem product={product} />
-                            </SwiperSlide>
+                            </div>
+
                         ))
                     }
-                </Swiper>
+                </div>
 
             </section >
         )
