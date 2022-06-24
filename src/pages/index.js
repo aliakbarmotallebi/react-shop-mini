@@ -1,12 +1,15 @@
 import React from "react";
-import Link from "next/link"
-
 
 import CustomHead from "@components/client/header/customHead";
 import Slider from "@components/client/slider/slider";
 import BigSlider from "@components/client/slider/bigSlider/bigSlider";
 import Titles from '@utils/Titles'
 import Detail from "@components/client/HomePage/detail";
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 const Home = () => {
     return (
         <>

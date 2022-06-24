@@ -1,5 +1,4 @@
 import { memo } from "react";
-import Image from 'next/image'
 const Footer = () => {
     return (
         <footer className="bg-white py-8 px-3 border-t border-gray-100">

@@ -6,8 +6,7 @@ import SliderItem from "@components/client/slider/sliderItem";
 
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
+
 import Loading from "@components/client/Commons/loading";
 
 
