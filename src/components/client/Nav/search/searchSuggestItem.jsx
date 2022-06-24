@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import ProductLinker from '@components/client/Commons/productLinker';
 import SearchContext from 'src/context/searchContext';
