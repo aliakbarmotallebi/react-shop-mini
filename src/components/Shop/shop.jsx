@@ -7,6 +7,7 @@ import Filter from './filter/filter'
 
 
 export default function ShopJozi({ query }) {
+
   const [products, setProducts] = useState([])
   const [hasMore, setHasMore] = useState(false)
   const [skip, setSkip] = useState(0)
@@ -40,6 +41,9 @@ export default function ShopJozi({ query }) {
       setLoading(false)
     })
   }, [skip])
+
+
+
 
 
 
