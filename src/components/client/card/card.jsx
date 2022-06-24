@@ -8,23 +8,24 @@ import TextLimit from "@helpers/textLimit";
 import ProductPrice from "@components/Shop/product/productPrice";
 
 const Card = ({ product }) => {
+
     return (
-        <div className="relative mx-auto w-full my-2 h-96">
+        <div className="relative mx-auto w-full my-2 md:h-96 h-80">
             <ProductLinker
                 productName={product.Name}
                 productErpCode={product.ErpCode}
                 style={"relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"} >
                 <div className="border p-2 rounded-lg bg-white h-full">
 
-                    <div className="flex justify-center relative rounded-lg overflow-hidden h-56">
-                        <div className="relative after:w-full after:h-full after:inset-0 after:absolute  transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
+                    <div className="flex justify-center relative rounded-lg overflow-hidden md:h-56">
+                        <div className="relative after:w-full after:h-full after:inset-0 after:absolute  transition-transform duration-500 transform ease-in-out hover:scale-110 w-full h-44 md:h-full">
                             <Image
                                 className="absolute inset-0"
                                 alt={product.Name}
                                 src={product.Image}
                                 layout='fill'
-                                width={300}
-                                height={300}
+                                width={130}
+                                height={130}
                             />
                         </div>
 
@@ -32,7 +33,7 @@ const Card = ({ product }) => {
                     <div className="h-32">
                         <div className="flex flex-col justify-between h-full">
                             <div className="mt-3 mb-1">
-                                <h5 className="text-md text-gray-800 font-yekan-bold">{product.Name}</h5>
+                                <h5 className="text-xs md:text-sm text-gray-800 font-yekan-bold">{product.Name}</h5>
                             </div>
                             <div className="flex justify-between w-full py-2">
                                 <div className="flex gap-1 items-center">

@@ -6,7 +6,7 @@ export default function ProductPrice({ lastBuyPrice, sellPrice }) {
         <div className="flex">
             <div className="justify-between  rounded-lg overflow-hidden ">
                 <div>
-                    <span className="text-slate-900  text-xl font-yekan-bold">
+                    <span className="text-slate-900 text-sm  md:text-xl font-yekan-bold">
                         {lastBuyPrice.toLocaleString("fa-ir")}
                         <span className="text-gray-300 text-xs"> تومان</span>
                     </span>

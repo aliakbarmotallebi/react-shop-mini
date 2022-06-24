@@ -839,6 +839,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 20rem;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-36 {
+  height: 9rem;
+}
+
+.h-44 {
+  height: 11rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2201,6 +2217,18 @@ nav#header {
     display: none;
   }
 
+  .md\:h-96 {
+    height: 24rem;
+  }
+
+  .md\:h-full {
+    height: 100%;
+  }
+
+  .md\:h-56 {
+    height: 14rem;
+  }
+
   .md\:w-3\/5 {
     width: 60%;
   }
@@ -2241,6 +2269,10 @@ nav#header {
     padding: 1.25rem;
   }
 
+  .md\:p-2 {
+    padding: 0.5rem;
+  }
+
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -2259,6 +2291,16 @@ nav#header {
   .md\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .md\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .md\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .md\:pt-0 {
