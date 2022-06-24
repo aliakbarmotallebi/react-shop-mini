@@ -61,13 +61,7 @@ const Slider = ({ label, sort, count, category }) => {
                     <h2 className="font-yekan-bold text-xl pt-5 py-2 mb-3">
                         {label}
                     </h2>
-
-                    <div className="mr-auto">
-                        <a href="#"
-                            className="border border-[#dfdfdf] rounded text-xs py-1 px-3 tracking-tight hover:bg-gray-300 text-black hover:text-gary-700">
-                            مشاهده همه
-                        </a>
-                    </div>
+                   
                 </header>
 
 

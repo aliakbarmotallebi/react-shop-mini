@@ -13,7 +13,7 @@ function App({ Component, pageProps }) {
                 <AuthProvider>
                     <CartProvider>
                         <MainLayout>
-                            <div className="md:p-5 p-1 relative w-full">
+                            <div className="relative w-full">
                                 <section>
                                     <Component {...pageProps} />
                                 </section>

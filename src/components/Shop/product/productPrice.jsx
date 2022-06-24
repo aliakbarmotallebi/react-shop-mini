@@ -4,14 +4,18 @@ export default function ProductPrice({ lastBuyPrice, sellPrice }) {
     return (
 
         <div className="flex">
-            <div className="justify-between  space-x-5 rounded-lg overflow-hidden ">
+            <div className="justify-between  rounded-lg overflow-hidden ">
                 <div>
-                    <span className="text-blue-600  text-xl font-yekan-bold">
+                    <span className="text-slate-900  text-xl font-yekan-bold">
                         {lastBuyPrice.toLocaleString("fa-ir")}
                         <span className="text-gray-300 text-xs"> تومان</span>
                     </span>
+
                 </div>
-                <span className="text-sm text-gray-400 text-center block line-through">{sellPrice.toLocaleString("fa-ir")}</span>
+                <div className='flex justify-between gap-2 items-center mt-2'>
+                    <span className="text-sm text-gray-400 text-center  line-through">{sellPrice.toLocaleString("fa-ir")}</span>
+                    <span className='bg-rose-500 text-sm text-white  px-2 rounded-full'>{Math.round(100 / (sellPrice / (sellPrice - lastBuyPrice))) + '%'}</span>
+                </div>
             </div>
         </div>
 
