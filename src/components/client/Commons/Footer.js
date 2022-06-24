@@ -1,7 +1,7 @@
 import { memo } from "react";
 const Footer = () => {
     return (
-        <footer className="bg-white py-8 px-3 border-t border-gray-100">
+        <footer className="bg-white py-8 px-3 border-t border-gray-100 mt-5">
             <div className="container">
                 <div className="w-full pb-3 border-b-[1px]">
                     <div className="w-3/5 m-auto flex gap-2 justify-between ">
