@@ -6,7 +6,8 @@ export default {
         home: 'صفحه اصلی',
         shop: 'فروشگاه',
         login: 'ورود',
-        cart : 'سبد خرید'
+        cart : 'سبد خرید',
+        search : 'جستوجو : '
 
 
     }

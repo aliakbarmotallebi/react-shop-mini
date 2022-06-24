@@ -9,7 +9,6 @@ export default function SearchSuggestItem({ searchedItem, removeSearchedBox }) {
         removeSearchedBox()
     }
 
-
     return (
 
         <li
