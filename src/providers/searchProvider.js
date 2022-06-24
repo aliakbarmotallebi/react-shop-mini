@@ -7,10 +7,11 @@ function SearchProvider({ children }) {
 
     const removeSearchedBox = () => {
         setSearchedQuery('')
+        document.getElementById('searchForm').reset()
     }
 
     return (
-        <SearchContext.Provider value={{ searchedQuery, setSearchedQuery , removeSearchedBox }}>
+        <SearchContext.Provider value={{ searchedQuery, setSearchedQuery, removeSearchedBox }}>
             {children}
         </SearchContext.Provider>
 

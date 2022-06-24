@@ -2,7 +2,7 @@ import React from 'react'
 import SearchSuggestItem from './searchSuggestItem'
 
 
-export default function SearchSuggest({ searchedItems, searchedQuery, event }) {
+export default function SearchSuggest({ searchedItems, searchedQuery, removeSearchedBox }) {
 
 
 
@@ -15,7 +15,7 @@ export default function SearchSuggest({ searchedItems, searchedQuery, event }) {
                     </p>
                 </li>
                 {searchedItems.map(searchedItem => (
-                    <SearchSuggestItem searchedItem={searchedItem} />
+                    <SearchSuggestItem searchedItem={searchedItem} removeSearchedBox={removeSearchedBox} />
                 ))
                 }
             </ul>

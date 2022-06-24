@@ -1,16 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import ProductLinker from '@components/client/Commons/productLinker';
-import SearchContext from 'src/context/searchContext';
-import { useContext } from 'react';
 
-export default function SearchSuggestItem({ searchedItem }) {
 
-    const { removeSearchedBox } = useContext(SearchContext)
+export default function SearchSuggestItem({ searchedItem, removeSearchedBox }) {
 
     function handleSearch() {
         removeSearchedBox()
-        document.getElementById('searchForm').reset()
     }
 
 

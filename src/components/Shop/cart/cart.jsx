@@ -10,8 +10,8 @@ export default function Cart() {
             {({ cart }) => (
                 cart.length <= 0 ? <EmptyCart /> :
                     (
-                        <div className="flex justify-center my-6">
-                            <div className="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y">
+                        <div className="flex justify-center my-6 container">
+                            <div className="flex flex-col w-full p-8 text-gray-800 bg-white ">
                                 <div className="flex-1">
                                     <table className="w-full text-sm lg:text-base" cellSpacing="0">
                                         <thead className='font-yekan-bold text-slate-600'>
