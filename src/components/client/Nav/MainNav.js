@@ -102,7 +102,7 @@ const MainNav = () => {
 
                                 </div>
                             </div>
-                            {/* <CategoryNav /> */}
+                            <CategoryNav />
                         </div>
                     </nav>
                 )}

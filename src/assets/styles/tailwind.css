@@ -125,6 +125,11 @@ nav#header {
   box-shadow: 0 2px 15px rgb(0 0 0/8%);
 
 }
+.categoryList-item::before{
+  content: '•';
+  font-size: 12px;
+  padding-left: 1px;
+}
 
 @keyframes dotFlashing {
   0% {
