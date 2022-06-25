@@ -56,8 +56,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
+  background-color: #F1F5F9;
+  color: #94A3B8;
   animation: dotFlashing 1s infinite linear alternate;
   animation-delay: .5s;
 }
@@ -82,8 +82,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
+  background-color: #F1F5F9;
+  color: #94A3B8;
   animation: dotFlashing 1s infinite alternate;
   animation-delay: 0s;
 }
@@ -93,8 +93,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
+  background-color: #F1F5F9;
+  color: #94A3B8;
   animation: dotFlashing 1s infinite alternate;
   animation-delay: 1s;
 }

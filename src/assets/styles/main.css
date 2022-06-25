@@ -1210,6 +1210,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
 
+.bg-rose-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 164 175 / var(--tw-bg-opacity));
+}
+
 .fill-blue-600 {
   fill: #2563eb;
 }
@@ -1517,6 +1522,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
@@ -1580,11 +1590,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-pink-600 {
   --tw-text-opacity: 1;
   color: rgb(219 39 119 / var(--tw-text-opacity));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-slate-500 {
@@ -1787,8 +1792,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
+  background-color: #F1F5F9;
+  color: #94A3B8;
   -webkit-animation: dotFlashing 1s infinite linear alternate;
           animation: dotFlashing 1s infinite linear alternate;
   -webkit-animation-delay: .5s;
@@ -1815,8 +1820,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
+  background-color: #F1F5F9;
+  color: #94A3B8;
   -webkit-animation: dotFlashing 1s infinite alternate;
           animation: dotFlashing 1s infinite alternate;
   -webkit-animation-delay: 0s;
@@ -1828,8 +1833,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
+  background-color: #F1F5F9;
+  color: #94A3B8;
   -webkit-animation: dotFlashing 1s infinite alternate;
           animation: dotFlashing 1s infinite alternate;
   -webkit-animation-delay: 1s;
