@@ -7,7 +7,7 @@ import Loading from "@components/client/Commons/loading";
 
 import { useKeenSlider } from 'keen-slider/react'
 
-const Slider = ({ label, sort, count, category }) => {
+const Slider = ({ label, sort, count, category, labelColor }) => {
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
@@ -48,20 +48,20 @@ const Slider = ({ label, sort, count, category }) => {
             }
         })
 
-        useEffect(() => {
-            fetchProducts();
-        }, [])
-    
+    useEffect(() => {
+        fetchProducts();
+    }, [])
+
 
     return (
 
         (isLoading ? <div className="w-full h-96"><Loading /></div> : (
             <section className="pt-2 h-full">
                 <header className="flex items-center">
-                    <h2 className="font-yekan-bold text-xl pt-5 py-2 mb-3">
+                    <h2 className={`font-yekan-bold text-xl pt-5 py-2 mb-3 ${labelColor ? labelColor : ''} `}>
                         {label}
                     </h2>
-                   
+
                 </header>
 
 

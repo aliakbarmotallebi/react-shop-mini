@@ -24,7 +24,7 @@ const Home = () => {
             <div className="w-full bg-[#ff5152] my-10 py-10">
                 <div className="container" >
                     <div className="min-h-96  w-full">
-                        <Slider label="محصولات ویژه" sort={3} count={15} />
+                        <Slider labelColor='text-white' label="محصولات ویژه" sort={3} count={15} />
                     </div>
                 </div>
             </div>
