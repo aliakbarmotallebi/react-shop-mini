@@ -30,7 +30,7 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
 
     const [refCallback] = useKeenSlider(
         {
-            mode: "free-snap",
+            mode: "free",
             rtl: true,
             breakpoints: {
 
@@ -62,7 +62,6 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
                     </h2>
 
                 </header>
-
 
                 <div ref={refCallback} className="keen-slider">
                     {

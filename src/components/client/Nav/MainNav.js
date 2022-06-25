@@ -1,15 +1,34 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
+
 import CategoryNav from "@components/client/Category/categoryNav";
 import AuthContext from "src/context/authContext";
 import CartContext from "src/context/cartContext";
 import Search from "./search/search";
 
 const MainNav = () => {
+
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    const handleScroll = () => {
+        const currentScrollPos = window.pageYOffset;
+        setVisible(prevScrollPos > currentScrollPos);
+        setPrevScrollPos(currentScrollPos);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+
+    }, [prevScrollPos, visible, handleScroll]);
+
+
     return (
         <>
             <AuthContext.Consumer>
                 {({ user, logoutuser }) => (
-                    <nav id="header" className="w-full z-30 bg-white sticky top-0">
+                    <nav id="header" className={`w-full z-30 bg-white sticky  ${visible ? 'top-0' : '-top-80'} transition-all ease-in-out duration-300`}>
                         <div className="container">
                             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 md:px-6 px-1 py-3">
                                 <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">

@@ -32,7 +32,7 @@ const CategoryNav = () => {
             <ul className="flex-col lg:flex lg:flex-row lg:items-center">
                 {categories.map((category, key) => (
                     <li key={key} onClick={() => fetchSubCategories(category.ErpCode)} className="lg:mx-2 hidden lg:block cursor-pointer ">
-                        <span className="text-gray-600 text-xs py-3 px-1 block font-yekan-bold categoryList-item">
+                        <span className="text-gray-600 text-xs py-3 px-1 block font-yekan-bold categoryList-item hover:text-blue-600 transition duration-150 ease-all">
                             {category.Name}
                         </span>
                     </li>

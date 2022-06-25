@@ -5,10 +5,7 @@ import Product from "@components/Shop/product/product";
 
 const product = ({ product }) => {
     return (
-        <>
-            <Product product={product} />
-        </>
-
+        <Product product={product} />
     )
 }
 

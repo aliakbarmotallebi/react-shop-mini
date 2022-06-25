@@ -510,6 +510,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }
@@ -584,6 +588,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .top-11 {
   top: 2.75rem;
+}
+
+.top-9 {
+  top: 2.25rem;
+}
+
+.top-80 {
+  top: 20rem;
+}
+
+.-top-80 {
+  top: -20rem;
 }
 
 .z-50 {
@@ -1984,6 +2000,11 @@ nav#header {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
