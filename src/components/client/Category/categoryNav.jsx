@@ -38,11 +38,11 @@ const CategoryNav = () => {
                     </li>
                 ))}
             </ul>
-            <div className=" relative">
-                <ul className="absolute top-0 left-0 right-0 bg-slate-100">
+            <div className=" relative ">
+                <ul className="absolute top-0 left-0 right-0 bg-slate-100 columns-3">
                     {subcategories.map((subCategory, key) => (
-                        <li key={key} className="lg:mx-2 hidden lg:inline-block">
-                            <a className="text-gray-600 text-xs py-3 px-1 block font-yekan-bold"
+                        <li key={key} className="lg:mx-2 lg:block">
+                            <a className="text-gray-600 text-xs py-3 px-1 block font-yekan-bold hover:bg-white rounded-md"
                                 href="#">{subCategory.Name}</a>
                         </li>
                     ))}

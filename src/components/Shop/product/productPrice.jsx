@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function ProductPrice({ lastBuyPrice, sellPrice }) {
+    const offPrice = Math.round(100 / (sellPrice / (sellPrice - lastBuyPrice)))
     return (
 
         <div className="flex">
@@ -14,7 +15,10 @@ export default function ProductPrice({ lastBuyPrice, sellPrice }) {
                 </div>
                 <div className='flex justify-between gap-2 items-center mt-2'>
                     <span className="text-sm text-gray-400 text-center  line-through">{sellPrice.toLocaleString("fa-ir")}</span>
-                    <span className='bg-rose-500 text-sm text-white  px-2 rounded-full'>{Math.round(100 / (sellPrice / (sellPrice - lastBuyPrice))) + '%'}</span>
+                    <span className='bg-rose-500 text-sm text-white  px-2 rounded-full'>
+
+                        {offPrice != 0 ? offPrice + '%' : ''}
+                    </span>
                 </div>
             </div>
         </div>
