@@ -48,7 +48,7 @@ export default function ShopJozi({ query }) {
 
 
   return (
-    <>
+    <div className='container'>
       <div className="grid grid-cols-4">
         <div>
           {/* TODO : something here  */}
@@ -70,6 +70,6 @@ export default function ShopJozi({ query }) {
 
 
       </div>
-    </>
+    </div>
   )
 }

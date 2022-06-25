@@ -30,7 +30,7 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
 
     const [refCallback] = useKeenSlider(
         {
-            mode: "free",
+            mode: "free-snap",
             rtl: true,
             breakpoints: {
 

@@ -10,6 +10,7 @@ const MainNav = () => {
 
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
+    const [showNavbar, setShowNavbar] = useState(false)
 
     const handleScroll = () => {
         const currentScrollPos = window.pageYOffset;
@@ -17,11 +18,20 @@ const MainNav = () => {
         setPrevScrollPos(currentScrollPos);
     };
 
+    const handleShowNavbar = () => {
+        if (showNavbar) {
+            setShowNavbar(false)
+        } else {
+            setShowNavbar(true)
+        }
+    }
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
 
     }, [prevScrollPos, visible, handleScroll]);
+
 
 
     return (
@@ -31,7 +41,7 @@ const MainNav = () => {
                     <nav id="header" className={`w-full z-30 bg-white sticky  ${visible ? 'top-0' : '-top-80'} transition-all ease-in-out duration-300`}>
                         <div className="container">
                             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 md:px-6 px-1 py-3">
-                                <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
+                                <label onClick={() => handleShowNavbar()} htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
                                     <svg className="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20"
                                         height="20" viewBox="0 0 20 20">
                                         <title>منو</title>
@@ -40,7 +50,7 @@ const MainNav = () => {
                                 </label>
                                 <input className="hidden" type="checkbox" id="menu-toggle" />
 
-                                <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
+                                <div className={`${showNavbar ? '' : 'hidden'} md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu`}>
                                     <nav>
                                         <ul className="md:flex items-center justify-between text-xs text-gray-700 pt-4 md:pt-0">
                                             <li>
