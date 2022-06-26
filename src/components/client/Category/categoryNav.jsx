@@ -10,6 +10,7 @@ const CategoryNav = () => {
         AxiosInstance.get(`${mainCategory}`)
             .then((res) => {
                 setCategories(res.data['data']);
+
             }).catch((err) => console.log(err));
     }
 
@@ -25,6 +26,7 @@ const CategoryNav = () => {
 
     useEffect(() => {
         fetchCategories();
+
     }, [])
 
     return (

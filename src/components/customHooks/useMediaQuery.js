@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 const useMediaQuery = () => {
   const [isMobile, setIsMobile] = useState(false)
 

@@ -8,7 +8,7 @@ import Search from "./search/search";
 import useMediaQuery from "@components/customHooks/useMediaQuery";
 
 const MainNav = () => {
-    
+
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const [showNavbar, setShowNavbar] = useState(false)
@@ -22,11 +22,7 @@ const MainNav = () => {
     };
 
     const handleShowNavbar = () => {
-        if (showNavbar) {
-            setShowNavbar(false)
-        } else {
-            setShowNavbar(true)
-        }
+        setShowNavbar(!showNavbar)
     }
 
     useEffect(() => {
@@ -135,9 +131,9 @@ const MainNav = () => {
 
                                 </div>
                             </div>
-                            <CategoryNav />
+                            {!isMobile && <CategoryNav />}
                         </div>
-                        {isMobile && <h1 className="text-4xl">mobile</h1>}
+
                     </nav>
 
 
