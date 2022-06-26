@@ -51,13 +51,13 @@ const MainNav = () => {
                                     </div>
                                     <nav>
                                         <ul className="md:flex items-center justify-between text-sm text-gray-700 pt-4 md:pt-0">
-                                            <li>
+                                            <li onClick={() => handleShowNavbar()}>
                                                 <Link href={'/'}>
                                                     <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
                                                     >صفحه اصلی</a>
                                                 </Link>
                                             </li>
-                                            <li>
+                                            <li onClick={() => handleShowNavbar()}>
                                                 <Link href={'/shop'}>
                                                     <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
                                                     >فروشگاه</a>
@@ -67,7 +67,7 @@ const MainNav = () => {
                                             {user ?
                                                 (
                                                     <>
-                                                        <li>
+                                                        <li onClick={() => handleShowNavbar()}>
                                                             <Link href={'/login'}>
                                                                 <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">{user.user.mobile}</a>
                                                             </Link>
@@ -77,7 +77,7 @@ const MainNav = () => {
                                                         </li>
                                                     </>
                                                 )
-                                                : (<li>
+                                                : (<li onClick={() => handleShowNavbar()}>
                                                     <Link href={'/login'}>
                                                         <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">ورود</a>
                                                     </Link>
@@ -88,7 +88,7 @@ const MainNav = () => {
                                     </nav>
                                     <div className="px-4">
 
-                                        {isMobile && <MobileCategoryNav />}
+                                        {isMobile && <MobileCategoryNav handleShowNavbar={handleShowNavbar} />}
                                     </div>
                                 </div>
                                 {showNavbar && <div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-800 z-30 opacity-75 " onClick={() => handleShowNavbar()}></div>}

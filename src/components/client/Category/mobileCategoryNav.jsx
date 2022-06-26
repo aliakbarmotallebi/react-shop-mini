@@ -2,7 +2,7 @@ import { AxiosInstance } from '@utils/http';
 import React, { useEffect, useState } from 'react'
 import Loading from '../Commons/loading';
 
-export default function MobileCategoryNav() {
+export default function MobileCategoryNav({ handleShowNavbar }) {
     const [subCategories, setSubcategoris] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
@@ -29,8 +29,8 @@ export default function MobileCategoryNav() {
 
             {!isLoading ? <ul>
                 {subCategories.map((subCategory, key) => (
-                    <li key={key}  >
-                        <a className='text-xs' href="">
+                    <li key={key} onClick={() => handleShowNavbar()} >
+                        <a className='text-xs text-slate-500' href="">
                             {subCategory.Name}
                         </a>
                     </li>
