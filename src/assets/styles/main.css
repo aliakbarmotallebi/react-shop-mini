@@ -902,6 +902,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 40%;
 }
 
+.w-60 {
+  width: 15rem;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.w-72 {
+  width: 18rem;
+}
+
 .min-w-full {
   min-width: 100%;
 }

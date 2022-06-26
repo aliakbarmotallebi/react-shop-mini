@@ -9,6 +9,6 @@ npm run dev or next dev
 - [X] try to responsive sliders
 - [ ] filter in shop
 - [ ] show product from category
-- [ ] navigation drawer
+- [X] navigation drawer
 - [ ] send checkout to server
 

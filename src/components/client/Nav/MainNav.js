@@ -45,7 +45,7 @@ const MainNav = () => {
                             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 md:px-6 px-1 py-3">
                                 <NavToggle handleShowNavbar={handleShowNavbar} />
 
-                                <div className={`${showNavbar ? '' : 'hidden'}  fixed overflow-auto z-50 md:relative top-0 right-0 w-56 h-full z-50 shadow-lg md:shadow-none bg-white md:flex md:items-center md:w-auto w-full order-3 md:order-1 `} id="menu">
+                                <div className={`${showNavbar ? '' : 'hidden'}  fixed overflow-auto z-50 md:relative top-0 right-0 w-72 h-full z-50 shadow-lg md:shadow-none bg-white md:flex md:items-center md:w-auto w-full order-3 md:order-1 `} id="menu">
                                     <div className="py-7 px-3 container  md:hidden">
                                         <NavToggle handleShowNavbar={handleShowNavbar} showNavbar={showNavbar} />
                                     </div>
