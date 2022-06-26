@@ -5,12 +5,15 @@ import CategoryNav from "@components/client/Category/categoryNav";
 import AuthContext from "src/context/authContext";
 import CartContext from "src/context/cartContext";
 import Search from "./search/search";
+import useMediaQuery from "@components/customHooks/useMediaQuery";
 
 const MainNav = () => {
-
+    
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const [showNavbar, setShowNavbar] = useState(false)
+
+    const isMobile = useMediaQuery()
 
     const handleScroll = () => {
         const currentScrollPos = window.pageYOffset;
@@ -33,13 +36,14 @@ const MainNav = () => {
     }, [prevScrollPos, visible, handleScroll]);
 
 
-
     return (
         <>
             <AuthContext.Consumer>
                 {({ user, logoutuser }) => (
                     <nav id="header" className={`w-full z-30 bg-white sticky  ${visible ? 'top-0' : '-top-80'} transition-all ease-in-out duration-300`}>
+
                         <div className="container">
+
                             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 md:px-6 px-1 py-3">
                                 <label onClick={() => handleShowNavbar()} htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
                                     <svg className="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20"
@@ -50,7 +54,7 @@ const MainNav = () => {
                                 </label>
                                 <input className="hidden" type="checkbox" id="menu-toggle" />
 
-                                <div className={`${showNavbar ? '' : 'hidden'} md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu`}>
+                                <div className={`${showNavbar ? '' : 'hidden'} fixed md:relative top-0 right-0 w-56 h-full z-50 shadow-lg md:shadow-none bg-white md:flex md:items-center md:w-auto w-full order-3 md:order-1`} id="menu">
                                     <nav>
                                         <ul className="md:flex items-center justify-between text-xs text-gray-700 pt-4 md:pt-0">
                                             <li>
@@ -133,7 +137,10 @@ const MainNav = () => {
                             </div>
                             <CategoryNav />
                         </div>
+                        {isMobile && <h1 className="text-4xl">mobile</h1>}
                     </nav>
+
+
                 )}
 
             </AuthContext.Consumer>
