@@ -7,6 +7,7 @@ import CartContext from "src/context/cartContext";
 import Search from "./search/search";
 import useMediaQuery from "@components/customHooks/useMediaQuery";
 import MobileCategoryNav from "../Category/mobileCategoryNav";
+import NavToggle from "./navToggle";
 
 const MainNav = () => {
 
@@ -42,28 +43,23 @@ const MainNav = () => {
                         <div className="container">
 
                             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 md:px-6 px-1 py-3">
-                                <label onClick={() => handleShowNavbar()} htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
-                                    <svg className="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20"
-                                        height="20" viewBox="0 0 20 20">
-                                        <title>منو</title>
-                                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                                    </svg>
-                                </label>
-                                <input className="hidden" type="checkbox" id="menu-toggle" />
+                                <NavToggle handleShowNavbar={handleShowNavbar} />
 
-                                <div className={`${showNavbar ? '' : 'hidden'}  fixed overflow-auto z-50 md:relative top-0 right-0 w-56 h-full z-50 shadow-lg md:shadow-none bg-white md:flex md:items-center md:w-auto w-full order-3 md:order-1`} id="menu">
-
+                                <div className={`${showNavbar ? '' : 'hidden'}  fixed overflow-auto z-50 md:relative top-0 right-0 w-56 h-full z-50 shadow-lg md:shadow-none bg-white md:flex md:items-center md:w-auto w-full order-3 md:order-1 `} id="menu">
+                                    <div className="py-7 px-3 container  md:hidden">
+                                        <NavToggle handleShowNavbar={handleShowNavbar} showNavbar={showNavbar} />
+                                    </div>
                                     <nav>
-                                        <ul className="md:flex items-center justify-between text-xs text-gray-700 pt-4 md:pt-0">
+                                        <ul className="md:flex items-center justify-between text-sm text-gray-700 pt-4 md:pt-0">
                                             <li>
                                                 <Link href={'/'}>
-                                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 md:px-4"
+                                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
                                                     >صفحه اصلی</a>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href={'/shop'}>
-                                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 md:px-4"
+                                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
                                                     >فروشگاه</a>
                                                 </Link>
                                             </li>
@@ -73,7 +69,7 @@ const MainNav = () => {
                                                     <>
                                                         <li>
                                                             <Link href={'/login'}>
-                                                                <a className="inline-block no-underline hover:text-black hover:underline py-2 md:px-4">{user.user.mobile}</a>
+                                                                <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">{user.user.mobile}</a>
                                                             </Link>
                                                         </li>
                                                         <li>
@@ -83,17 +79,20 @@ const MainNav = () => {
                                                 )
                                                 : (<li>
                                                     <Link href={'/login'}>
-                                                        <a className="inline-block no-underline hover:text-black hover:underline py-2 md:px-4">ورود</a>
+                                                        <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">ورود</a>
                                                     </Link>
                                                 </li>)
                                             }
 
                                         </ul>
                                     </nav>
-                                    <div className="px-2">
+                                    <div className="px-4">
+
                                         {isMobile && <MobileCategoryNav />}
                                     </div>
                                 </div>
+                                {showNavbar && <div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-800 z-30 opacity-75 " onClick={() => handleShowNavbar()}></div>}
+
 
                                 <div className="md:basis-1/3 basis-2/3 order-1 md:order-2">
                                     <div className="pt-2 relative mx-auto text-gray-600 w-full">
