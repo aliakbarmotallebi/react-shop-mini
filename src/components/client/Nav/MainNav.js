@@ -6,6 +6,7 @@ import AuthContext from "src/context/authContext";
 import CartContext from "src/context/cartContext";
 import Search from "./search/search";
 import useMediaQuery from "@components/customHooks/useMediaQuery";
+import MobileCategoryNav from "../Category/mobileCategoryNav";
 
 const MainNav = () => {
 
@@ -50,18 +51,19 @@ const MainNav = () => {
                                 </label>
                                 <input className="hidden" type="checkbox" id="menu-toggle" />
 
-                                <div className={`${showNavbar ? '' : 'hidden'} fixed md:relative top-0 right-0 w-56 h-full z-50 shadow-lg md:shadow-none bg-white md:flex md:items-center md:w-auto w-full order-3 md:order-1`} id="menu">
+                                <div className={`${showNavbar ? '' : 'hidden'}  fixed overflow-auto z-50 md:relative top-0 right-0 w-56 h-full z-50 shadow-lg md:shadow-none bg-white md:flex md:items-center md:w-auto w-full order-3 md:order-1`} id="menu">
+
                                     <nav>
                                         <ul className="md:flex items-center justify-between text-xs text-gray-700 pt-4 md:pt-0">
                                             <li>
                                                 <Link href={'/'}>
-                                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 md:px-4"
                                                     >صفحه اصلی</a>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href={'/shop'}>
-                                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                                                    <a className="inline-block no-underline hover:text-black hover:underline py-2 md:px-4"
                                                     >فروشگاه</a>
                                                 </Link>
                                             </li>
@@ -71,7 +73,7 @@ const MainNav = () => {
                                                     <>
                                                         <li>
                                                             <Link href={'/login'}>
-                                                                <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">{user.user.mobile}</a>
+                                                                <a className="inline-block no-underline hover:text-black hover:underline py-2 md:px-4">{user.user.mobile}</a>
                                                             </Link>
                                                         </li>
                                                         <li>
@@ -81,13 +83,16 @@ const MainNav = () => {
                                                 )
                                                 : (<li>
                                                     <Link href={'/login'}>
-                                                        <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4">ورود</a>
+                                                        <a className="inline-block no-underline hover:text-black hover:underline py-2 md:px-4">ورود</a>
                                                     </Link>
                                                 </li>)
                                             }
 
                                         </ul>
                                     </nav>
+                                    <div className="px-2">
+                                        {isMobile && <MobileCategoryNav />}
+                                    </div>
                                 </div>
 
                                 <div className="md:basis-1/3 basis-2/3 order-1 md:order-2">
