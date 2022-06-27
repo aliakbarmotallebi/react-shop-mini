@@ -6,8 +6,7 @@ import Titles from "@utils/Titles";
 const Shop = ({ query: { categoryId, slug, page } }) => {
     return (
         <>
-            <CustomHead title={Titles.titles.shop} />
-
+            <CustomHead title={`${Titles.titles.shop} | دسته بندی : ${slug}`} />
             <ShopJozi categoryId={categoryId} page={page} slug={slug} />
         </>
 
