@@ -6,30 +6,31 @@ import Loading from '@components/client/Commons/loading'
 import Filter from './filter/filter'
 
 
-export default function ShopJozi({ query }) {
+export default function ShopJozi({ page, q }) {
+
+  const productsOnPage = 28
 
   const [products, setProducts] = useState([])
-  const [skip, setSkip] = useState(20)
+  const [skip, setSkip] = useState(page && page > 1 ? productsOnPage : 0)
   const [loading, setLoading] = useState(true)
-  const [page, setPage] = useState(1)
-
+  const [perPage, setPerPage] = useState(page || 1)
 
   useEffect(() => {
-    console.log(query)
+    console.log(Math.abs(skip * (perPage - 1)))
 
     setLoading(true)
     AxiosInstance({
       url: "products",
       params: {
-        count: 12,
-        q: query ? query.q : '',
-        skip,
+        q: q ? q : '',
+        count: productsOnPage,
+        skip: Math.abs(skip * (perPage - 1)),
       }
     }).then(result => {
       setProducts(result.data['data'])
       setLoading(false)
     })
-  }, [])
+  }, [page])
 
   return (
     <div className='container'>
