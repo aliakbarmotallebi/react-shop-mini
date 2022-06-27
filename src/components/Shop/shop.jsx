@@ -7,7 +7,7 @@ import Loading from '@components/client/Commons/loading'
 import Filter from './filter/filter'
 
 
-export default function ShopJozi({ page, q }) {
+export default function ShopJozi({ page, q, categoryId }) {
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -17,7 +17,14 @@ export default function ShopJozi({ page, q }) {
 
   useEffect(() => {
     setLoading(true)
-    AxiosInstance({
+    AxiosInstance(categoryId ? {
+      url: "products/subcategory/" + categoryId,
+      params: {
+        q: q ? q : '',
+        count: productsOnPage,
+        skip: (page - 1) * productsOnPage,
+      }
+    } : {
       url: "products",
       params: {
         q: q ? q : '',
@@ -48,18 +55,19 @@ export default function ShopJozi({ page, q }) {
               )
           }
           <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
+            <Link href={q ? { pathname: 'shop', query: { q, page: parseInt(page) - 1 } } : { pathname: 'shop', query: { page: parseInt(page) - 1 } }}>
+              <a>
+                <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
+              </a>
+            </Link>
 
-            <Link href={q ? { pathname: 'shop', query: { q, page: parseInt(page) + 1 } } : ''}>
+            <Link href={q ? { pathname: 'shop', query: { q, page: parseInt(page) + 1 } } : { pathname: 'shop', query: { page: parseInt(page) + 1 } }}>
               <a>
                 <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'>بعدی</span>
               </a>
             </Link>
 
-            <Link href="">
-              <a>
-                <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
-              </a>
-            </Link>
+
 
           </div>
         </div>
