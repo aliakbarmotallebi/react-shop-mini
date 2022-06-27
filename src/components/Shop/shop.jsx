@@ -7,7 +7,7 @@ import Loading from '@components/client/Commons/loading'
 import Filter from './filter/filter'
 
 
-export default function ShopJozi({ page, q, categoryId }) {
+export default function ShopJozi({ page, q, categoryId, slug }) {
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -35,7 +35,7 @@ export default function ShopJozi({ page, q, categoryId }) {
       setProducts(result.data['data'])
       setLoading(false)
     })
-  }, [page, q])
+  }, [page, q, categoryId])
 
   return (
     <div className='container'>
@@ -55,24 +55,37 @@ export default function ShopJozi({ page, q, categoryId }) {
               )
           }
           <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
-            <Link href={q ? { pathname: 'shop', query: { q, page: parseInt(page) - 1 } } : { pathname: 'shop', query: { page: parseInt(page) - 1 } }}>
-              <a>
-                <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
-              </a>
-            </Link>
+            {categoryId ?
+              <>
+                <Link href={`/shop/category/${categoryId}/${slug}?page=${page - 1}`}>
+                  <a>
+                    <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
+                  </a>
+                </Link>
 
-            <Link href={q ? { pathname: 'shop', query: { q, page: parseInt(page) + 1 } } : { pathname: 'shop', query: { page: parseInt(page) + 1 } }}>
-              <a>
-                <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'>بعدی</span>
-              </a>
-            </Link>
+                <Link href={`/shop/category/${categoryId}/${slug}?page=${page + 1}`}>
+                  <a>
+                    <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'>بعدی</span>
+                  </a>
+                </Link>
+              </>
+              :
+              <>
+                <Link href={q ? { pathname: 'shop', query: { q, page: page - 1 } } : { pathname: 'shop', query: { page: page - 1 } }}>
+                  <a>
+                    <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
+                  </a>
+                </Link>
 
-
-
+                <Link href={q ? { pathname: 'shop', query: { q, page: page + 1 } } : { pathname: 'shop', query: { page: page + 1 } }}>
+                  <a>
+                    <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'>بعدی</span>
+                  </a>
+                </Link>
+              </>
+            }
           </div>
         </div>
-
-
       </div>
     </div >
   )

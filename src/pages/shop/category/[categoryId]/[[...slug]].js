@@ -3,12 +3,12 @@ import ShopJozi from "@components/Shop/shop";
 import CustomHead from "@components/client/header/customHead";
 import Titles from "@utils/Titles";
 
-const Shop = ({ query: { categoryId } }) => {
+const Shop = ({ query: { categoryId, slug, page } }) => {
     return (
         <>
             <CustomHead title={Titles.titles.shop} />
 
-            <ShopJozi categoryId={categoryId} />
+            <ShopJozi categoryId={categoryId} page={page} slug={slug} />
         </>
 
     )

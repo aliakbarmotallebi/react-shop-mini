@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Config from "@utils/Config";
 import { AxiosInstance } from "@utils/http";
+import CategoryLinker from "../Commons/categoryLinker";
 
 const CategoryNav = () => {
     const [categories, setCategories] = useState([])
@@ -44,13 +45,14 @@ const CategoryNav = () => {
                 <ul className="absolute top-0 left-0 right-0 bg-slate-100 columns-3">
                     {subcategories.map((subCategory, key) => (
                         <li key={key} className="lg:mx-2 lg:block">
-                            <a className="text-gray-600 text-xs py-3 px-1 block font-yekan-bold hover:bg-white rounded-md"
-                                href="#">{subCategory.Name}</a>
+                            <CategoryLinker setSubcategoris={setSubcategoris} categoryId={subCategory.ErpCode} categorySlug={subCategory.Name} style={'text-gray-600 text-xs py-3 px-1 block font-yekan-bold hover:bg-white rounded-md'}>
+                                {subCategory.Name}
+                            </CategoryLinker>
                         </li>
                     ))}
                 </ul>
             </div>
-        </div>
+        </div >
 
     )
 }
