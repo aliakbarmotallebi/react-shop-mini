@@ -18,7 +18,7 @@ export default function Search() {
     const searchFormSubmit = (event) => {
         event.preventDefault()
 
-        router.push(`/search?q=${searchedQuery}`)
+        router.push(`/shop?q=${searchedQuery}`)
         removeSearchedBox()
     }
 

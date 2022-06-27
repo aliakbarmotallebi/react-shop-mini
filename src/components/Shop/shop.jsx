@@ -30,7 +30,7 @@ export default function ShopJozi({ page, q }) {
       setProducts(result.data['data'])
       setLoading(false)
     })
-  }, [page])
+  }, [page, q])
 
   return (
     <div className='container'>
