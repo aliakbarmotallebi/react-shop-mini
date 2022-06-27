@@ -9,7 +9,6 @@ const Shop = ({ query: { categoryId, slug, page } }) => {
             <CustomHead title={`${Titles.titles.shop} | دسته بندی : ${slug}`} />
             <ShopJozi categoryId={categoryId} page={page} slug={slug} />
         </>
-
     )
 }
 Shop.getInitialProps = ({ query }) => {

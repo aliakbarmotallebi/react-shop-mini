@@ -8,7 +8,7 @@ npm run dev or next dev
 - [ ] use cookie for cart 
 - [X] try to responsive sliders
 - [ ] filter in shop
-- [ ] show product from category
+- [X] show product from category
 - [X] navigation drawer
 - [ ] send checkout to server
 
