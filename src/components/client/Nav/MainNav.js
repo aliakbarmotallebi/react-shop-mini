@@ -24,6 +24,7 @@ const MainNav = () => {
     };
 
     const handleShowNavbar = () => {
+        if (!isMobile) return
         setShowNavbar(!showNavbar)
     }
 
