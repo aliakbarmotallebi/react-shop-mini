@@ -7,6 +7,7 @@ import CustomHead from '@components/client/header/customHead';
 import ProductPrice from './productPrice';
 import AlertContext from 'src/context/alertContext';
 import Slider from '@components/client/slider/slider';
+import CategoryLinker from '@components/client/Commons/categoryLinker';
 
 export default function Product({ product }) {
 
@@ -77,13 +78,12 @@ export default function Product({ product }) {
                                     </div>
                                     <div className='flex justify-between w-full border-b-[1px] border-slate-100 py-4'>
                                         <span className='font-yekan-bold text-slate-500'>دسته بندی</span>
-                                        <Link href={'/'}>
-                                            <a>
-                                                <span className='w-24 text-center text-slate-400 text-sm'>
-                                                    {product.SideGroupName}
-                                                </span>
-                                            </a>
-                                        </Link>
+                                        <CategoryLinker categoryId={product.SideGroupErpCode} categorySlug={product.SideGroupName}>
+                                            <span className='w-24 text-center text-slate-400 text-sm'>
+                                                {product.SideGroupName}
+                                            </span>
+                                        </CategoryLinker>
+
                                     </div>
                                 </div>
                                 <div className="flex justify-between w-full gap-2 py-4 ">
