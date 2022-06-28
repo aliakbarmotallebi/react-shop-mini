@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useRouter } from 'next/router';
+import { CookiesProvider } from "react-cookie";
 
 import LoadingBar from "react-top-loading-bar";
 
@@ -50,22 +51,24 @@ function App({ Component, pageProps }) {
         }
     }, [])
     return (
-        <AlertProvider>
-            <SearchProvider>
-                <AuthProvider>
-                    <CartProvider>
-                        <MainLayout>
-                            <LoadingBar color='#ff5152' height={4} ref={loadingRef} />
-                            <div className="relative w-full">
-                                <section>
-                                    <Component {...pageProps} />
-                                </section>
-                            </div>
-                        </MainLayout>
-                    </CartProvider>
-                </AuthProvider>
-            </SearchProvider>
-        </AlertProvider>
+        <CookiesProvider>
+            <AlertProvider>
+                <SearchProvider>
+                    <AuthProvider>
+                        <CartProvider>
+                            <MainLayout>
+                                <LoadingBar color='#ff5152' height={4} ref={loadingRef} />
+                                <div className="relative w-full">
+                                    <section>
+                                        <Component {...pageProps} />
+                                    </section>
+                                </div>
+                            </MainLayout>
+                        </CartProvider>
+                    </AuthProvider>
+                </SearchProvider>
+            </AlertProvider>
+        </CookiesProvider>
     );
 }
 
