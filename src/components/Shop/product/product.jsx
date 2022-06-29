@@ -36,7 +36,7 @@ export default function Product({ product }) {
     const [itemnumber, ItemDispatch] = useReducer(itemNumberReducer, 1)
 
     const handleAddToCart = (product) => {
-        addItemToCart({ product: product.ErpCode })
+        addItemToCart({ product: product.ErpCode, quantity: itemnumber })
         alert.success('به سبد خرید اضافه شد')
     }
 
@@ -89,10 +89,9 @@ export default function Product({ product }) {
                                 </div>
                                 <div className="flex justify-between w-full gap-2 py-4 ">
                                     <div className='flex gap-3'>
-                                        
-                                        <button className='p-10 bg-rose-600' onClick={() => handleAddToCart(product)}>afzoodan be sabad kharid</button>
 
-                                        {/* <button onClick={() => ItemDispatch({ type: "INCREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
+
+                                        <button onClick={() => ItemDispatch({ type: "INCREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
                                             +
                                         </button>
                                         <span className="self-center font-bold">
@@ -100,15 +99,15 @@ export default function Product({ product }) {
                                                 {itemnumber}
                                             </p>
                                         </span>
-                                        <button onClick={() => ItemDispatch({ type: "DECREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
+                                        {/* <button onClick={() => ItemDispatch({ type: "DECREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
                                             -
-                                        </button> */}
+                                        </button>  */}
                                     </div>
 
-                                    {/* <button onClick={() => handleAddToCart({ product })} type="button" className="text-blue-600 bg-white border-2 border-blue-600 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 md:font-sm font-xs rounded-md transition duration-150 ease-all text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-white ">
+                                    <button onClick={() => handleAddToCart(product)} type="button" className="text-blue-600 bg-white border-2 border-blue-600 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 md:font-sm font-xs rounded-md transition duration-150 ease-all text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-white ">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-7 h-7" viewBox="0 0 512 512"><title>Cart</title><circle cx={176} cy={416} r={16} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /><circle cx={400} cy={416} r={16} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} d="M48 80h64l48 272h256" /><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /></svg>
                                         افزودن به سبد خرید
-                                    </button> */}
+                                    </button>
                                 </div>
                             </div>
                         </div>

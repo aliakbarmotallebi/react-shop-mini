@@ -11,18 +11,19 @@ export default function Cart() {
     const { cartCookie } = useContext(CartContext)
     const [cart, setCart] = useState([])
 
+
     useEffect(() => {
-        cartCookie.map(item => (
-            AxiosInstance.get('products/' + item.product).then(res => {
-                setCart(oldCart => [...oldCart, res.data['data']])
-            })
-        ))
+        cartCookie &&
+            cartCookie.map(item => (
+                AxiosInstance.get('products/' + item.product).then(res => {
+                    setCart(oldCart => [...oldCart, res.data['data']])
+                })
+            ))
     }, [])
 
 
     return (
         <>
-            {console.log(cart)}
             {cart.length <= 0 ? <EmptyCart /> :
                 (
                     <div className="flex justify-center my-6 container">
