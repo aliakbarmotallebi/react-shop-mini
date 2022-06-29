@@ -136,7 +136,8 @@ const MainNav = () => {
 
                                 </div>
                             </div>
-                            {!isMobile && <CategoryNav />}
+                            
+                            {/* {!isMobile && <CategoryNav />} */}
                         </div>
 
                     </nav>

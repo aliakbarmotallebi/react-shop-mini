@@ -14,11 +14,11 @@ export default function ProductPrice({ lastBuyPrice, sellPrice }) {
 
                 </div>
                 <div className='flex justify-between gap-2 items-center mt-2'>
-                    {offPrice != 0 ? <span className="text-sm text-gray-400 text-center  line-through">{sellPrice.toLocaleString("fa-ir")}</span> : ''}
-                    <span className='bg-rose-500 text-sm text-white  px-2 rounded-full'>
-
+                    <span className='bg-rose-500 text-sm text-white  px-2  rounded-tl-full  rounded-tr-full rounded-br-full'>
                         {offPrice != 0 ? offPrice + '%' : ''}
                     </span>
+                    {offPrice != 0 ? <span className="text-sm text-gray-400 text-center  line-through">{sellPrice.toLocaleString("fa-ir")}</span> : ''}
+
                 </div>
             </div>
         </div>

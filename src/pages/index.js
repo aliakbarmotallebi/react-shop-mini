@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import CustomHead from "@components/client/header/customHead";
 import Slider from "@components/client/slider/slider";
@@ -7,8 +7,19 @@ import Titles from '@utils/Titles'
 import Detail from "@components/client/HomePage/detail";
 
 import 'keen-slider/keen-slider.min.css'
+import { AxiosInstance } from "@utils/http";
 
 const Home = () => {
+    
+    // useEffect(() => {
+    //     AxiosInstance.get('products/' + cookies.ErpCode).then(res => {
+    //         setProducts(res.data['data'])
+    //     }).catch(err => {
+    //         console.log(err)
+    //     })
+    // }, [cookies.ErpCode])
+
+
     return (
         <>
             <CustomHead title={Titles.titles.home} />
@@ -17,6 +28,7 @@ const Home = () => {
                     <div className="md:block hidden one absolute -bottom-4 -right-9"></div>
                     <div className="md:flex  gap-5">
                         <BigSlider />
+
                         <Detail />
                     </div>
                 </div>
@@ -42,4 +54,5 @@ const Home = () => {
         </>
     )
 }
+
 export default Home

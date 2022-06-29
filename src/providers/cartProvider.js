@@ -1,29 +1,32 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useState, useEffect } from 'react'
+import { useCookies } from 'react-cookie'
 import CartContext from 'src/context/cartContext'
 
-function cartReducer(cart, action) {
-
-    switch (action.type) {
-        case 'add':
-            // const itemIndex = cart.findIndex(item => item.product.Id === action.product.Id)
-            // if (itemIndex < 0) {
-            //     return [...cart, action]
-            // }
-            return [...cart, action]
-    }
-}
-
 function CartProvider({ children }) {
-    const [cart, setCart] = useReducer(cartReducer, [])
+    const [cookie, setCookie] = useCookies()
+    const [cartCookie, setCartCookie] = useState(cookie.cart)
     const [total, setTotal] = useState(0)
 
-    React.useEffect(() => {
-        setTotal(cart.length)
-    })
+    useEffect(() => {
+        cookie.cart &&
+            setTotal(cookie.cart.length)
+    }, [cookie.cart])
+
+
+    function addItemToCart(productErpCode) {
+        cartCookie
+            ? setCartCookie(oldcart => [...oldcart, productErpCode])
+            : setCartCookie([productErpCode])
+    }
+
+    useEffect(() => {
+        cartCookie &&
+            setCookie('cart', cartCookie, { maxAge: 36000, sameSite: 'lax' })
+    }, [cartCookie])
 
     return (
         <CartContext.Provider value={{
-            cart, setCart, total
+            total, addItemToCart, cartCookie
         }}>
             {children}
         </CartContext.Provider>
