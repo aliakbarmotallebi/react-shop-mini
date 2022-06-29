@@ -21,7 +21,7 @@ export default function Cart() {
         cartCookie &&
             cartCookie.map(item => (
                 AxiosInstance.get('products/' + item.product).then(res => {
-                    setCart(oldCart => [...oldCart, res.data['data']])
+                    setCart(oldCart => [...oldCart, { ...res.data['data'], quantity: item.quantity }])
                     setIsLoading(false)
                 })
             ))
@@ -31,12 +31,12 @@ export default function Cart() {
     return (
 
         <div className="flex justify-center my-6 container">
+            {console.log(cart)}
             <div className="flex flex-col w-full p-8 text-gray-800 bg-white ">
                 <div className="flex-1">
                     <table className="w-full text-sm lg:text-base" >
                         <thead className='font-yekan-bold text-slate-600'>
                             <tr className="h-12">
-                                <th className="hidden md:table-cell"></th>
                                 <th className="text-right">محصول</th>
                                 <th className="lg:text-right text-right pl-5 lg:pl-0">
                                     <span className="lg:hidden" title="Quantity">Qtd</span>
@@ -46,8 +46,9 @@ export default function Cart() {
                                 <th className="text-right">قیمت مجموع</th>
                             </tr>
                         </thead>
-
-                        {isLoading ? <Loading /> : <tbody>{cart.map(productItem => <p>{productItem.Name}</p>)}</tbody>}
+                        {isLoading ? <Loading /> : <tbody>
+                            {cart.map(productItem => <CartItem product={productItem} />)}
+                        </tbody>}
                     </table>
                     <hr className="pb-6 mt-6" />
                     <div className='flex justify-end'>

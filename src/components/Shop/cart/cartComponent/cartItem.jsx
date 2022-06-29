@@ -27,8 +27,8 @@ export default function CartItem({ product }) {
                     <div className="relative flex flex-row w-full h-8">
 
                         <form >
-                            {/* <input type="number" value={product.quantity}
-                                className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" /> */}
+                            <input type="number" value={product.quantity}
+                                className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                         </form>
                     </div>
                 </div>
@@ -39,9 +39,9 @@ export default function CartItem({ product }) {
                 </span>
             </td>
             <td className="text-right">
-                {/* <span className="text-lg text-blue-600 font-yekan-bold">
+                <span className="text-lg text-blue-600 font-yekan-bold">
                     {(product.SellPrice * product.quantity).toLocaleString("fa-ir")}
-                </span> */}
+                </span>
             </td>
         </tr >
     )
