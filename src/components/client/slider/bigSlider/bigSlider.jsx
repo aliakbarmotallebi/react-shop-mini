@@ -23,7 +23,7 @@ const BigSlider = () => {
     }
     useEffect(() => {
         fetchBigSlider();
-    }, [])
+        }, [])
     return (
 
 

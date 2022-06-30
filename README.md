@@ -11,4 +11,6 @@ npm run dev or next dev
 - [X] show product from category
 - [X] navigation drawer
 - [ ] send checkout to server
+- [ ] get user information from localStorage
+
 
