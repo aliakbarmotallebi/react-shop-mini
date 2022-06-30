@@ -15,7 +15,6 @@ export default function Cart() {
     const [cart, setCart] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
-
     useEffect(() => {
         setIsLoading(true)
         cartCookie &&
