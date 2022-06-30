@@ -5,7 +5,7 @@ npm run dev or next dev
 
 ## ✓ must do ...
 - [ ] user panel for change personal information such as "user address and name"
-- [ ] use cookie for cart 
+- [X] use cookie for cart 
 - [X] try to responsive sliders
 - [ ] filter in shop
 - [X] show product from category
