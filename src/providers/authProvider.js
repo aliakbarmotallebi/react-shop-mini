@@ -1,12 +1,14 @@
-import Alert from "@components/client/Alert/alert"
+import { useContext } from "react"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import AlertContext from "src/context/alertContext"
 import AuthContext from "src/context/authContext"
 
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
     const router = useRouter()
     const [storageUser, setStorageUser] = useState({})
+    const alert = useContext(AlertContext)
 
     useEffect(() => {
         user &&
@@ -16,13 +18,13 @@ function AuthProvider({ children }) {
 
     useEffect(() => {
         setStorageUser(JSON.parse(localStorage.getItem('user')))
-        console.log(storageUser)
     }, [user])
 
 
     const logoutuser = () => {
         localStorage.clear('user')
         setStorageUser({})
+        alert.warning('از حساب خود خارج شدید', 5)
     }
 
     return (

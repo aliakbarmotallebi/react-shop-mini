@@ -65,7 +65,7 @@ const MainNav = () => {
                                     </Link>
                                 </li>
 
-                                {storageUser.user ?
+                                {storageUser?.user ?
                                     (
                                         <>
                                             <li onClick={() => handleShowNavbar()}>
