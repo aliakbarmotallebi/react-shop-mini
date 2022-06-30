@@ -1,8 +1,12 @@
 import Alert from "@components/client/Alert/alert"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import AuthContext from "src/context/authContext"
+
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
+    const router = useRouter()
+    const [storageUser, setStorageUser] = useState({})
 
     useEffect(() => {
         user &&
@@ -10,18 +14,22 @@ function AuthProvider({ children }) {
 
     }, [user])
 
-
-
+    useEffect(() => {
+        setStorageUser(JSON.parse(localStorage.getItem('user')))
+        console.log(storageUser)
+    }, [user])
 
 
     const logoutuser = () => {
-        setUser()
+        localStorage.clear('user')
+        setStorageUser({})
     }
+
     return (
         <AuthContext.Provider value={{
-            user,
             setUser,
-            logoutuser
+            logoutuser,
+            storageUser
         }}>
             {children}
         </AuthContext.Provider>
