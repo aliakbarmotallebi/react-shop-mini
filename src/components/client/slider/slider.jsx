@@ -35,7 +35,7 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
             breakpoints: {
 
                 "(min-width: 481px)": {
-                    slides: { perView: 3.5, spacing: 15 },
+                    slides: { perView: 3, spacing: 5 },
                 },
                 "(min-width: 769px)": {
                     slides: { perView: 5.5, spacing: 15 },
@@ -57,7 +57,7 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
         (isLoading ? <div className="w-full h-96"><Loading /></div> : (
             <section className="pt-2 h-full">
                 <header className="flex items-center">
-                    <h2 className={`font-yekan-bold md:text-xl text-lg py-1  mb-3 ${labelColor ? labelColor : ''} `}>
+                    <h2 className={`font-yekan-bold md:text-xl text-lg py-1  md:mb-3 mb-0 ${labelColor ? labelColor : ''} `}>
                         {label}
                     </h2>
                 </header>

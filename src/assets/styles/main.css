@@ -837,6 +837,10 @@ video {
   margin-left: 0.75rem;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+
 .block {
   display: block;
 }
@@ -2308,6 +2312,10 @@ nav#header {
 
   .md\:ml-4 {
     margin-left: 1rem;
+  }
+
+  .md\:mb-3 {
+    margin-bottom: 0.75rem;
   }
 
   .md\:flex {

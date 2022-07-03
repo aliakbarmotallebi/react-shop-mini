@@ -5,20 +5,23 @@ import Slider from "@components/client/slider/slider";
 import BigSlider from "@components/client/slider/bigSlider/bigSlider";
 import Titles from '@utils/Titles'
 import Detail from "@components/client/HomePage/detail";
+import useMediaQuery from "@components/customHooks/useMediaQuery";
 
 import 'keen-slider/keen-slider.min.css'
-import { AxiosInstance } from "@utils/http";
+
 
 const Home = () => {
+
+    const isMobile = useMediaQuery()
 
     return (
         <>
             <CustomHead title={Titles.titles.home} />
             <div className="container mt-4" >
                 <div className="w-full relative ">
-                    <div className="md:flex md:h-96 h-auto gap-5">
+                    <div className="md:flex  h-auto gap-3">
                         <BigSlider />
-                        <Detail />
+                        {!isMobile && <Detail />}
                     </div>
                 </div>
             </div>
