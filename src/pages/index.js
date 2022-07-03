@@ -8,6 +8,7 @@ import Detail from "@components/client/HomePage/detail";
 import useMediaQuery from "@components/customHooks/useMediaQuery";
 
 import 'keen-slider/keen-slider.min.css'
+import MobileCategorySlider from "@components/client/slider/bigSlider/mobileCategorySlider";
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
                     <div className="md:flex  h-auto gap-3">
                         <BigSlider />
                         {!isMobile && <Detail />}
+
                     </div>
                 </div>
             </div>
@@ -32,6 +34,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {isMobile && <div className="container">
+                <MobileCategorySlider />
+            </div>}
             <div className="container" >
                 <div className="min-h-96  w-full">
                     <Slider label="پرفروش ترین" sort={2} count={15} />
