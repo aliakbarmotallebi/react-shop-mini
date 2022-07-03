@@ -31,7 +31,7 @@ export default function Detail() {
                 </span>
                 08638623001
             </p>
-            <div className="flex justify-between border-t-[1px] border-b-[1px] border-slate-200 py-4 mt-5">
+            <div className="flex justify-between border-t-[1px]  border-slate-200 py-4 mt-5">
                 <div className="flex items-center">
                     <div>
                         <h4 className="md:text-sm text-xs text-blue-600 font-yekan-bold">

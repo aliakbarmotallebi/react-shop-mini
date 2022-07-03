@@ -16,13 +16,13 @@ const Home = () => {
             <CustomHead title={Titles.titles.home} />
             <div className="container mt-4" >
                 <div className="w-full relative ">
-                    <div className="md:flex gap-5">
+                    <div className="md:flex md:h-96 h-auto gap-5">
                         <BigSlider />
                         <Detail />
                     </div>
                 </div>
             </div>
-            <div className="w-full bg-[#ff5152] my-5 py-5">
+            <div className="w-full bg-[#ff5152] md:my-5 my-1 pb-2">
                 <div className="container" >
                     <div className="min-h-96  w-full">
                         <Slider labelColor='text-white' label="محصولات ویژه" sort={3} count={15} />

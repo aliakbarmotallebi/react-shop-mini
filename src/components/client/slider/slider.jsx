@@ -35,14 +35,14 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
             breakpoints: {
 
                 "(min-width: 481px)": {
-                    slides: { perView: 3, spacing: 15 },
+                    slides: { perView: 3.5, spacing: 15 },
                 },
                 "(min-width: 769px)": {
-                    slides: { perView: 5, spacing: 15 },
+                    slides: { perView: 5.5, spacing: 15 },
                 }
             },
             slides: {
-                perView: 2,
+                perView: 2.3,
                 spacing: 10
             }
         })

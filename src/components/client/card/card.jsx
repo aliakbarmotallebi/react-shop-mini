@@ -35,11 +35,11 @@ const Card = ({ product }) => {
                             <div className="mt-3 mb-1">
                                 <h5 className="text-xs md:text-sm text-gray-800 font-yekan-bold">{product.Name}</h5>
                             </div>
-                            <div className="flex justify-between w-full py-2">
+                            <div className="flex justify-between w-full md:py-2 py-1">
                                 <div className="flex gap-1 items-center">
-                                    <Link href="">
-                                        <a className="text-gray-400">
-                                            <span className="text-xs font-yekan-regular">{TextLimit(product.SideGroupName, 20)}</span>
+                                    <Link href="" >
+                                        <a className="text-gray-400 ">
+                                            <span className="text-xs font-yekan-regular ">{TextLimit(product.SideGroupName, 20)}</span>
                                         </a>
                                     </Link>
                                 </div>
