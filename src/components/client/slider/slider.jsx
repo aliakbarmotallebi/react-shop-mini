@@ -43,7 +43,7 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
             },
             slides: {
                 perView: 2.3,
-                spacing: 10
+                spacing: 4
             }
         })
 
@@ -57,12 +57,10 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
         (isLoading ? <div className="w-full h-96"><Loading /></div> : (
             <section className="pt-2 h-full">
                 <header className="flex items-center">
-                    <h2 className={`font-yekan-bold text-xl pt-5 py-2 mb-3 ${labelColor ? labelColor : ''} `}>
+                    <h2 className={`font-yekan-bold md:text-xl text-lg py-1  mb-3 ${labelColor ? labelColor : ''} `}>
                         {label}
                     </h2>
-
                 </header>
-
                 <div ref={refCallback} className="keen-slider">
                     {
                         products.map((product, id) => (

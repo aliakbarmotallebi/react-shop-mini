@@ -10,7 +10,7 @@ import ProductPrice from "@components/Shop/product/productPrice";
 const Card = ({ product }) => {
 
     return (
-        <div className="relative mx-auto w-full my-2 md:h-96 h-80">
+        <div className="relative mx-auto w-full my-2 md:h-96 h-72">
             <ProductLinker
                 productName={product.Name}
                 productErpCode={product.ErpCode}
@@ -18,7 +18,7 @@ const Card = ({ product }) => {
                 <div className="border hover:border-gray-300 transition duration-150 p-2 rounded-lg bg-white h-full">
 
                     <div className="flex justify-center relative rounded-lg overflow-hidden md:h-56">
-                        <div className="relative after:w-full after:h-full after:inset-0 after:absolute  transition-transform duration-500 transform ease-in-out hover:scale-110 w-full h-44 md:h-full">
+                        <div className="relative after:w-full after:h-full after:inset-0 after:absolute  transition-transform duration-500 transform ease-in-out hover:scale-110 w-full h-36 md:h-full">
                             <Image
                                 className="absolute inset-0"
                                 alt={product.Name}
