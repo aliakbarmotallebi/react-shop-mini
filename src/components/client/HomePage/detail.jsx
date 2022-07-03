@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Detail() {
     return (
 
-        <div className="rounded-lg md:w-3/5 md:py-5 py-1">
+        <div className="rounded-lg md:w-3/5 md:py-2 py-1">
             <h1 className="md:text-4xl text-2xl font-yekan-bold text-gray-900 text-center">فروشگاه آنلاین شهروند مهاجر</h1>
             <p className="text-slate-600 text-justify md:text-sm text-xs md:my-4 my-1 leading-7 font-yekan-bold">شهروند مهاجر جهت تسریع و تسهیل فرایند خرید اینترنتی و خدمت‌رسانی به همشهریان عزیز شهر مهاجران، بیش از ۵۰۰۰ کالای متنوع در دسته‌بند‌ی‌های گوناگون نظیر لبنیات، خواربار، میوه و سبزیجات تازه، نان، مواد پروتئینی، لوازم بهداشتی و آرایشی ... را به صورت آنلاین عرضه می‌کند </p>
             <p className="md:text-sm text-xs text-gray-600 mt-5 flex  items-center">

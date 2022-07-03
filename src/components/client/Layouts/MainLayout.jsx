@@ -7,16 +7,10 @@ import Alert from "../Alert/alert"
 
 
 const MainLayout = ({ children }) => {
-
-    
-
-   
-
     return (
-        <div className="font-yekan-regular text-gray-600 work-sans leading-normal text-base tracking-normal ">
+        <div className="font-yekan-regular text-gray-600 work-sans leading-normal text-base tracking-normal  ">
             <Header />
 
-            
             <div className="min-h-full w-full">
                 {children}
             </div>
