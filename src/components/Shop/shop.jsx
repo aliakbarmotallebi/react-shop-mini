@@ -39,21 +39,21 @@ export default function ShopJozi({ page, q, categoryId, slug }) {
 
   return (
     <div className='container'>
-      <div className="grid grid-cols-4">
+      <div className="grid md:grid-cols-4">
         <div>
-          {/* TODO : something here  */}
+          {/* TODO : somthing here  */}
         </div>
-        <div className='grid col-span-3 grid-cols-4'>
-          <Filter />
-          {
-            loading ? <div className='col-span-4 my-4'><Loading /></div> :
-              products.map((product, index) =>
-              (
-                <div key={product.Id} >
-                  <ProductItem product={product} />
-                </div>)
-              )
-          }
+        <div className='w-full md:col-span-3 col-span-4'>
+          <div className='grid  md:grid-cols-4 grid-cols-2'>
+
+            {/* <Filter /> */}
+            {
+              loading ? <div className='md:col-span-4 col-span-2 my-4'><Loading /></div> :
+                products.map((product, index) =>
+                  <ProductItem key={product.Id} product={product} />
+                )
+            }
+          </div>
           <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
             {categoryId ?
               <>
@@ -86,6 +86,7 @@ export default function ShopJozi({ page, q, categoryId, slug }) {
             }
           </div>
         </div>
+
       </div>
     </div >
   )

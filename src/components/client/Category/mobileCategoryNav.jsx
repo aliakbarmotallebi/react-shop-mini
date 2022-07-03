@@ -1,5 +1,6 @@
 import { AxiosInstance } from '@utils/http';
 import React, { useEffect, useState } from 'react'
+import CategoryLinker from '../Commons/categoryLinker';
 import Loading from '../Commons/loading';
 
 export default function MobileCategoryNav({ handleShowNavbar }) {
@@ -29,13 +30,14 @@ export default function MobileCategoryNav({ handleShowNavbar }) {
 
             {!isLoading ? <ul>
                 {subCategories.map((subCategory, key) => (
-                    <li key={key} onClick={() => handleShowNavbar()} >
-                        <a className='text-xs text-slate-500' href="">
+                    <li onClick={() => handleShowNavbar()}>
+                        <CategoryLinker key={key} categoryId={subCategory.ErpCode} categorySlug={subCategory.Name} style={'text-xs text-slate-500'} >
                             {subCategory.Name}
-                        </a>
+                        </CategoryLinker>
                     </li>
                 ))}
-            </ul> : <Loading padding='py-10' />}
+            </ul> : <Loading padding='py-10' />
+            }
 
         </>
     )
