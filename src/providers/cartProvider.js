@@ -13,10 +13,10 @@ function CartProvider({ children }) {
     }, [cookie.cart])
 
 
-    function addItemToCart(productErpCode) {
+    function addItemToCart(product) {
         cartCookie
-            ? setCartCookie(oldcart => [...oldcart, productErpCode])
-            : setCartCookie([productErpCode])
+            ? setCartCookie(oldcart => [...oldcart, product])
+            : setCartCookie([product])
     }
 
     useEffect(() => {
