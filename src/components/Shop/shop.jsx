@@ -42,6 +42,7 @@ export default function ShopJozi({ page, q, categoryId, slug }) {
     <div className='container'>
       <div className="grid md:grid-cols-4">
         <div>
+          
           {/* TODO : somthing here  */}
         </div>
         <div className='w-full md:col-span-3 col-span-4'>

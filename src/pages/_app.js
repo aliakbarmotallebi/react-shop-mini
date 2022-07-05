@@ -62,6 +62,7 @@ function App({ Component, pageProps }) {
                                         <Component {...pageProps} />
                                     </section>
                                 </div>
+                                
                             </MainLayout>
                         </CookiesProvider>
                     </CartProvider>

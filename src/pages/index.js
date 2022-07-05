@@ -47,7 +47,7 @@ const Home = () => {
                     <Slider label="پربازدیدترین" sort={1} count={15} />
                 </div>
             </div>
-
+            
         </>
     )
 }
