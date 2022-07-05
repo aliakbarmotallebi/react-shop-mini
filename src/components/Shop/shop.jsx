@@ -64,12 +64,13 @@ export default function ShopJozi({ page, q, categoryId, slug }) {
                     <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
                   </a>
                 </Link>}
-
-                <Link href={`/shop/category/${categoryId}/${slug}?page=${page + 1}`}>
-                  <a>
-                    <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'>بعدی</span>
-                  </a>
-                </Link>
+                {products.length >= productsOnPage &&
+                  <Link href={`/shop/category/${categoryId}/${slug}?page=${page + 1}`}>
+                    <a>
+                      <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'>بعدی</span>
+                    </a>
+                  </Link>
+                }
               </>
               :
               <>
@@ -78,12 +79,13 @@ export default function ShopJozi({ page, q, categoryId, slug }) {
                     <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
                   </a>
                 </Link>}
-
-                <Link href={q ? { pathname: 'shop', query: { q, page: page + 1 } } : { pathname: 'shop', query: { page: page + 1 } }}>
-                  <a>
-                    <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'>بعدی</span>
-                  </a>
-                </Link>
+                {products.length >= productsOnPage &&
+                  <Link href={q ? { pathname: 'shop', query: { q, page: page + 1 } } : { pathname: 'shop', query: { page: page + 1 } }}>
+                    <a>
+                      <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'>بعدی</span>
+                    </a>
+                  </Link>
+                }
               </>
             }
           </div>
