@@ -1,6 +1,5 @@
 import React, { useContext, useReducer } from 'react'
 import Image from "next/image";
-import Link from 'next/link'
 
 import CartContext from 'src/context/cartContext';
 import CustomHead from '@components/client/header/customHead';
@@ -8,7 +7,7 @@ import ProductPrice from './productPrice';
 import AlertContext from 'src/context/alertContext';
 import Slider from '@components/client/slider/slider';
 import CategoryLinker from '@components/client/Commons/categoryLinker';
-import NumberUnitFew from '../components/numberUnitFew';
+import ItemDispatcher from '../components/itemDispatcher';
 
 export default function Product({ product }) {
 
@@ -35,17 +34,17 @@ export default function Product({ product }) {
     const floatItemNumberReducer = (floatitemNumber, action) => {
         switch (action.type) {
             case "INCREAMENT":
-                if (floatitemNumber + 1 > product.Few) {
-                    alert.warning(`   از این محصول تنها  ${product.Few} موجود می باشد `, 4)
+                if (floatitemNumber + .25 > product.Few) {
+                    alert.warning(`   از این محصول تنها  ${product.Few} کیلو موجود می باشد `, 4)
                     return floatitemNumber
                 }
-                return floatitemNumber += 1
+                return floatitemNumber += .25
             case "DECREAMENT":
-                if (floatitemNumber < 2) {
-                    alert.warning('تعداد نمی تواند کمتر از یک باشد')
+                if (floatitemNumber < .5) {
+                    alert.warning('تعداد نمی تواند کمتر از دویست و پنجاه باشد')
                     return floatitemNumber
                 }
-                return floatitemNumber -= 1
+                return floatitemNumber -= .25
             default:
                 return floatitemNumber
         }
@@ -109,29 +108,7 @@ export default function Product({ product }) {
                                     </div>
                                 </div>
                                 <div className="flex justify-between w-full gap-2 py-4 ">
-                                    <div className='flex gap-3'>
-                                        {typeof (product.UnitFew) == 'number' ?
-                                            <>
-                                                <button onClick={() => ItemDispatch({ type: "INCREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
-                                                    +
-                                                </button>
-                                                <NumberUnitFew itemnumber={itemnumber} />
-                                                <button onClick={() => ItemDispatch({ type: "DECREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
-                                                    -
-                                                </button>
-                                            </>
-                                            :
-                                            <>
-                                                <button onClick={() => floatItemDispatch({ type: "INCREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
-                                                    +
-                                                </button>
-                                                <NumberUnitFew floatitemNumber={floatitemNumber} />
-                                                <button onClick={() => floatItemDispatch({ type: "DECREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
-                                                    -
-                                                </button>
-                                            </>
-                                        }
-                                    </div>
+                                    <ItemDispatcher unitFew={product.UnitFew} ItemDispatch={ItemDispatch} itemnumber={itemnumber} floatItemDispatch={floatItemDispatch} floatitemNumber={floatitemNumber} />
                                     <button onClick={() => handleAddToCart(product)} type="button" className="text-blue-600 bg-white border-2 border-blue-600 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 md:font-sm font-xs rounded-md transition duration-150 ease-all text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-white ">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-7 h-7" viewBox="0 0 512 512"><title>Cart</title><circle cx={176} cy={416} r={16} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /><circle cx={400} cy={416} r={16} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} d="M48 80h64l48 272h256" /><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /></svg>
                                         افزودن به سبد خرید
