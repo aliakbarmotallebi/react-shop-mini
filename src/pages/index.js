@@ -8,7 +8,7 @@ import Detail from "@components/client/HomePage/detail";
 import useMediaQuery from "@components/customHooks/useMediaQuery";
 
 import 'keen-slider/keen-slider.min.css'
-import MobileCategorySlider from "@components/client/slider/bigSlider/mobileCategorySlider";
+import MobileCategorySlider from "@components/client/slider/bigSlider/mobileCategorySection";
 
 
 const Home = () => {
@@ -47,7 +47,7 @@ const Home = () => {
                     <Slider label="پربازدیدترین" sort={1} count={15} />
                 </div>
             </div>
-            
+
         </>
     )
 }

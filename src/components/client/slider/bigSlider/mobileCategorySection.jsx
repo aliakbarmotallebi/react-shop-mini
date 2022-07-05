@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AxiosInstance } from '@utils/http'
+import Link from 'next/link'
+import MainCategoryLinker from '@components/client/Commons/mainCategoryLinker'
 
 
 export default function MobileCategorySlider() {
@@ -105,13 +107,17 @@ export default function MobileCategorySlider() {
     return (
         <div className='grid grid-cols-3 gap-2 p-3'>
             {categories.map(category => (
-                <div className='bg-slate-50 rounded-md p-1'>
-                    <span className=' flex justify-center m-auto w-14 h-14 p-1'>
-                        {(categoryImages[category.Id - 1])}
-                    </span>
-                    <p className='text-center text-xs text-slate-800 font-yekan-bold'>{category.Name}</p>
-                </div>
-            ))}
-        </div>
+                <MainCategoryLinker mainCategoryId={category.ErpCode} categorySlug={category.Name}>
+                    <div className='bg-slate-50 rounded-md p-1'>
+                        <span className=' flex justify-center m-auto w-14 h-14 p-1'>
+                            {(categoryImages[category.Id - 1])}
+                        </span>
+                        <p className='text-center text-xs text-slate-800 font-yekan-bold'>{category.Name}</p>
+                    </div>
+                </MainCategoryLinker>
+
+            ))
+            }
+        </div >
     )
 }
