@@ -12,12 +12,14 @@ export default function ShopJozi({ page, q, categoryId, slug, mainCategoryId }) 
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [showNoProduct, setShowNoProduct] = useState(false)
 
   const productsOnPage = 28
   page = page ? parseInt(page) : 1
 
   useEffect(() => {
     setLoading(true)
+    setShowNoProduct(false)
 
     AxiosInstance(mainCategoryId ?
       {
@@ -43,6 +45,8 @@ export default function ShopJozi({ page, q, categoryId, slug, mainCategoryId }) 
           skip: (page - 1) * productsOnPage,
         }
       }).then(result => {
+
+        if (result.data['data'].length <= 0) setShowNoProduct(true)
         setProducts(result.data['data'])
         setLoading(false)
       })
@@ -66,7 +70,7 @@ export default function ShopJozi({ page, q, categoryId, slug, mainCategoryId }) 
                 )
             }
           </div>
-          {products.length > 0 ? <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
+          <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
 
             {mainCategoryId ?
               <>
@@ -115,7 +119,7 @@ export default function ShopJozi({ page, q, categoryId, slug, mainCategoryId }) 
                 </>
             }
           </div>
-            : <NoProductFound />}
+          {showNoProduct && <NoProductFound />}
         </div>
       </div>
     </div>
