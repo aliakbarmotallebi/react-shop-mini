@@ -33,13 +33,29 @@ export default function Product({ product }) {
     }
 
     const floatItemNumberReducer = (floatitemNumber, action) => {
+        switch (action.type) {
+            case "INCREAMENT":
+                if (floatitemNumber + 1 > product.Few) {
+                    alert.warning(`   از این محصول تنها  ${product.Few} موجود می باشد `, 4)
+                    return floatitemNumber
+                }
+                return floatitemNumber += 1
+            case "DECREAMENT":
+                if (floatitemNumber < 2) {
+                    alert.warning('تعداد نمی تواند کمتر از یک باشد')
+                    return floatitemNumber
+                }
+                return floatitemNumber -= 1
+            default:
+                return floatitemNumber
+        }
 
     }
 
     const { addItemToCart } = useContext(CartContext)
     const alert = useContext(AlertContext);
     const [itemnumber, ItemDispatch] = useReducer(itemNumberReducer, 1)
-    const [floatitemNumber, setFloatItemNumber] = useReducer(floatItemNumberReducer, .25)
+    const [floatitemNumber, floatItemDispatch] = useReducer(floatItemNumberReducer, .25)
 
     const handleAddToCart = (product) => {
         addItemToCart({ product: product.ErpCode, quantity: itemnumber })
@@ -105,7 +121,15 @@ export default function Product({ product }) {
                                                 </button>
                                             </>
                                             :
-                                            ''
+                                            <>
+                                                <button onClick={() => floatItemDispatch({ type: "INCREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
+                                                    +
+                                                </button>
+                                                <NumberUnitFew floatitemNumber={floatitemNumber} />
+                                                <button onClick={() => floatItemDispatch({ type: "DECREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
+                                                    -
+                                                </button>
+                                            </>
                                         }
                                     </div>
                                     <button onClick={() => handleAddToCart(product)} type="button" className="text-blue-600 bg-white border-2 border-blue-600 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 md:font-sm font-xs rounded-md transition duration-150 ease-all text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-white ">

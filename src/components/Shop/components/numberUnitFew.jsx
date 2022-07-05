@@ -1,11 +1,16 @@
 import React from 'react'
 
-export default function NumberUnitFiew({itemnumber}) {
+export default function NumberUnitFiew({ itemnumber, floatitemNumber }) {
     return (
         <span className="self-center font-bold">
-            <p className="text-center">
+            {itemnumber ? <p className="text-center">
                 {itemnumber}
-            </p>
+            </p> :
+                <p className="text-center">
+                    {floatitemNumber}
+                </p>
+            }
+
         </span>
     )
 }
