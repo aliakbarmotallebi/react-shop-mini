@@ -5,6 +5,7 @@ import { AxiosInstance } from '@utils/http'
 import ProductItem from '@components/client/Products/productItem'
 import Loading from '@components/client/Commons/loading'
 import Filter from './filter/filter'
+import NoProductFound from './components/noProductFound'
 
 
 export default function ShopJozi({ page, q, categoryId, slug }) {
@@ -54,14 +55,15 @@ export default function ShopJozi({ page, q, categoryId, slug }) {
                 )
             }
           </div>
-          <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
+          {products.length > 0 ? <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
+
             {categoryId ?
               <>
-                <Link href={`/shop/category/${categoryId}/${slug}?page=${page - 1}`}>
+                {page > 1 && <Link href={`/shop/category/${categoryId}/${slug}?page=${page - 1}`}>
                   <a>
                     <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
                   </a>
-                </Link>
+                </Link>}
 
                 <Link href={`/shop/category/${categoryId}/${slug}?page=${page + 1}`}>
                   <a>
@@ -71,11 +73,11 @@ export default function ShopJozi({ page, q, categoryId, slug }) {
               </>
               :
               <>
-                <Link href={q ? { pathname: 'shop', query: { q, page: page - 1 } } : { pathname: 'shop', query: { page: page - 1 } }}>
+                {page > 1 && <Link href={q ? { pathname: 'shop', query: { q, page: page - 1 } } : { pathname: 'shop', query: { page: page - 1 } }}>
                   <a>
                     <span className='bg-slate-100 text-sm rounded-sm px-4 py-2'> قبلی</span>
                   </a>
-                </Link>
+                </Link>}
 
                 <Link href={q ? { pathname: 'shop', query: { q, page: page + 1 } } : { pathname: 'shop', query: { page: page + 1 } }}>
                   <a>
@@ -85,6 +87,8 @@ export default function ShopJozi({ page, q, categoryId, slug }) {
               </>
             }
           </div>
+            : <NoProductFound />}
+
         </div>
 
       </div>

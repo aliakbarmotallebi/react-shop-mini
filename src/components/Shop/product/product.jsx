@@ -89,8 +89,6 @@ export default function Product({ product }) {
                                 </div>
                                 <div className="flex justify-between w-full gap-2 py-4 ">
                                     <div className='flex gap-3'>
-
-
                                         <button onClick={() => ItemDispatch({ type: "INCREAMENT" })} className="bg-gray-100 px-3 text-center h-10 self-center">
                                             +
                                         </button>
