@@ -1,12 +1,29 @@
 import React from 'react'
-import Image from 'next/image'
 
 import ProductLinker from '@components/client/Commons/productLinker';
 
-export default function CartItem({ product }) {
+export default function CartItem({ product, cart, setCartCookie }) {
+
+
+    const handlechange = (event) => {
+        const updatedCart = []
+        let itemProduct
+        event = parseInt(event)
+        for (const label of cart) {
+            if (label.ErpCode == product.ErpCode) {
+                itemProduct = { ...label, quantity: event }
+            } else {
+                itemProduct = {
+                    ...label
+                }
+            }
+            updatedCart.push(itemProduct)
+        }
+        setCartCookie(updatedCart)
+    }
+
     return (
         <tr>
-            {console.log(product)}
 
             <td>
                 <ProductLinker
@@ -33,7 +50,7 @@ export default function CartItem({ product }) {
                                     <input type="number" step={'.25'} defaultValue={product.quantity}
                                         className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                                     :
-                                    <input type="number" defaultValue={product.quantity}
+                                    <input name='quantity' type="number" onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
                                         className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                             }
 

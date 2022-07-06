@@ -7,6 +7,8 @@ function CartProvider({ children }) {
     const [cartCookie, setCartCookie] = useState(cookie.cart)
     const [total, setTotal] = useState(0)
 
+
+
     useEffect(() => {
         cookie.cart &&
             setTotal(cookie.cart.length)
@@ -26,7 +28,7 @@ function CartProvider({ children }) {
 
     return (
         <CartContext.Provider value={{
-            total, addItemToCart, cartCookie
+            total, addItemToCart, cartCookie , setCartCookie
         }}>
             {children}
         </CartContext.Provider>

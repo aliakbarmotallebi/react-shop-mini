@@ -12,6 +12,8 @@ import Link from 'next/link';
 
 export default function Product({ product }) {
 
+    
+
     const itemNumberReducer = (itemnumber, action) => {
         switch (action.type) {
             case "INCREAMENT":
@@ -60,9 +62,9 @@ export default function Product({ product }) {
 
     const handleAddToCart = (product) => {
         if (typeof (product.UnitFew) == 'number') {
-            addItemToCart({ product: product.ErpCode, quantity: itemnumber })
+            addItemToCart({ ErpCode: product.ErpCode, quantity: itemnumber })
         } else {
-            addItemToCart({ product: product.ErpCode, quantity: floatitemNumber })
+            addItemToCart({ ErpCode: product.ErpCode, quantity: floatitemNumber })
         }
         setShowCartButton(true)
         alert.success('به سبد خرید اضافه شد')

@@ -6,6 +6,6 @@ const CartContext = createContext({
     cart: [],
     cartCookie: [],
     setCart: () => { },
-    cartCookie: []
+    cartCookie: [],
 })
 export default CartContext

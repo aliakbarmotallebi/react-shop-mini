@@ -11,7 +11,7 @@ import { AxiosInstance } from '@utils/http'
 
 
 export default function Cart() {
-    const { cartCookie } = useContext(CartContext)
+    const { cartCookie, setCartCookie } = useContext(CartContext)
     const [cart, setCart] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [showCartIsEmpty, setShowCartIsEmpty] = useState(false)
@@ -19,9 +19,10 @@ export default function Cart() {
     useEffect(() => {
         setIsLoading(true)
         setShowCartIsEmpty(false)
+        console.log(cartCookie)
         cartCookie &&
             cartCookie.map(item => (
-                AxiosInstance.get('products/' + item.product).then(res => {
+                AxiosInstance.get('products/' + item.ErpCode).then(res => {
                     setIsLoading(false)
                     setCart(oldCart => [...oldCart, { ...res.data['data'], quantity: item.quantity }])
 
@@ -37,6 +38,7 @@ export default function Cart() {
 
     return (
         <div className='container'>
+
             {showCartIsEmpty ? <EmptyCart /> : <div className="flex justify-center my-6">
                 {isLoading ? <Loading /> :
                     <div className="flex flex-col w-full p-8 text-gray-800 bg-white ">
@@ -54,7 +56,7 @@ export default function Cart() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {cart.map(productItem => <CartItem product={productItem} />)}
+                                    {cart.map(productItem => <CartItem product={productItem} cart={cart} setCart={setCart} setCartCookie={setCartCookie} />)}
                                 </tbody>
                             </table>
                             <hr className="pb-6 mt-6" />
