@@ -67,13 +67,10 @@ export default function Product({ product }) {
         setShowCartButton(true)
         alert.success('به سبد خرید اضافه شد')
     }
-    useEffect(() => {
-        const item = cartCookie.find(item => item.product == product.ErpCode)
-        item && setShowCartButton(true)
-    }, [showCartButton])
 
     useEffect(() => {
-        console.log(showCartButton)
+        const item = cartCookie?.find(item => item.product == product.ErpCode)
+        item && setShowCartButton(true)
     }, [showCartButton])
 
     return (
