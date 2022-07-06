@@ -2,13 +2,13 @@ import React from 'react'
 
 import ProductLinker from '@components/client/Commons/productLinker';
 
-export default function CartItem({ product, cart, setCartCookie }) {
+export default function CartItem({ product, cart, setCart, setCartCookie }) {
 
 
     const handlechange = (event) => {
-        const updatedCart = []
         let itemProduct
-        event = parseInt(event)
+        const updatedCart = []
+        event = parseFloat(event)
         for (const label of cart) {
             if (label.ErpCode == product.ErpCode) {
                 itemProduct = { ...label, quantity: event }
@@ -19,8 +19,11 @@ export default function CartItem({ product, cart, setCartCookie }) {
             }
             updatedCart.push(itemProduct)
         }
+        setCart(updatedCart)
         setCartCookie(updatedCart)
     }
+
+
 
     return (
         <tr>
@@ -47,10 +50,10 @@ export default function CartItem({ product, cart, setCartCookie }) {
                         <form >
                             {
                                 typeof (product.UnitFew) == 'string' ?
-                                    <input type="number" step={'.25'} defaultValue={product.quantity}
+                                    <input type="number" step={'.25'} min={.25} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
                                         className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                                     :
-                                    <input name='quantity' type="number" onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
+                                    <input name='quantity' type="number" min={1} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
                                         className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                             }
 

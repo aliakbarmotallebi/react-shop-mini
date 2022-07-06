@@ -19,7 +19,6 @@ export default function Cart() {
     useEffect(() => {
         setIsLoading(true)
         setShowCartIsEmpty(false)
-        console.log(cartCookie)
         cartCookie &&
             cartCookie.map(item => (
                 AxiosInstance.get('products/' + item.ErpCode).then(res => {
