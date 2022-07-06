@@ -6,6 +6,7 @@ import ProductLinker from '@components/client/Commons/productLinker';
 export default function CartItem({ product }) {
     return (
         <tr>
+            {console.log(product)}
 
             <td>
                 <ProductLinker
@@ -27,8 +28,15 @@ export default function CartItem({ product }) {
                     <div className="relative flex flex-row w-full h-8">
 
                         <form >
-                            <input type="number" value={product.quantity}
-                                className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
+                            {
+                                typeof (product.UnitFew) == 'string' ?
+                                    <input type="number" step={'.25'} defaultValue={product.quantity}
+                                        className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
+                                    :
+                                    <input type="number" defaultValue={product.quantity}
+                                        className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
+                            }
+
                         </form>
                     </div>
                 </div>

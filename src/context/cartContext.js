@@ -5,6 +5,7 @@ const CartContext = createContext({
     setTotal: () => { },
     cart: [],
     cartCookie: [],
-    setCart: () => { }
+    setCart: () => { },
+    cartCookie: []
 })
 export default CartContext
