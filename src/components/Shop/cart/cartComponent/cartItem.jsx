@@ -63,12 +63,12 @@ export default function CartItem({ product, cart, setCart, setCartCookie }) {
             </td>
             <td className="hidden text-right md:table-cell">
                 <span className="text-lg  font-yekan-bold">
-                    {product.SellPrice.toLocaleString("fa-ir")}
+                    {product.LastBuyPrice.toLocaleString("fa-ir")}
                 </span>
             </td>
             <td className="text-right">
                 <span className="text-lg text-blue-600 font-yekan-bold">
-                    {(product.SellPrice * product.quantity).toLocaleString("fa-ir")}
+                    {(product.LastBuyPrice * product.quantity).toLocaleString("fa-ir")}
                 </span>
             </td>
         </tr >

@@ -9,6 +9,7 @@ import CheckOutTotal from './checkOutTotal'
 export default function Checkout() {
 
     const { storageUser } = useContext(AuthContext)
+    const { total , totalPrice } = useContext(CartContext)
 
     return (
         <div className='container'>
@@ -48,12 +49,7 @@ export default function Checkout() {
 
                     </div>
                     <div className='flex-none w-2/5 px-8 py-2'>
-                        <CartContext.Consumer>
-                            {({ total }) => (
-                                <CheckOutTotal total={total} />
-                            )}
-                        </CartContext.Consumer>
-
+                        <CheckOutTotal total={total} totalPrice={totalPrice} />
                     </div>
                 </div>
             </div >
