@@ -8,8 +8,15 @@ function CartProvider({ children }) {
     const [totalPrice, setTotalPrice] = useState(0)
     const [total, setTotal] = useState(0)
 
+
+    function addItemToCart(product) {
+        cartCookie
+            ? setCartCookie(oldcart => [...oldcart, product])
+            : setCartCookie([product])
+
+    }
+
     useEffect(() => {
-        console.log(cookie.cart)
         cookie.cart &&
             setTotal(cookie.cart.length)
 
@@ -29,16 +36,6 @@ function CartProvider({ children }) {
         }
 
     }, [cartCookie])
-
-
-    function addItemToCart(product) {
-        cartCookie
-            ? setCartCookie(oldcart => [...oldcart, product])
-            : setCartCookie([product])
-
-    }
-
-
 
     return (
         <CartContext.Provider value={{

@@ -7,9 +7,8 @@ export default function CheckOutTotal({ total, totalPrice }) {
     const [lastTotal, setLastTotal] = useState(0)
 
     useEffect(() => {
-        totalPrice < 50000 &&
-            setCourier(3000)
-    }, [])
+        totalPrice < 50000 ? setCourier(3000) : setCourier(0)
+    }, [totalPrice])
 
 
     useEffect(() => {
@@ -26,7 +25,7 @@ export default function CheckOutTotal({ total, totalPrice }) {
             </div>
             <div className='flex justify-between border-b-2 border-gray-100 p-3'>
                 <span>جمع مبلغ سفارش</span>
-                <span className='justify-center'>{totalPrice}
+                <span className='justify-center'>{totalPrice.toLocaleString("fa-ir")}
                     <small className='text-gray-400'> تومان </small>
                 </span>
             </div>
@@ -38,7 +37,7 @@ export default function CheckOutTotal({ total, totalPrice }) {
             </div>
             <div className='flex justify-between p-3'>
                 <span>قابل پرداخت</span>
-                <span className='justify-center text-xl font-yekan-bold text-blue-600'>{lastTotal}
+                <span className='justify-center text-xl font-yekan-bold text-blue-600'>{lastTotal.toLocaleString("fa-ir")}
                     <small className='text-gray-400'> تومان </small>
                 </span>
             </div>

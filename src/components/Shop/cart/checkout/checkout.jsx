@@ -3,9 +3,6 @@ import AuthContext from 'src/context/authContext'
 import CartContext from 'src/context/cartContext'
 import CheckOutTotal from './checkOutTotal'
 
-
-
-
 export default function Checkout() {
 
     const { storageUser } = useContext(AuthContext)
@@ -14,8 +11,8 @@ export default function Checkout() {
     return (
         <div className='container'>
             <div className='w-full bg-white p-3 mt-4'>
-                <div className='flex justify-between'>
-                    <div className='w-3/5'>
+                <div className='md:flex justify-between'>
+                    <div className='md:w-3/5'>
                         <h3 className='text-4xl font-yekan-bold mb-5'>
                             تکمیل حساب
                         </h3>
@@ -23,14 +20,10 @@ export default function Checkout() {
                             <form action="">
                                 <label for="fullname" class="block mt-2 text-sm font-yekan-bold text-gray-600">نام تحویل گیرنده</label>
                                 <input defaultValue={storageUser.user?.name} id="fullname" name="fullname" placeholder="نام کامل خود را وارد نمایید" class="block w-full p-3 mt-2 text-gray-900 bg-gray-100  focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
-                                {/* TODO : check this */}
                                 <label for="mobile" class="block mt-2 text-sm font-yekan-bold text-gray-600">شماره موبایل</label>
                                 <input defaultValue={storageUser.user?.mobile} id="mobile" name="mobile" placeholder="09180000000" class="block w-full p-3 mt-2 text-gray-900 bg-gray-100  focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
-
                                 <label for="address" class="block mt-2 text-sm font-yekan-bold text-gray-600">آدرس</label>
                                 <input defaultValue={storageUser.user?.address} id="address" name="address" placeholder="آدرس کامل محل سکونت" class="block w-full p-3 mt-2 text-gray-900 bg-gray-100  focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
-
-
                                 <div className='py-3'>
                                     <h4 className='text-2xl font-yekan-bold text-gray-500 py-2 mb-3 border-b-2'>نحوه پرداخت</h4>
                                     <div class="flex items-center">
@@ -48,7 +41,7 @@ export default function Checkout() {
 
 
                     </div>
-                    <div className='flex-none w-2/5 px-8 py-2'>
+                    <div className='flex-none md:w-2/5 md:px-8 px-2 py-2'>
                         <CheckOutTotal total={total} totalPrice={totalPrice} />
                     </div>
                 </div>

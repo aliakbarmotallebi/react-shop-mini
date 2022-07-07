@@ -40,20 +40,21 @@ export default function Cart() {
 
             {showCartIsEmpty ? <EmptyCart /> : <div className="flex justify-center my-6">
 
-                <div className="flex flex-col w-full p-8 text-gray-800 bg-white ">
+                <div className="flex flex-col w-full  text-gray-800 bg-white ">
                     <div className="flex-1">
-                    
-                        <table className="w-full text-sm lg:text-base" >
-                            
+
+                        <table className="w-full lg:text-base  table-auto w-full" >
+
                             <thead className='font-yekan-bold text-slate-600'>
                                 <tr className="h-12">
+
                                     <th className="text-right">محصول</th>
                                     <th className="lg:text-right text-right pl-5 lg:pl-0">
-                                        <span className="lg:hidden" title="Quantity">Qtd</span>
-                                        <span className="hidden lg:inline">تعداد</span>
+                                        <span className="">تعداد</span>
                                     </th>
                                     <th className="hidden text-right md:table-cell">قیمت واحد</th>
                                     <th className="text-right">قیمت مجموع</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
