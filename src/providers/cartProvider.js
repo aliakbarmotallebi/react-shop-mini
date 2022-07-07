@@ -9,23 +9,23 @@ function CartProvider({ children }) {
     const [total, setTotal] = useState(0)
 
     useEffect(() => {
+        console.log(cookie.cart)
         cookie.cart &&
             setTotal(cookie.cart.length)
 
     }, [cookie])
 
     useEffect(() => {
-        let price = 0
+
         cartCookie &&
             setCookie('cart', cartCookie, { maxAge: 36000, sameSite: 'lax' })
 
-
+        let price = 0
         if (cartCookie) {
             for (const item of cartCookie) {
                 price += item.LastBuyPrice * item.quantity
             }
             setTotalPrice(price)
-
         }
 
     }, [cartCookie])
@@ -35,6 +35,7 @@ function CartProvider({ children }) {
         cartCookie
             ? setCartCookie(oldcart => [...oldcart, product])
             : setCartCookie([product])
+
     }
 
 

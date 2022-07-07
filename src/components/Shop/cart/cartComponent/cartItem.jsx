@@ -22,7 +22,6 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
         setCart([])
     }
 
-
     const handlechange = (event) => {
         let itemProduct
         const updatedCart = []
@@ -39,10 +38,6 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
         }
         setCartCookie(updatedCart)
     }
-
-
-
-
 
     return (
         <tr>
