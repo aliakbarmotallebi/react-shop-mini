@@ -11,7 +11,6 @@ function CartProvider({ children }) {
     useEffect(() => {
         cookie.cart &&
             setTotal(cookie.cart.length)
-        console.log(cookie.cart)
 
     }, [cookie])
 

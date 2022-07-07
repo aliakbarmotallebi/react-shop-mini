@@ -7,8 +7,6 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
 
     function removeItemFromCart(id) {
         const currentCartCookie = [...cartCookie];
-        console.log(cartCookie)
-
         const filtered = currentCartCookie.filter(item => item.ErpCode !== id);
         if (filtered.length === 0) {
             goRemoveCart()
@@ -53,7 +51,7 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
                 <ProductLinker
                     productErpCode={product.ErpCode}
                     productName={product.Name} >
-                <p className="mb-2 font-yekan-bold  md:ml-4">{product.Name}</p>
+                    <p className="mb-2 font-yekan-bold  md:ml-4">{product.Name}</p>
 
                 </ProductLinker>
 
@@ -69,10 +67,10 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
                         <form >
                             {
                                 typeof (product.UnitFew) == 'string' ?
-                                    <input type="number" step={'.25'} min={.25} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
+                                    <input type="number" readOnly='' step={'.25'} min={.25} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
                                         className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                                     :
-                                    <input name='quantity' type="number" min={1} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
+                                    <input name='quantity' readOnly='' type="number" min={1} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
                                         className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                             }
 

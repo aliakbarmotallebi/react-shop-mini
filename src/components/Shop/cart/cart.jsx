@@ -31,7 +31,6 @@ export default function Cart() {
             setShowCartIsEmpty(true)
         }
 
-        console.log(cart)
 
     }, [cartCookie])
 
@@ -43,7 +42,9 @@ export default function Cart() {
 
                 <div className="flex flex-col w-full p-8 text-gray-800 bg-white ">
                     <div className="flex-1">
+                    
                         <table className="w-full text-sm lg:text-base" >
+                            
                             <thead className='font-yekan-bold text-slate-600'>
                                 <tr className="h-12">
                                     <th className="text-right">محصول</th>
@@ -56,10 +57,11 @@ export default function Cart() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {isLoading && <Loading />}
+
                                 {cart.map(productItem => <CartItem product={productItem} cart={cart} setCart={setCart} setCartCookie={setCartCookie} cartCookie={cartCookie} removeCookie={removeCookie} />)}
                             </tbody>
                         </table>
+                        {isLoading && <Loading />}
                         <hr className="pb-6 mt-6" />
                         <div className='flex justify-end'>
                             <Link href={'cart/checkout'}>

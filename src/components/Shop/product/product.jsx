@@ -71,6 +71,7 @@ export default function Product({ product }) {
     }
 
     useEffect(() => {
+        console.log(showCartButton)
         setShowCartButton(false)
         const item = cartCookie?.find(item => item.ErpCode == product.ErpCode)
         item && setShowCartButton(true)
