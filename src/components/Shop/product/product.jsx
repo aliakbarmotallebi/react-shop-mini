@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 export default function Product({ product }) {
 
-    
+
 
     const itemNumberReducer = (itemnumber, action) => {
         switch (action.type) {
@@ -62,18 +62,19 @@ export default function Product({ product }) {
 
     const handleAddToCart = (product) => {
         if (typeof (product.UnitFew) == 'number') {
-            addItemToCart({ ErpCode: product.ErpCode, quantity: itemnumber })
+            addItemToCart({ ...product, quantity: itemnumber })
         } else {
-            addItemToCart({ ErpCode: product.ErpCode, quantity: floatitemNumber })
+            addItemToCart({ ...product, quantity: floatitemNumber })
         }
         setShowCartButton(true)
         alert.success('به سبد خرید اضافه شد')
     }
 
     useEffect(() => {
-        const item = cartCookie?.find(item => item.product == product.ErpCode)
+        setShowCartButton(false)
+        const item = cartCookie?.find(item => item.ErpCode == product.ErpCode)
         item && setShowCartButton(true)
-    }, [showCartButton])
+    }, [])
 
     return (
         <>

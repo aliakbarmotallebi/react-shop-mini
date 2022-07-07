@@ -2,7 +2,27 @@ import React from 'react'
 
 import ProductLinker from '@components/client/Commons/productLinker';
 
-export default function CartItem({ product, cart, setCart, setCartCookie }) {
+export default function CartItem({ product, cart, setCart, setCartCookie, cartCookie, removeCookie }) {
+
+
+    function removeItemFromCart(id) {
+        const currentCartCookie = [...cartCookie];
+        console.log(cartCookie)
+
+        const filtered = currentCartCookie.filter(item => item.ErpCode !== id);
+        if (filtered.length === 0) {
+            goRemoveCart()
+        } else {
+            setCartCookie(filtered)
+            setCart(filtered);
+        }
+    }
+
+    function goRemoveCart() {
+        removeCookie('cart');
+        setCartCookie([]);
+        setCart([])
+    }
 
 
     const handlechange = (event) => {
@@ -19,9 +39,10 @@ export default function CartItem({ product, cart, setCart, setCartCookie }) {
             }
             updatedCart.push(itemProduct)
         }
-        setCart(updatedCart)
         setCartCookie(updatedCart)
     }
+
+
 
 
 
@@ -32,15 +53,13 @@ export default function CartItem({ product, cart, setCart, setCartCookie }) {
                 <ProductLinker
                     productErpCode={product.ErpCode}
                     productName={product.Name} >
-                    <p className="mb-2 font-yekan-bold  md:ml-4">{product.Name}</p>
+                <p className="mb-2 font-yekan-bold  md:ml-4">{product.Name}</p>
 
                 </ProductLinker>
 
-                <form action="" method="POST">
-                    <button type="submit" className="text-gray-700 md:ml-4">
-                        <small className='bg-red-100  text-red-700 px-3 py-1 rounded-sm text-xs'>حذف محصول</small>
-                    </button >
-                </form>
+                <button type="submit" onClick={() => removeItemFromCart(product.ErpCode)} className="text-gray-700 md:ml-4">
+                    <small className='bg-red-100  text-red-700 px-3 py-1 rounded-sm text-xs'>حذف محصول</small>
+                </button >
 
             </td>
             <td className="justify-center md:justify-start md:flex mt-6">

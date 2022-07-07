@@ -3,29 +3,23 @@ import { useCookies } from 'react-cookie'
 import CartContext from 'src/context/cartContext'
 
 function CartProvider({ children }) {
-    const [cookie, setCookie] = useCookies()
+    const [cookie, setCookie, removeCookie] = useCookies()
     const [cartCookie, setCartCookie] = useState(cookie.cart)
     const [totalPrice, setTotalPrice] = useState(0)
     const [total, setTotal] = useState(0)
 
-
-
     useEffect(() => {
         cookie.cart &&
             setTotal(cookie.cart.length)
-    }, [cookie.cart])
+        console.log(cookie.cart)
 
-
-    function addItemToCart(product) {
-        cartCookie
-            ? setCartCookie(oldcart => [...oldcart, product])
-            : setCartCookie([product])
-    }
+    }, [cookie])
 
     useEffect(() => {
         let price = 0
         cartCookie &&
             setCookie('cart', cartCookie, { maxAge: 36000, sameSite: 'lax' })
+
 
         if (cartCookie) {
             for (const item of cartCookie) {
@@ -37,9 +31,24 @@ function CartProvider({ children }) {
 
     }, [cartCookie])
 
+
+    function addItemToCart(product) {
+        cartCookie
+            ? setCartCookie(oldcart => [...oldcart, product])
+            : setCartCookie([product])
+    }
+
+
+
     return (
         <CartContext.Provider value={{
-            total, addItemToCart, cartCookie, setCartCookie, totalPrice
+            total,
+            addItemToCart,
+            cartCookie,
+            setCartCookie,
+            totalPrice,
+            removeCookie
+
         }}>
 
             {children}

@@ -17,8 +17,6 @@ export default function CheckOutTotal({ total, totalPrice }) {
     }, [courier])
 
 
-
-
     return (
         <div className='w-full rounded-md h-80 p-3'>
             <h4 className='text-2xl font-yekan-bold text-gray-500 mb-3'>جزییات فاکتور</h4>
