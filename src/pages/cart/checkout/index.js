@@ -13,10 +13,13 @@ function checkout() {
     const router = useRouter()
     
     // checking user
+
     if (!storageUser) {
         router.push('/login');
         alert.info('ابتدا وارد حساب کاربری خود شوید', 5)
     }
+    // dynamic redirect most use
+    
 
     return (
         <>

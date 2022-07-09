@@ -9,28 +9,33 @@ function AuthProvider({ children }) {
     const [token, setToken] = useState("")
     const router = useRouter()
     const [storageUser, setStorageUser] = useState({})
+    const [storageToken, setStorageToken] = useState({})
     const alert = useContext(AlertContext)
 
 
     useEffect(() => {
         token &&
             localStorage.setItem('token', JSON.stringify(token))
+
+        setStorageToken(JSON.parse(localStorage.getItem('token')))
     }, [token])
 
     useEffect(() => {
         user &&
             localStorage.setItem('user', JSON.stringify(user))
 
-    }, [user])
-
-    useEffect(() => {
         setStorageUser(JSON.parse(localStorage.getItem('user')))
+
     }, [user])
 
 
     const logoutuser = () => {
         localStorage.clear('user')
+        localStorage.clear('token')
+        
         setStorageUser({})
+        setStorageToken({})
+
         alert.warning('از حساب خود خارج شدید', 5)
     }
 
@@ -40,7 +45,7 @@ function AuthProvider({ children }) {
             logoutuser,
             storageUser,
             setToken,
-            token
+            storageToken
         }}>
             {children}
         </AuthContext.Provider>

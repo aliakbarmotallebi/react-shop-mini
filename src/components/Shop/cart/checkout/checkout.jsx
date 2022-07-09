@@ -7,14 +7,33 @@ import { AxiosInstance } from '@utils/http'
 
 export default function Checkout() {
 
-    const { storageUser , token } = useContext(AuthContext)
-    const { total , totalPrice } = useContext(CartContext)
+    const { storageUser, storageToken } = useContext(AuthContext)
+    const { total, totalPrice } = useContext(CartContext)
 
-    const handleCartSubmit =(event) => {
+    const handleCartSubmit = (event) => {
         event.preventDefault()
-        console.log(JSON.parse(localStorage.user))
-        console.log(JSON.parse(localStorage.token))
         
+        console.log(storageUser)
+        console.log(storageToken)
+
+        // AxiosInstance.post('orders',
+        //         [{
+        //             "erp_code": "bAADNA5Ickd4QB4O",
+        //             "quantity": 5,
+        //             "attr": ""
+        //         }]
+        //     , {
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //             "Authorization": `Bearer ${token.token}`
+        //         }
+        //     }
+        // ).then(res => {
+        //     console.log(res)
+        // }).catch(err => {
+        //     console.log(err)
+        // })
+
     }
     return (
         <div className='container'>
