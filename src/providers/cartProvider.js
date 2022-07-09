@@ -15,6 +15,10 @@ function CartProvider({ children }) {
             : setCartCookie([product])
 
     }
+    function goRemoveCart() {
+        removeCookie('cart');
+        setCartCookie([]);
+    }
 
     useEffect(() => {
         cookie.cart &&
@@ -44,7 +48,8 @@ function CartProvider({ children }) {
             cartCookie,
             setCartCookie,
             totalPrice,
-            removeCookie
+            removeCookie,
+            goRemoveCart
 
         }}>
 

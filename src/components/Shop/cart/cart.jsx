@@ -9,7 +9,7 @@ import { AxiosInstance } from '@utils/http'
 
 
 export default function Cart() {
-    const { cartCookie, setCartCookie, removeCookie } = useContext(CartContext)
+    const { cartCookie, setCartCookie,  goRemoveCart } = useContext(CartContext)
     const [isLoading, setIsLoading] = useState(false)
     const [showCartIsEmpty, setShowCartIsEmpty] = useState(false)
     const [cart, setCart] = useState([])
@@ -30,7 +30,6 @@ export default function Cart() {
             setIsLoading(false)
             setShowCartIsEmpty(true)
         }
-
 
     }, [cartCookie])
 
@@ -59,7 +58,7 @@ export default function Cart() {
                             </thead>
                             <tbody>
 
-                                {cart.map(productItem => <CartItem product={productItem} cart={cart} setCart={setCart} setCartCookie={setCartCookie} cartCookie={cartCookie} removeCookie={removeCookie} />)}
+                                {cart.map(productItem => <CartItem product={productItem} cart={cart} setCart={setCart} setCartCookie={setCartCookie} cartCookie={cartCookie} goRemoveCart={goRemoveCart} />)}
                             </tbody>
                         </table>
                         {isLoading && <Loading />}

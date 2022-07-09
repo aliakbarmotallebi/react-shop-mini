@@ -1,38 +1,44 @@
 import React, { useContext } from 'react'
+import { useRouter } from 'next/router'
 import AuthContext from 'src/context/authContext'
 import CartContext from 'src/context/cartContext'
 import CheckOutTotal from './checkOutTotal'
 
 import { AxiosInstance } from '@utils/http'
+import AlertContext from 'src/context/alertContext'
 
 export default function Checkout() {
 
     const { storageUser, storageToken } = useContext(AuthContext)
-    const { total, totalPrice } = useContext(CartContext)
+    const { total, totalPrice, goRemoveCart } = useContext(CartContext)
+    const alert = useContext(AlertContext)
+
+    const router = useRouter()
 
     const handleCartSubmit = (event) => {
         event.preventDefault()
-        
-        console.log(storageUser)
-        console.log(storageToken)
 
-        // AxiosInstance.post('orders',
-        //         [{
-        //             "erp_code": "bAADNA5Ickd4QB4O",
-        //             "quantity": 5,
-        //             "attr": ""
-        //         }]
-        //     , {
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             "Authorization": `Bearer ${token.token}`
-        //         }
-        //     }
-        // ).then(res => {
-        //     console.log(res)
-        // }).catch(err => {
-        //     console.log(err)
-        // })
+        AxiosInstance.post('orders',
+            [{
+                "erp_code": "bAADNA5Ickd4QB4O",
+                "quantity": 5,
+                "attr": ""
+            }]
+            , {
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Authorization": `Bearer ${storageToken.token}`
+                }
+            }
+        ).then(res => {
+            goRemoveCart()
+            alert.success('سفارش شما ثبت شد و به زودی به دست شما خواهد رسید', 5)
+            router.push('/')
+
+
+        }).catch(err => {
+            console.log(err)
+        })
 
     }
     return (

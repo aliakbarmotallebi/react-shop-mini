@@ -28,11 +28,7 @@ function AuthProvider({ children }) {
 
     }, [user])
 
-    useEffect(() => {
-        if (!storageUser) {
-            router.push('/');
-        }
-    }, [storageUser])
+    
 
 
     const logoutuser = () => {
@@ -41,6 +37,8 @@ function AuthProvider({ children }) {
 
         setStorageUser({})
         setStorageToken({})
+
+        router.push('/');
 
         alert.warning('از حساب خود خارج شدید', 5)
     }

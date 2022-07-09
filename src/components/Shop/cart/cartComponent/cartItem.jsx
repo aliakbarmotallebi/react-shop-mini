@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import ProductLinker from '@components/client/Commons/productLinker';
 
-export default function CartItem({ product, cart, setCart, setCartCookie, cartCookie, removeCookie }) {
+export default function CartItem({ product, cart, setCart, setCartCookie, cartCookie , goRemoveCart }) {
 
 
     function removeItemFromCart(id) {
@@ -16,11 +16,7 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
         }
     }
 
-    function goRemoveCart() {
-        removeCookie('cart');
-        setCartCookie([]);
-        setCart([])
-    }
+    
 
     const handlechange = (event) => {
         let itemProduct
