@@ -19,7 +19,9 @@ function checkout() {
         alert.info('ابتدا وارد حساب کاربری خود شوید', 5)
     }
     // dynamic redirect most use
-    
+
+   
+
 
     return (
         <>

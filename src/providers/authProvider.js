@@ -28,16 +28,23 @@ function AuthProvider({ children }) {
 
     }, [user])
 
+    useEffect(() => {
+        if (!storageUser) {
+            router.push('/');
+        }
+    }, [storageUser])
+
 
     const logoutuser = () => {
         localStorage.clear('user')
         localStorage.clear('token')
-        
+
         setStorageUser({})
         setStorageToken({})
 
         alert.warning('از حساب خود خارج شدید', 5)
     }
+
 
     return (
         <AuthContext.Provider value={{
