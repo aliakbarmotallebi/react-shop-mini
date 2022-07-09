@@ -89,7 +89,6 @@ export default function Product({ product }) {
     }, [nativeProduct])
 
     useEffect(() => {
-        console.log(product)
         setNativeProduct(product)
     }, [product])
 

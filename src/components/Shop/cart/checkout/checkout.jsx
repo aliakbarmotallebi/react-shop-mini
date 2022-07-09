@@ -10,20 +10,21 @@ import AlertContext from 'src/context/alertContext'
 export default function Checkout() {
 
     const { storageUser, storageToken } = useContext(AuthContext)
-    const { total, totalPrice, goRemoveCart } = useContext(CartContext)
+    const { total, totalPrice, goRemoveCart, cartCookie } = useContext(CartContext)
     const alert = useContext(AlertContext)
 
     const router = useRouter()
 
     const handleCartSubmit = (event) => {
         event.preventDefault()
+        const listOfItems = []
+
+        for (const item of cartCookie) {
+            listOfItems.push({ erp_code: item.ErpCode, quantity: item.quantity, attr: '' })
+        }
 
         AxiosInstance.post('orders',
-            [{
-                "erp_code": "bAADNA5Ickd4QB4O",
-                "quantity": 5,
-                "attr": ""
-            }]
+            listOfItems
             , {
                 headers: {
                     'Content-Type': 'application/json',
