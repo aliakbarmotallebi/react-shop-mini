@@ -7,7 +7,7 @@ import AuthContext from 'src/context/authContext';
 
 const MessageSent = ({ userNumber }) => {
     const [code, setCode] = useState("")
-    const { user, setUser } = useContext(AuthContext)
+    const { setUser, setToken } = useContext(AuthContext)
 
     // redirecting 
     const router = useRouter()
@@ -26,6 +26,7 @@ const MessageSent = ({ userNumber }) => {
                 'Content-Type': 'application/json',
             }
         }).then((response) => {
+            setToken({ token: response.data.data.access_token })
             setUser({ user: response.data.data.user })
             router.push('/')
         }).catch((error) => console.log(error))

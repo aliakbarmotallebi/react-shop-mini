@@ -6,9 +6,16 @@ import AuthContext from "src/context/authContext"
 
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
+    const [token, setToken] = useState("")
     const router = useRouter()
     const [storageUser, setStorageUser] = useState({})
     const alert = useContext(AlertContext)
+
+
+    useEffect(() => {
+        token &&
+            localStorage.setItem('token', JSON.stringify(token))
+    }, [token])
 
     useEffect(() => {
         user &&
@@ -31,7 +38,9 @@ function AuthProvider({ children }) {
         <AuthContext.Provider value={{
             setUser,
             logoutuser,
-            storageUser
+            storageUser,
+            setToken,
+            token
         }}>
             {children}
         </AuthContext.Provider>

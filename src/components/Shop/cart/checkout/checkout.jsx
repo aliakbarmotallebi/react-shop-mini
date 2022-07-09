@@ -3,11 +3,19 @@ import AuthContext from 'src/context/authContext'
 import CartContext from 'src/context/cartContext'
 import CheckOutTotal from './checkOutTotal'
 
+import { AxiosInstance } from '@utils/http'
+
 export default function Checkout() {
 
-    const { storageUser } = useContext(AuthContext)
+    const { storageUser , token } = useContext(AuthContext)
     const { total , totalPrice } = useContext(CartContext)
 
+    const handleCartSubmit =(event) => {
+        event.preventDefault()
+        console.log(JSON.parse(localStorage.user))
+        console.log(JSON.parse(localStorage.token))
+        
+    }
     return (
         <div className='container'>
             <div className='w-full bg-white p-3 mt-4'>
@@ -17,7 +25,7 @@ export default function Checkout() {
                             تکمیل حساب
                         </h3>
                         {storageUser ?
-                            <form action="">
+                            <form onSubmit={handleCartSubmit} >
                                 <label for="fullname" class="block mt-2 text-sm font-yekan-bold text-gray-600">نام تحویل گیرنده</label>
                                 <input defaultValue={storageUser.user?.name} id="fullname" name="fullname" placeholder="نام کامل خود را وارد نمایید" class="block w-full p-3 mt-2 text-gray-900 bg-gray-100  focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
                                 <label for="mobile" class="block mt-2 text-sm font-yekan-bold text-gray-600">شماره موبایل</label>
@@ -37,7 +45,6 @@ export default function Checkout() {
                                 </button>
                             </form> : ''
                         }
-
 
 
                     </div>
