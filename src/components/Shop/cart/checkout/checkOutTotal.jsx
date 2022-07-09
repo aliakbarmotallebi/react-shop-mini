@@ -32,7 +32,7 @@ export default function CheckOutTotal({ total, totalPrice }) {
 
             <div className='flex justify-between border-b-2 border-gray-100 p-3'>
                 <span>هزینه ارسال</span>
-                {courier == 0 ? 'رایگان' : <span className='justify-center'>{courier}<small className='text-gray-400'> تومان </small></span>}
+                {courier == 0 ? ' رایگان ; )' : <span className='justify-center'>{courier}<small className='text-gray-400'> تومان </small></span>}
 
             </div>
             <div className='flex justify-between p-3'>
