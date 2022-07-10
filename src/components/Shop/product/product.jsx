@@ -97,7 +97,7 @@ export default function Product({ product }) {
         }).catch(err => {
             console.log(err)
         })
-    }, [])
+    }, [nativeProduct])
 
 
 
