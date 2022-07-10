@@ -42,7 +42,7 @@ export default function Detail() {
                     </div>
                 </div>
                 <div className="flex justify-center gap-2">
-                    <Link href={'cart/checkout'}>
+                    <Link href={'https://cafebazaar.ir/app/ir.shopjozi.shahrvandmohajer'}>
                         <a>
                             <span class="text-gray-700 font-yekan-bold bg-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg  p-2 text-center inline-flex items-center text-xs">
                                 <svg class="w-10 h-10 ml-2 text-pink-600 stroke-current" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1" viewBox="-.01 -.01 391.98 158.75" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +58,7 @@ export default function Detail() {
                             </span>
                         </a>
                     </Link>
-                    <Link href={'cart/checkout'}>
+                    <Link href={'https://dl.shahrvand-mohajer.com/'}>
                         <a>
                             <span class="text-gray-700 font-yekan-bold bg-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs p-2 text-center inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 ml-2 text-pink-600 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
