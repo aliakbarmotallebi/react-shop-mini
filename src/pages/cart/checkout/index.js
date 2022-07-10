@@ -7,7 +7,7 @@ import CustomHead from '@components/client/header/customHead';
 import AlertContext from "src/context/alertContext";
 import CartContext from 'src/context/cartContext';
 
-function checkout() {
+function CartCheckout() {
 
     const { storageUser } = useContext(AuthContext);
     const {cartCookie} = useContext(CartContext)
@@ -33,4 +33,4 @@ function checkout() {
     )
 }
 
-export default checkout;
+export default CartCheckout;
