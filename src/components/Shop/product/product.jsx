@@ -5,16 +5,13 @@ import CartContext from 'src/context/cartContext';
 import CustomHead from '@components/client/header/customHead';
 import ProductPrice from './productPrice';
 import AlertContext from 'src/context/alertContext';
-import Slider from '@components/client/slider/slider';
 import CategoryLinker from '@components/client/Commons/categoryLinker';
 import ItemDispatcher from '../components/itemDispatcher';
 import Link from 'next/link';
+import { AxiosInstance } from '@utils/http';
+import ProductItem from '@components/client/products/productItem';
 
 export default function Product({ product }) {
-
-
-
-
     const itemNumberReducer = (itemnumber, action) => {
         switch (action.type) {
             case "INCREAMENT":
@@ -57,6 +54,7 @@ export default function Product({ product }) {
 
     const { cartCookie, addItemToCart } = useContext(CartContext)
     const [showCartButton, setShowCartButton] = useState(false)
+    const [relateds, setRelateds] = useState([])
     const alert = useContext(AlertContext);
     const [itemnumber, ItemDispatch] = useReducer(itemNumberReducer, 1)
     const [floatitemNumber, floatItemDispatch] = useReducer(floatItemNumberReducer, .25)
@@ -91,6 +89,17 @@ export default function Product({ product }) {
     useEffect(() => {
         setNativeProduct(product)
     }, [product])
+
+    useEffect(() => {
+        console.log(product.MainGroupErpCode)
+        AxiosInstance.get(`products/category/${product.MainGroupErpCode}`, { params: { count: 5 } }).then(res => {
+            setRelateds(res.data['data'])
+        }).catch(err => {
+            console.log(err)
+        })
+    }, [])
+
+
 
     return (
         <>
@@ -166,8 +175,17 @@ export default function Product({ product }) {
                 </div>
             </div>
             <div className='container'>
-                <div className="min-h-96  w-full">
-                    <Slider label="محصولات مرتبط" category={product.MainGroupErpCode} count={15} />
+                <div className="min-h-96  w-full pt-2">
+                    <header className="flex items-center">
+                        <h2 className='font-yekan-bold md:text-xl text-lg py-1  md:mb-3 mb-0 '>
+                            محصولات مرتبط
+                        </h2>
+                    </header>
+                    <div className='grid grid-cols-5 gap-3'>
+                        {relateds.map(product => (
+                            <ProductItem key={product.Id} product={product} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </>
