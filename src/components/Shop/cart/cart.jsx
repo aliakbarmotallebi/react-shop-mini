@@ -9,7 +9,7 @@ import { AxiosInstance } from '@utils/http'
 
 
 export default function Cart() {
-    const { cartCookie, setCartCookie,  goRemoveCart } = useContext(CartContext)
+    const { cartCookie, setCartCookie, goRemoveCart, totalPrice } = useContext(CartContext)
     const [isLoading, setIsLoading] = useState(false)
     const [showCartIsEmpty, setShowCartIsEmpty] = useState(false)
     const [cart, setCart] = useState([])
@@ -33,6 +33,12 @@ export default function Cart() {
 
     }, [cartCookie])
 
+    useEffect(() => {
+        cartCookie.map(item => {
+            console.log(item.LastBuyPrice * item.quantity)
+        })
+    }, [cartCookie])
+
 
     return (
         <div className='container'>
@@ -42,10 +48,10 @@ export default function Cart() {
                 <div className="flex flex-col w-full  text-gray-800 bg-white ">
                     <div className="flex-1">
 
-                        <table className="w-full lg:text-base  table-auto w-full" >
+                        <table className="w-full lg:text-base  table-auto" >
 
                             <thead className='font-yekan-bold text-slate-600'>
-                                <tr className="h-12">
+                                <tr className="">
 
                                     <th className="text-right">محصول</th>
                                     <th className="lg:text-right text-right pl-5 lg:pl-0">
@@ -63,6 +69,13 @@ export default function Cart() {
                         </table>
                         {isLoading && <Loading />}
                         <hr className="pb-6 mt-6" />
+                        <div className=' p-5  border-[1px] rounded-md mb-4'>
+                            <div className='flex justify-between p-2'>
+                                <span className='text-sm'>مقدار مجموع سبد خرید</span>
+                                <span className='text-lg'>{totalPrice.toLocaleString("fa-ir") + ' تومان '}</span>
+                            </div>
+                        </div>
+
                         <div className='flex justify-end'>
                             <Link href={'cart/checkout'}>
                                 <a>

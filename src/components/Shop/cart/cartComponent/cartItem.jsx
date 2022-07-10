@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import ProductLinker from '@components/client/Commons/productLinker';
 
-export default function CartItem({ product, cart, setCart, setCartCookie, cartCookie , goRemoveCart }) {
+export default function CartItem({ product, cart, setCart, setCartCookie, cartCookie, goRemoveCart }) {
 
 
     function removeItemFromCart(id) {
@@ -15,8 +15,6 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
             setCart(filtered);
         }
     }
-
-    
 
     const handlechange = (event) => {
         let itemProduct
@@ -44,8 +42,8 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
 
     }
 
-
     return (
+        
         <tr>
 
 
@@ -67,10 +65,10 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
                         <form >
                             {
                                 typeof (product.UnitFew) == 'string' ?
-                                    <input type="number"  step={'.25'} min={.25} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
+                                    <input type="number" step={'.25'} min={.25} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
                                         className="md:w-full w-12 font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                                     :
-                                    <input name='quantity'  type="number" min={1} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
+                                    <input name='quantity' type="number" min={1} max={product.Few} onChange={event => handlechange(event.target.value)} defaultValue={product.quantity}
                                         className="md:w-full w-12 font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
                             }
 
@@ -89,7 +87,7 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
                 </span>
             </td>
             <td>
-                <button type="submit" onClick={() => removeItemFromCart(product.ErpCode)} className="text-gray-700 md:ml-4  text-red-700 px-3 py-1 rounded-sm ">
+                <button type="submit" onClick={() => removeItemFromCart(product.ErpCode)} className=" md:ml-4  px-3 py-1 rounded-sm ">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" width={20} height={20} viewBox="0 0 256 256" xmlSpace="preserve">
                         <desc>Created with Fabric.js 1.7.22</desc>
                         <defs>
@@ -108,5 +106,8 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
                 </button >
             </td>
         </tr >
+        
+        
+       
     )
 }

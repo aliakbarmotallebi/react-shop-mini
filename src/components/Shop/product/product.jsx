@@ -73,7 +73,7 @@ export default function Product({ product }) {
                 Name: product.Name,
                 ErpCode: product.ErpCode,
                 LastBuyPrice: product.LastBuyPrice,
-                quantity: floatitemNumber
+                quantity: floatitemNumber,
             })
         }
         setShowCartButton(true)
@@ -181,7 +181,7 @@ export default function Product({ product }) {
                             محصولات مرتبط
                         </h2>
                     </header>
-                    <div className='grid grid-cols-5 gap-3'>
+                    <div className='grid md:grid-cols-5 grid-cols-2 gap-3'>
                         {relateds.map(product => (
                             <ProductItem key={product.Id} product={product} />
                         ))}

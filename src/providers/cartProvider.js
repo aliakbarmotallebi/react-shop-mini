@@ -9,6 +9,7 @@ function CartProvider({ children }) {
     const [total, setTotal] = useState(0)
 
 
+
     function addItemToCart(product) {
         cartCookie
             ? setCartCookie(oldcart => [...oldcart, product])
@@ -49,8 +50,7 @@ function CartProvider({ children }) {
             setCartCookie,
             totalPrice,
             removeCookie,
-            goRemoveCart
-
+            goRemoveCart,
         }}>
 
             {children}
