@@ -38,7 +38,7 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
                     slides: { perView: 3, spacing: 5 },
                 },
                 "(min-width: 769px)": {
-                    slides: { perView: 5.5, spacing: 15 },
+                    slides: { perView: 5.5, spacing: 8 },
                 }
             },
             slides: {

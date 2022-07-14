@@ -19,6 +19,7 @@
   },
   "scripts": {
     "tailwind:css": "tailwind build -i src/assets/styles/tailwind.css -o src/assets/styles/main.css --watch",
+    "tailwind:minify": "tailwind build -i src/assets/styles/tailwind.css -o src/assets/styles/main.css --minify",
     "start": "npm run tailwind:css && next start",
     "build": "next build",
     "test": "react-scripts test",
