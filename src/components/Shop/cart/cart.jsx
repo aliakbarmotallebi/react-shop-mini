@@ -33,11 +33,7 @@ export default function Cart() {
 
     }, [cartCookie])
 
-    useEffect(() => {
-        cartCookie.map(item => {
-            console.log(item.LastBuyPrice * item.quantity)
-        })
-    }, [cartCookie])
+  
 
 
     return (
