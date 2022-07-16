@@ -91,7 +91,6 @@ export default function Product({ product }) {
     }, [product])
 
     useEffect(() => {
-        console.log(product.MainGroupErpCode)
         AxiosInstance.get(`products/category/${product.MainGroupErpCode}`, { params: { count: 5 } }).then(res => {
             setRelateds(res.data['data'])
         }).catch(err => {
