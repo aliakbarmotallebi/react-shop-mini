@@ -10,17 +10,17 @@ import CartContext from 'src/context/cartContext';
 function CartCheckout() {
 
     const { storageUser } = useContext(AuthContext);
-    const {cartCookie} = useContext(CartContext)
+    const { cartCookie } = useContext(CartContext)
     const alert = useContext(AlertContext)
     const router = useRouter()
-    
 
     if (!storageUser) {
+
         router.push('/login');
         alert.info('ابتدا وارد حساب کاربری خود شوید', 5)
     }
-    
-    if(cartCookie && cartCookie.length <= 0 ){
+
+    if (cartCookie && cartCookie.length <= 0) {
         router.push('/shop');
         alert.info('سبد خرید شما خالی است', 5)
     }

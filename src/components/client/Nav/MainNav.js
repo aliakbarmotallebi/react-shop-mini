@@ -64,7 +64,12 @@ const MainNav = () => {
                                         >فروشگاه</a>
                                     </Link>
                                 </li>
-
+                                <li onClick={() => handleShowNavbar()}>
+                                    <Link href={'/profile'}>
+                                        <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                                        >پروفایل من</a>
+                                    </Link>
+                                </li>
                             </ul>
                         </nav>
                         <div className="px-4">

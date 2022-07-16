@@ -50,7 +50,7 @@ export default function Checkout() {
                         <h3 className='text-4xl font-yekan-bold mb-5'>
                             تکمیل حساب
                         </h3>
-                        {storageUser ?
+                        {/* {storageUser ?
                             <form onSubmit={handleCartSubmit} >
                                 <label for="fullname" class="block mt-2 text-sm font-yekan-bold text-gray-600">نام تحویل گیرنده</label>
                                 <input defaultValue={storageUser.user?.name} id="fullname" name="fullname" placeholder="نام کامل خود را وارد نمایید" class="block w-full p-3 mt-2 text-gray-900 bg-gray-100  focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
@@ -70,7 +70,7 @@ export default function Checkout() {
                                     ثبت سفارش
                                 </button>
                             </form> : ''
-                        }
+                        } */}
 
 
                     </div>

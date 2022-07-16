@@ -18,10 +18,10 @@ const AuthBox = () => {
     const [messageSent, setMessageSent] = useState(false)
     const [otpVerify, setOtpVerify] = useState(false)
     const alert = useContext(AlertContext)
-    const { user } = useContext(AuthContext)
+    const { Storageuser, user } = useContext(AuthContext)
     const router = useRouter()
 
-    if (user) {
+    if (Storageuser) {
         router.push('/')
         alert.info('شما قبلا وارد شدید')
     }

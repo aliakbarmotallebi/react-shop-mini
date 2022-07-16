@@ -28,15 +28,13 @@ function AuthProvider({ children }) {
 
     }, [user])
 
-    
-
 
     const logoutuser = () => {
         localStorage.clear('user')
         localStorage.clear('token')
 
-        setStorageUser({})
-        setStorageToken({})
+        setStorageUser()
+        setStorageToken()
 
         router.push('/');
 
@@ -46,6 +44,7 @@ function AuthProvider({ children }) {
 
     return (
         <AuthContext.Provider value={{
+            user,
             setUser,
             logoutuser,
             storageUser,
