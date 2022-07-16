@@ -58,7 +58,9 @@ export default function ShopJozi({ page, q, categoryId, slug, mainCategoryId }) 
       <div className="grid md:grid-cols-4 grid-cols-1 gap-3">
         <div className='pt-3 w-full'>
           <div className='border rounded-md px-3 py-6 w-full'>
-            <span className='text-slate-700 text-lg font-yekan-bold'>فیلتر : {slug ? <span className='text-sm text-blue-600'>{slug}</span> : <span className='text-sm text-blue-600'>بدون فیلتر</span>}</span>
+
+            <span className='text-slate-700 text-lg font-yekan-bold'>فیلتر : {slug ? <span className='text-sm text-blue-600'>{slug}</span> : <span className='text-sm text-blue-600'>{q ? q : 'بدون فیلتر'}</span>}</span>
+
 
           </div>
           {/* TODO : somthing here  */}
@@ -74,7 +76,7 @@ export default function ShopJozi({ page, q, categoryId, slug, mainCategoryId }) 
                 )
             }
           </div>
-          <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
+          {products.length > 0 && <div className='flex justify-center gap-3 w-full col-span-4 py-8'>
 
             {mainCategoryId ?
               <>
@@ -122,7 +124,8 @@ export default function ShopJozi({ page, q, categoryId, slug, mainCategoryId }) 
                   }
                 </>
             }
-          </div>
+          </div>}
+
           {showNoProduct && <NoProductFound />}
         </div>
       </div>
