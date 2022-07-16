@@ -7,10 +7,10 @@ npm run dev or next dev
 - [ ] user panel for change personal information such as "user address and name"
 - [X] use cookie for cart 
 - [X] try to responsive sliders
-- [ ] filter in shop
+- [X] filter in shop
 - [X] show product from category
 - [X] navigation drawer
-- [ ] send checkout to server
-- [ ] get user information from localStorage
+- [X] send checkout to server
+- [X] get user information from localStorage
 
 
