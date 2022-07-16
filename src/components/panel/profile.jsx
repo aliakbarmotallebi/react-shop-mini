@@ -72,7 +72,7 @@ export default function Profile() {
                             <label for="fullname" class="block mt-2 text-sm font-yekan-bold text-gray-600">نام تحویل گیرنده</label>
                             <input defaultValue={storageUser.user?.name} id="fullname" name="fullname" placeholder="نام کامل خود را وارد نمایید" class="block w-full p-3 mt-2 text-gray-900 bg-slate-100  focus:outline-none focus:bg-slate-200 rounded-md" required />
                             <label for="mobile" class="block mt-2 text-sm font-yekan-bold text-gray-600">شماره منزل</label>
-                            <input defaultValue={storageUser.user?.tel} id="mobile" name="tel" placeholder="09180000000" class="block w-full p-3 mt-2 text-gray-900 bg-slate-100  focus:outline-none focus:bg-slate-200 rounded-md" required />
+                            <input defaultValue={storageUser.user?.tel} id="mobile" name="tel" placeholder="08600000000" class="block w-full p-3 mt-2 text-gray-900 bg-slate-100  focus:outline-none focus:bg-slate-200 rounded-md" required />
                             <label for="address" class="block mt-2 text-sm font-yekan-bold text-gray-600">آدرس</label>
                             <input defaultValue={storageUser.user?.address} id="address" name="address" placeholder="آدرس کامل محل سکونت" class="block w-full p-3 mt-2 text-gray-900 bg-slate-100  focus:outline-none focus:bg-slate-200 rounded-md" required />
 
