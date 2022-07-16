@@ -13,7 +13,8 @@ const Card = ({ product }) => {
     const isMobile = useMediaQuery()
 
     return (
-        <div className="relative mx-auto w-full my-2 md:h-96 h-72">
+        <div className="relative mx-auto w-full my-2 md:h-96 h-72 z-10">
+            <span className="absolute top-4 right-4 bg-rose-600 p-4 z-20">add</span>
             <ProductLinker
                 productName={product.Name}
                 productErpCode={product.ErpCode}

@@ -55,6 +55,7 @@ export default function ShopJozi({ page, q, categoryId, slug, mainCategoryId }) 
 
   return (
     <div className='container'>
+      
       <div className="grid md:grid-cols-4 grid-cols-1 gap-3">
         <div className='pt-3 w-full'>
           <div className='border rounded-md px-3 py-6 w-full'>

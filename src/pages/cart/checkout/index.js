@@ -22,7 +22,6 @@ function CartCheckout() {
 
     if (cartCookie && cartCookie.length <= 0) {
         router.push('/shop');
-        alert.info('سبد خرید شما خالی است', 5)
     }
 
     return (

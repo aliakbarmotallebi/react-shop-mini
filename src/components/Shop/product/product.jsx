@@ -147,7 +147,7 @@ export default function Product({ product }) {
                                     </div>
                                 </div>
 
-                                <div className="flex md:relative fixed bottom-0 right-0 left-0 justify-between items-center w-full gap-2 py-4 z-50 md:bg-none md:bg-inherit bg-white border-t-2 md:border-t-0 md:shadow-none p-3 md:p-0">
+                                <div className="flex md:relative fixed bottom-0 right-0 left-0 justify-between items-center w-full gap-2 py-4 z-20 md:bg-none md:bg-inherit bg-white border-t-2 md:border-t-0 md:shadow-none p-3 md:p-0">
                                     {
                                         showCartButton ?
                                             <p className='text-sm'><Link href='/cart'><a>مشاهده سبد خرید</a></Link></p>
@@ -160,7 +160,7 @@ export default function Product({ product }) {
                                                     floatItemDispatch={floatItemDispatch}
                                                     floatitemNumber={floatitemNumber}
                                                 />
-                                                <button onClick={() => handleAddToCart(product)} type="button" className="text-blue-600 bg-white md:border-2 border-[1px] border-blue-600 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 md:font-sm font-xs rounded-md transition duration-150 ease-all text-sm md:px-5 px-2 py-2 md:py-2.5 text-center inline-flex items-center mr-2 dark:bg-white ">
+                                                <button onClick={() => handleAddToCart(product)} type="button" className="text-blue-600 bg-white md:border-2 border-[1px] border-blue-600 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 md:font-sm font-xs rounded-md transition duration-150 ease-all md:text-sm text-xs md:px-5 px-2 py-2 md:py-2.5 text-center inline-flex items-center mr-2 dark:bg-white ">
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-7 h-7" viewBox="0 0 512 512"><title>Cart</title><circle cx={176} cy={416} r={16} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /><circle cx={400} cy={416} r={16} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} d="M48 80h64l48 272h256" /><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={32} /></svg>
                                                     افزودن به سبد خرید
                                                 </button>

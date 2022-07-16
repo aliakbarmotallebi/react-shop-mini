@@ -55,7 +55,7 @@ const Slider = ({ label, sort, count, category, labelColor }) => {
     return (
 
         (isLoading ? <div className="w-full h-96"><Loading /></div> : (
-            <section className="pt-2 h-full">
+            <section className="pt-2 h-full ">
                 <header className="flex items-center">
                     <h2 className={`font-yekan-bold md:text-xl text-lg py-1  md:mb-3 mb-0 ${labelColor ? labelColor : ''} `}>
                         {label}

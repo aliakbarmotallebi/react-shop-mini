@@ -17,6 +17,11 @@ const Home = () => {
 
     return (
         <>
+            {/* <div className="fixed z-50 top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-slate-500 bg-opacity-50">
+                <div className="w-96 bg-white  p-10 shadow-lg rounded-md ">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic sed fugit voluptate, laboriosam suscipit veniam alias autem quae iste provident impedit adipisci odit velit quam non temporibus veritatis quas iure!
+                </div>
+            </div> */}
             <CustomHead title={Titles.titles.home} />
             <div className="container mt-4" >
                 <div className="w-full relative ">

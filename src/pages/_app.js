@@ -11,6 +11,7 @@ import AlertProvider from "src/providers/alertProvider";
 
 // imported style file
 import "../assets/styles/main.css"
+import MainProvider from "src/providers/mainProvider";
 
 function App({ Component, pageProps }) {
     const loadingRef = useRef(null);
@@ -50,25 +51,26 @@ function App({ Component, pageProps }) {
         }
     }, [])
     return (
-        <AlertProvider>
-            <SearchProvider>
-                <AuthProvider>
-                    <CartProvider>
-                        <CookiesProvider>
-                            <MainLayout>
-                                <LoadingBar color='#ff5152' height={4} ref={loadingRef} />
-                                <div className="relative w-full">
-                                    <section>
-                                        <Component {...pageProps} />
-                                    </section>
-                                </div>
-                                
-                            </MainLayout>
-                        </CookiesProvider>
-                    </CartProvider>
-                </AuthProvider>
-            </SearchProvider>
-        </AlertProvider>
+        <MainProvider>
+            <AlertProvider>
+                <SearchProvider>
+                    <AuthProvider>
+                        <CartProvider>
+                            <CookiesProvider>
+                                <MainLayout>
+                                    <LoadingBar color='#ff5152' height={4} ref={loadingRef} />
+                                    <div className="relative w-full">
+                                        <section>
+                                            <Component {...pageProps} />
+                                        </section>
+                                    </div>
+                                </MainLayout>
+                            </CookiesProvider>
+                        </CartProvider>
+                    </AuthProvider>
+                </SearchProvider>
+            </AlertProvider>
+        </MainProvider>
     );
 }
 

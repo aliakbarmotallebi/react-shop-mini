@@ -4,7 +4,7 @@ import { AxiosInstance } from '@utils/http'
 import AlertContext from 'src/context/alertContext'
 
 export default function Profile() {
-    const { storageUser, storageToken, setUser } = useContext(AuthContext)
+    const { storageUser, storageToken, setUser , logoutuser } = useContext(AuthContext)
     const alert = useContext(AlertContext)
 
     const handleChangeProfileDetail = (e) => {
@@ -59,7 +59,7 @@ export default function Profile() {
                         <div className='px-3 py-6'>
                             <ul className='text-sm leading-8'>
                                 <li>ویرایش اطلاعات</li>
-                                <li className='text-rose-600 cursor-pointer'>خروج از حساب کاربری</li>
+                                <li onClick={logoutuser} className='text-rose-600 cursor-pointer'>خروج از حساب کاربری</li>
                             </ul>
                         </div>
 
