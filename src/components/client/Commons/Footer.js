@@ -4,7 +4,7 @@ const Footer = () => {
         <footer className="bg-white py-8 px-3 border-t border-gray-100 mt-5">
             <div className="container">
                 <div className="w-full pb-3 border-b-[1px]">
-                    <div className="w-3/5 m-auto flex gap-2 justify-between ">
+                    <div className="md:w-3/5 w-full m-auto flex gap-2 justify-between ">
                         <div>
                             <svg className="m-auto" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 126 120">
                                 <g fill="none" fill-rule="evenodd">
@@ -67,11 +67,11 @@ const Footer = () => {
 
                 </div>
                 <div className="flex justify-between">
-                    <div className="text-xl p-5 font-semibold tracking-tighter">
+                    <div className="text-xl p-5 font-semibold tracking-tighter flex flex-col md:flex-row gap-3">
                         <span>
                             سوالی دارید؟ تماس بگیرید
                         </span>
-                        <span className="ltr text-xl pr-5">
+                        <span className="ltr text-xl md:pr-5">
                             3001 3862 086
                         </span>
                     </div>

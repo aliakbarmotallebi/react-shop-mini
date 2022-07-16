@@ -7,8 +7,8 @@ export default {
         shop: 'فروشگاه',
         login: 'ورود',
         cart : 'سبد خرید',
-        search : 'جستوجو : '
-
+        search : 'جستوجو : ',
+        profile : 'پروفایل کاربری'
 
     }
 }

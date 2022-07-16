@@ -46,10 +46,43 @@ export default function Checkout() {
         <div className='container'>
             <div className='w-full bg-white p-3 mt-4'>
                 <div className='md:flex justify-between'>
+                    <div className='flex-none md:w-2/5 md:px-8 px-2'>
+                        <CheckOutTotal total={total} totalPrice={totalPrice} />
+                    </div>
                     <div className='md:w-3/5'>
-                        <h3 className='text-4xl font-yekan-bold mb-5'>
-                            تکمیل حساب
-                        </h3>
+
+                        <h4 className='text-2xl font-yekan-bold text-gray-500 mb-3'>مشخصات کاربری</h4>
+
+                        {storageUser?.user?.tel === null || storageUser?.user?.name === null || storageUser?.user?.address === null ? <p>اطلاعات حساب شما کامل نمیباشد</p> : ''}
+                        <div className='p-3 border rounded-md grid grid-cols-3 gap-3 text-sm font-yekan-bold'>
+                            <span className='flex gap-2 '>
+                                <span className='text-slate-900 '> شماره موبایل :</span>
+                                <span className='text-blue-500 underline  decoration-dotted decoration-[1.2px] decoration-blue-500'>
+                                    09223899180
+                                </span>
+                            </span>
+                            <span className='flex gap-2'>
+                                <span>نام و نام خانوادگی :</span>
+                                <span className='text-blue-500 underline  decoration-dotted decoration-[1.2px] decoration-blue-500'>
+                                    محمد طهوریان
+                                </span>
+                            </span>
+                            <span className='flex gap-2'>
+                                <span>شماره منزل :</span>
+                                <span className='text-blue-500 underline  decoration-dotted decoration-[1.2px] decoration-blue-500'>
+                                    09223899180
+                                </span>
+                            </span>
+                            <span className='flex col-span-3 gap-2'>
+                                <span>آدرس </span>
+                                <span className='text-blue-500 underline  decoration-dotted decoration-[1.2px] decoration-blue-500'>
+                                    اراک مهاجران الغدیر یاس ۳ واحد ۱۴ رو به روی کوه ها
+                                </span>
+                            </span>
+
+
+                        </div>
+
                         {/* {storageUser ?
                             <form onSubmit={handleCartSubmit} >
                                 <label for="fullname" class="block mt-2 text-sm font-yekan-bold text-gray-600">نام تحویل گیرنده</label>
@@ -74,9 +107,7 @@ export default function Checkout() {
 
 
                     </div>
-                    <div className='flex-none md:w-2/5 md:px-8 px-2 py-2'>
-                        <CheckOutTotal total={total} totalPrice={totalPrice} />
-                    </div>
+
                 </div>
             </div >
         </div>

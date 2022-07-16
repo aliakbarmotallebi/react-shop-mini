@@ -3,6 +3,8 @@ import { useContext } from "react";
 import AuthContext from "src/context/authContext";
 import { useRouter } from "next/router";
 import AlertContext from "src/context/alertContext";
+import CustomHead from "@components/client/header/customHead";
+import Titles from "@utils/Titles";
 
 
 const ProfilePage = () => {
@@ -16,7 +18,10 @@ const ProfilePage = () => {
         alert.info('ابتدا وارد حساب کاربری خود شوید', 5)
     }
     return (
-        <Profile />
+        <>
+            <CustomHead title={Titles.titles.profile} />
+            <Profile />
+        </>
     )
 }
 
