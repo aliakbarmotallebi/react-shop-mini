@@ -2558,6 +2558,10 @@ nav#header {
     border-width: 2px;
   }
 
+  .md\:border {
+    border-width: 1px;
+  }
+
   .md\:border-t-0 {
     border-top-width: 0px;
   }
