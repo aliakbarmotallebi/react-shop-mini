@@ -1,10 +1,8 @@
 import React, { useContext, useReducer, useEffect, useState } from 'react'
 import Image from "next/image";
-
 import CartContext from 'src/context/cartContext';
 import CustomHead from '@components/client/header/customHead';
 import ProductPrice from './productPrice';
-import AlertContext from 'src/context/alertContext';
 import CategoryLinker from '@components/client/Commons/categoryLinker';
 import ItemDispatcher from '../components/itemDispatcher';
 import Link from 'next/link';
@@ -12,73 +10,24 @@ import { AxiosInstance } from '@utils/http';
 import ProductItem from '@components/client/products/productItem';
 
 export default function Product({ product }) {
-    const itemNumberReducer = (itemnumber, action) => {
-        switch (action.type) {
-            case "INCREAMENT":
-                if (itemnumber + 1 > product.Few) {
-                    alert.warning(`   از این محصول تنها  ${product.Few} موجود می باشد `, 4)
-                    return itemnumber
-                }
-                return itemnumber += 1
-            case "DECREAMENT":
-                if (itemnumber < 2) {
-                    alert.warning('تعداد نمی تواند کمتر از یک باشد')
-                    return itemnumber
-                }
-                return itemnumber -= 1
-            default:
-                return itemnumber
-        }
 
-    }
 
-    const floatItemNumberReducer = (floatitemNumber, action) => {
-        switch (action.type) {
-            case "INCREAMENT":
-                if (floatitemNumber + .25 > product.Few) {
-                    alert.warning(`   از این محصول تنها  ${product.Few} کیلو موجود می باشد `, 4)
-                    return floatitemNumber
-                }
-                return floatitemNumber += .25
-            case "DECREAMENT":
-                if (floatitemNumber < .5) {
-                    alert.warning('تعداد نمی تواند کمتر از دویست و پنجاه باشد')
-                    return floatitemNumber
-                }
-                return floatitemNumber -= .25
-            default:
-                return floatitemNumber
-        }
+    const { cartCookie,
+        addItemToCart,
+        ItemDispatch,
+        itemnumber,
+        floatitemNumber,
+        floatItemDispatch,
+        showCartButton,
+        setShowCartButton,
+        handleAddToCart } = useContext(CartContext)
 
-    }
-
-    const { cartCookie, addItemToCart } = useContext(CartContext)
-    const [showCartButton, setShowCartButton] = useState(false)
     const [relateds, setRelateds] = useState([])
-    const alert = useContext(AlertContext);
-    const [itemnumber, ItemDispatch] = useReducer(itemNumberReducer, 1)
-    const [floatitemNumber, floatItemDispatch] = useReducer(floatItemNumberReducer, .25)
+    
+
     const [nativeProduct, setNativeProduct] = useState({})
 
-    const handleAddToCart = (product) => {
-        if (typeof (product.UnitFew) == 'number') {
-            addItemToCart({
-                Name: product.Name,
-                ErpCode: product.ErpCode,
-                LastBuyPrice: product.LastBuyPrice,
-                quantity: itemnumber
-            })
-        } else {
-            addItemToCart({
-                Name: product.Name,
-                ErpCode: product.ErpCode,
-                LastBuyPrice: product.LastBuyPrice,
-                quantity: floatitemNumber,
-            })
-        }
-        setShowCartButton(true)
-        alert.success('به سبد خرید اضافه شد')
-    }
+
 
     useEffect(() => {
         setShowCartButton(false)
@@ -154,6 +103,7 @@ export default function Product({ product }) {
                                             :
                                             <>
                                                 <ItemDispatcher
+                                                    product={product}
                                                     unitFew={product.UnitFew}
                                                     ItemDispatch={ItemDispatch}
                                                     itemnumber={itemnumber}
