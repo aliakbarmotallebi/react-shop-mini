@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 
 import OutOfStock from "../Commons/outOfStock";
@@ -8,18 +8,26 @@ import TextLimit from "@helpers/textLimit";
 import ProductPrice from "@components/Shop/product/productPrice";
 import useMediaQuery from "@components/customHooks/useMediaQuery";
 import MainContext from "src/context/mainContext";
+import CartContext from "src/context/cartContext";
+import { useState } from "react";
 
 
 const Card = ({ product }) => {
     const { modalHandler, showModal } = useContext(MainContext)
+    const { cartCookie } = useContext(CartContext)
+    const [showBasket, setShowBasket] = useState(false)
     const isMobile = useMediaQuery()
 
+    useEffect(() => {
+        const item = cartCookie?.find(item => item.ErpCode == product.ErpCode)
+        item && setShowBasket(true)
+    }, [showModal])
 
 
     return (
         <div className="relative mx-auto w-full my-2 md:h-96 h-72 z-10">
-            <span className="absolute top-4 right-4 bg-white border border-slate-300  p-3 z-20 w-12 h-12 rounded-full" onClick={() => modalHandler()}>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"  version="1.1" viewBox="0 0 256 256" xmlSpace="preserve">
+            {showBasket ? '' : <span className="absolute md:top-4 md:right-4 top-2 right-2 bg-white border border-slate-300  p-3 z-20 w-12 h-12 rounded-full" onClick={() => modalHandler({ product })}>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 256 256" xmlSpace="preserve">
                     <desc>Created with Fabric.js 1.7.22</desc>
                     <defs>
                     </defs>
@@ -33,6 +41,8 @@ const Card = ({ product }) => {
                     </g>
                 </svg>
             </span>
+            }
+
             <ProductLinker
                 productName={product.Name}
                 productErpCode={product.ErpCode}

@@ -11,10 +11,6 @@ function CartProvider({ children }) {
     const [total, setTotal] = useState(0)
     const alert = useContext(AlertContext);
 
-
-
-
-
     function addItemToCart(product) {
         cartCookie
             ? setCartCookie(oldcart => [...oldcart, product])
@@ -90,8 +86,8 @@ function CartProvider({ children }) {
     const floatItemNumberReducer = (floatitemNumber, action) => {
         switch (action.type) {
             case "INCREAMENT":
-                if (floatitemNumber + .25 > product.Few) {
-                    alert.warning(`   از این محصول تنها  ${product.Few} کیلو موجود می باشد `, 4)
+                if (floatitemNumber + .25 > action.product.Few) {
+                    alert.warning(`   از این محصول تنها  ${action.product.Few} کیلو موجود می باشد `, 4)
                     return floatitemNumber
                 }
                 return floatitemNumber += .25
@@ -109,6 +105,9 @@ function CartProvider({ children }) {
 
     const [itemnumber, ItemDispatch] = useReducer(itemNumberReducer, 1)
     const [floatitemNumber, floatItemDispatch] = useReducer(floatItemNumberReducer, .25)
+
+
+
 
     return (
         <CartContext.Provider value={{

@@ -1,15 +1,15 @@
 import { useEffect, useState, useContext } from "react"
 import Footer from "../Commons/Footer"
 import Header from "../Commons/Header"
-
 import AlertContext from 'src/context/alertContext'
 import Alert from "../Alert/alert"
-import MainContext from "src/context/mainContext";
 import ModalProduct from "../Commons/modalProduct"
+import MainContext from "src/context/mainContext"
 
 
 const MainLayout = ({ children }) => {
     const [showAndroidVersion, setShowAndroidVersion] = useState(true)
+    const { modalProduct } = useContext(MainContext)
 
     useEffect(() => {
         localStorage.getItem('doNotShowAgainAndriodVersion') &&
@@ -21,11 +21,11 @@ const MainLayout = ({ children }) => {
         setShowAndroidVersion(false)
         localStorage.setItem('doNotShowAgainAndriodVersion', true)
     }
-    
+
     return (
         <div className="font-yekan-regular text-gray-600 work-sans leading-normal text-base tracking-normal  ">
             <Header />
-            <ModalProduct />
+            <ModalProduct product={modalProduct?.product} />
             <div className="min-h-full w-full">
                 {children}
             </div>

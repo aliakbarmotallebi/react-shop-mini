@@ -4,10 +4,12 @@ import MainContext from "src/context/mainContext";
 
 export default function MainProvider({ children }) {
 
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
+    const [modalProduct, setModalProduct] = useState({})
 
-    const modalHandler = () => {
+    const modalHandler = (product) => {
         setShowModal(!showModal)
+        setModalProduct(product)
     }
 
     useEffect(() => {
@@ -17,7 +19,7 @@ export default function MainProvider({ children }) {
 
     return (
         <MainContext.Provider
-            value={{ showModal, setShowModal, modalHandler }}>
+            value={{ showModal, setShowModal, modalHandler, modalProduct }}>
             {children}
         </MainContext.Provider>
     )
