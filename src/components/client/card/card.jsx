@@ -26,21 +26,40 @@ const Card = ({ product }) => {
 
     return (
         <div className="relative mx-auto w-full my-2 md:h-96 h-72 z-10">
-            {showBasket ? '' : <span className="absolute md:top-4 md:right-4 top-2 right-2 bg-white border border-slate-300  p-3 z-20 w-12 h-12 rounded-full" onClick={() => modalHandler({ product })}>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 256 256" xmlSpace="preserve">
-                    <desc>Created with Fabric.js 1.7.22</desc>
-                    <defs>
-                    </defs>
-                    <g transform="translate(128 128) scale(0.72 0.72)" style={{}} fill="#fff">
-                        <g style={{ "stroke": "none", "stroke-width": "0", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "none", "fill-rule": "nonzero", "opacity": "1" }} transform="translate(-175.05 -175.05) scale(3.89 3.89)">
-                            <path d="M 72.975 58.994 H 31.855 c -1.539 0 -2.897 -1.005 -3.347 -2.477 L 15.199 13.006 H 3.5 c -1.933 0 -3.5 -1.567 -3.5 -3.5 s 1.567 -3.5 3.5 -3.5 h 14.289 c 1.539 0 2.897 1.005 3.347 2.476 l 13.309 43.512 h 36.204 l 10.585 -25.191 h -6.021 c -1.933 0 -3.5 -1.567 -3.5 -3.5 s 1.567 -3.5 3.5 -3.5 H 86.5 c 1.172 0 2.267 0.587 2.915 1.563 s 0.766 2.212 0.312 3.293 L 76.201 56.85 C 75.655 58.149 74.384 58.994 72.975 58.994 z" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "#0F172A", "fill-rule": "nonzero", "opacity": "1" }} transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round" />
-                            <circle cx="28.88" cy="74.33" r="6.16" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "#0F172A", "fill-rule": "nonzero", "opacity": "1" }} transform="  matrix(1 0 0 1 0 0) " />
-                            <circle cx="74.59" cy="74.33" r="6.16" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "#0F172A", "fill-rule": "nonzero", "opacity": "1" }} transform="  matrix(1 0 0 1 0 0) " />
-                            <path d="M 62.278 19.546 H 52.237 V 9.506 c 0 -1.933 -1.567 -3.5 -3.5 -3.5 s -3.5 1.567 -3.5 3.5 v 10.04 h -10.04 c -1.933 0 -3.5 1.567 -3.5 3.5 s 1.567 3.5 3.5 3.5 h 10.04 v 10.04 c 0 1.933 1.567 3.5 3.5 3.5 s 3.5 -1.567 3.5 -3.5 v -10.04 h 10.041 c 1.933 0 3.5 -1.567 3.5 -3.5 S 64.211 19.546 62.278 19.546 z" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "#0F172A", "fill-rule": "nonzero", "opacity": "1" }} transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round" />
+            {showBasket ?
+                <Link href={'/cart'}>
+                    <a>
+                        <span className="absolute md:top-4 md:right-4 top-2 right-2 bg-white border border-slate-300  p-2 z-20 w-12 h-12 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 256 256" xmlSpace="preserve">
+                                <desc>Created with Fabric.js 1.7.22</desc>
+                                <defs>
+                                </defs>
+                                <g transform="translate(128 128) scale(0.72 0.72)" style={{}}>
+                                    <g style={{ "stroke": "none", "stroke-width": "0", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "none", "fill-rule": "nonzero", "opacity": "1" }} transform="translate(-175.05 -175.05) scale(3.89 3.89)">
+                                        <path d="M 89 46.173 c -0.244 0 -0.488 -0.089 -0.681 -0.267 c -29.148 -27.059 -57.489 -27.059 -86.639 0 c -0.404 0.374 -1.038 0.352 -1.413 -0.053 s -0.352 -1.037 0.053 -1.413 c 29.648 -27.522 59.713 -27.521 89.361 0 c 0.404 0.376 0.428 1.008 0.052 1.413 C 89.536 46.065 89.269 46.173 89 46.173 z" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "rgb(0,0,0)", "fill-rule": "nonzero", "opacity": "1" }} transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round" />
+                                        <path d="M 45 66.03 c -8.639 0 -15.667 -7.028 -15.667 -15.667 S 36.361 34.697 45 34.697 s 15.667 7.028 15.667 15.667 S 53.639 66.03 45 66.03 z M 45 36.697 c -7.536 0 -13.667 6.131 -13.667 13.667 c 0 7.536 6.131 13.667 13.667 13.667 c 7.536 0 13.667 -6.131 13.667 -13.667 C 58.667 42.828 52.536 36.697 45 36.697 z" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "rgb(0,0,0)", "fill-rule": "nonzero", "opacity": "1" }} transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                </Link>
+                :
+                <span className="absolute md:top-4 md:right-4 top-2 right-2 bg-white border border-slate-300  p-3 z-20 w-12 h-12 rounded-full" onClick={() => modalHandler({ product })}>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 256 256" xmlSpace="preserve">
+                        <desc>Created with Fabric.js 1.7.22</desc>
+                        <defs>
+                        </defs>
+                        <g transform="translate(128 128) scale(0.72 0.72)" style={{}} fill="#fff">
+                            <g style={{ "stroke": "none", "stroke-width": "0", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "none", "fill-rule": "nonzero", "opacity": "1" }} transform="translate(-175.05 -175.05) scale(3.89 3.89)">
+                                <path d="M 72.975 58.994 H 31.855 c -1.539 0 -2.897 -1.005 -3.347 -2.477 L 15.199 13.006 H 3.5 c -1.933 0 -3.5 -1.567 -3.5 -3.5 s 1.567 -3.5 3.5 -3.5 h 14.289 c 1.539 0 2.897 1.005 3.347 2.476 l 13.309 43.512 h 36.204 l 10.585 -25.191 h -6.021 c -1.933 0 -3.5 -1.567 -3.5 -3.5 s 1.567 -3.5 3.5 -3.5 H 86.5 c 1.172 0 2.267 0.587 2.915 1.563 s 0.766 2.212 0.312 3.293 L 76.201 56.85 C 75.655 58.149 74.384 58.994 72.975 58.994 z" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "#0F172A", "fill-rule": "nonzero", "opacity": "1" }} transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round" />
+                                <circle cx="28.88" cy="74.33" r="6.16" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "#0F172A", "fill-rule": "nonzero", "opacity": "1" }} transform="  matrix(1 0 0 1 0 0) " />
+                                <circle cx="74.59" cy="74.33" r="6.16" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "#0F172A", "fill-rule": "nonzero", "opacity": "1" }} transform="  matrix(1 0 0 1 0 0) " />
+                                <path d="M 62.278 19.546 H 52.237 V 9.506 c 0 -1.933 -1.567 -3.5 -3.5 -3.5 s -3.5 1.567 -3.5 3.5 v 10.04 h -10.04 c -1.933 0 -3.5 1.567 -3.5 3.5 s 1.567 3.5 3.5 3.5 h 10.04 v 10.04 c 0 1.933 1.567 3.5 3.5 3.5 s 3.5 -1.567 3.5 -3.5 v -10.04 h 10.041 c 1.933 0 3.5 -1.567 3.5 -3.5 S 64.211 19.546 62.278 19.546 z" style={{ "stroke": "none", "stroke-width": "1", "stroke-dasharray": "none", "stroke-linecap": "butt", "stroke-linejoin": "miter", "stroke-miterlimit": "10", "fill": "#0F172A", "fill-rule": "nonzero", "opacity": "1" }} transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round" />
+                            </g>
                         </g>
-                    </g>
-                </svg>
-            </span>
+                    </svg>
+                </span>
             }
 
             <ProductLinker
