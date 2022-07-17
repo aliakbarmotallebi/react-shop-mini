@@ -126,6 +126,10 @@ nav#header {
   padding-left: 1px;
 }
 
+.modelMessage {
+  box-shadow: 0 2px 15px rgb(0 0 0/8%);
+}
+
 
 
 @keyframes dotFlashing {
