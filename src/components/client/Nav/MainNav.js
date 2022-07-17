@@ -54,8 +54,12 @@ const MainNav = () => {
 
                             <ul className="md:flex items-center justify-between text-sm text-gray-700 pt-4 md:pt-0">
                                 {storageUser?.user ?
-                                    <li className="px-4 py-2 md:border rounded-md border-slate-200">
-                                        {storageUser?.user?.mobile}
+                                    <li className="px-4 py-2 ">
+                                        <Link href={'/profile'}>
+                                            <a className="border rounded-md border-slate-200 px-2">
+                                                {storageUser?.user?.mobile}
+                                            </a>
+                                        </Link>
                                     </li>
                                     :
                                     <li onClick={() => handleShowNavbar()} className="md:border rounded-md border-slate-200">
@@ -80,16 +84,7 @@ const MainNav = () => {
                                         >فروشگاه</a>
                                     </Link>
                                 </li>
-                                {storageUser?.user ?
-                                    <li onClick={() => handleShowNavbar()}>
-                                        <Link href={'/profile'}>
-                                            <a className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                                            >پروفایل من</a>
-                                        </Link>
-                                    </li>
-                                    :
-                                    ''
-                                }
+
                                 {storageUser?.user ?
                                     <li
                                         onClick={logoutuser}
