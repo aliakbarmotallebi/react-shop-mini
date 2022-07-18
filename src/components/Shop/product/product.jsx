@@ -33,6 +33,8 @@ export default function Product({ product }) {
         setNativeProduct(product)
     }, [product])
 
+
+
     useEffect(() => {
         AxiosInstance.get(`products/category/${product.MainGroupErpCode}`, { params: { count: 5 } }).then(res => {
             setRelateds(res.data['data'])
