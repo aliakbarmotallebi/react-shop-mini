@@ -18,7 +18,7 @@ const AuthBox = () => {
     const [messageSent, setMessageSent] = useState(false)
     const [otpVerify, setOtpVerify] = useState(false)
     const alert = useContext(AlertContext)
-    const { Storageuser, user } = useContext(AuthContext)
+    const { Storageuser } = useContext(AuthContext)
     const router = useRouter()
 
     if (Storageuser) {
@@ -51,7 +51,7 @@ const AuthBox = () => {
                 })
                 setOtpVerify(true)
                 setMessageSent(true)
-            }).catch((error) => console.log(error))
+            }).catch((error) => alert.warning('لطفا بعد از ۲ دقیقه دوباره تلاش کنید', 5))
         }
 
     }
