@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
-
+import React from 'react'
+import Image from 'next/image'
 import ProductLinker from '@components/client/Commons/productLinker';
 
 export default function CartItem({ product, cart, setCart, setCartCookie, cartCookie, goRemoveCart }) {
-
 
     function removeItemFromCart(id) {
         const currentCartCookie = [...cartCookie];
@@ -24,6 +23,7 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
             if (label.ErpCode == product.ErpCode) {
                 itemProduct = {
                     Name: label.Name,
+                    Image: label.Image,
                     ErpCode: label.ErpCode,
                     LastBuyPrice: label.LastBuyPrice,
                     quantity: event
@@ -31,6 +31,7 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
             } else {
                 itemProduct = {
                     Name: label.Name,
+                    Image: label.Image,
                     ErpCode: label.ErpCode,
                     LastBuyPrice: label.LastBuyPrice,
                     quantity: label.quantity
@@ -43,22 +44,21 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
     }
 
     return (
-        
-        <tr>
 
+        <div className='flex items-center justify-between border rounded-md mb-2 p-2'>
 
-            <td>
-                <ProductLinker
-                    productErpCode={product.ErpCode}
-                    productName={product.Name} >
-                    <p className="mb-2 font-yekan-bold md:ml-4 text-xs md:text-sm">{product.Name}</p>
+            <div className='flex  md:w-72 w-32 items-center  justify-center'>
+                <div className='flex text-center flex-col items-center'>
+                    <Image src={product.Image} className={'rounded-md'} width={100} height={100} />
+                    <ProductLinker
+                        productErpCode={product.ErpCode}
+                        productName={product.Name} >
+                        <p className="pt-2 text-center  font-yekan-bold md:ml-4 text-xs md:text-sm">{product.Name}</p>
+                    </ProductLinker>
+                </div>
+            </div>
 
-                </ProductLinker>
-
-
-
-            </td>
-            <td className="justify-center md:justify-start md:flex mt-6">
+            <span className=" mt-6">
                 <div className="w-20 h-10">
                     <div className="relative flex flex-row w-full h-8">
 
@@ -75,18 +75,18 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
                         </form>
                     </div>
                 </div>
-            </td>
-            <td className="hidden text-right md:table-cell">
+            </span>
+            <span className="hidden text-right md:table-cell">
                 <span className="md:text-lg text-sm  font-yekan-bold">
                     {product.LastBuyPrice.toLocaleString("fa-ir")}
                 </span>
-            </td>
-            <td className="text-right">
+            </span>
+            <span className="text-right">
                 <span className="md:text-lg text-sm text-blue-600 font-yekan-bold">
                     {(product.LastBuyPrice * product.quantity).toLocaleString("fa-ir")}
                 </span>
-            </td>
-            <td>
+            </span>
+            <span>
                 <button type="submit" onClick={() => removeItemFromCart(product.ErpCode)} className=" md:ml-4  px-3 py-1 rounded-sm ">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" width={20} height={20} viewBox="0 0 256 256" xmlSpace="preserve">
                         <desc>Created with Fabric.js 1.7.22</desc>
@@ -104,10 +104,10 @@ export default function CartItem({ product, cart, setCart, setCartCookie, cartCo
                         </g>
                     </svg>
                 </button >
-            </td>
-        </tr >
-        
-        
-       
+            </span>
+        </div >
+
+
+
     )
 }

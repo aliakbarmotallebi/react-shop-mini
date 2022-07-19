@@ -33,36 +33,20 @@ export default function Cart() {
 
     }, [cartCookie])
 
-  
+
 
 
     return (
         <div className='container'>
+            <h1 className='text-xl py-2 border-b font-yekan-bold'>سبد خرید</h1>
 
             {showCartIsEmpty ? <EmptyCart /> : <div className="flex justify-center my-6">
 
                 <div className="flex flex-col w-full  text-gray-800 bg-white ">
                     <div className="flex-1">
-
-                        <table className="w-full lg:text-base  table-auto" >
-
-                            <thead className='font-yekan-bold text-slate-600'>
-                                <tr className="">
-
-                                    <th className="text-right">محصول</th>
-                                    <th className="lg:text-right text-right pl-5 lg:pl-0">
-                                        <span className="">تعداد</span>
-                                    </th>
-                                    <th className="hidden text-right md:table-cell">قیمت واحد</th>
-                                    <th className="text-right">قیمت مجموع</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                {cart.map(productItem => <CartItem product={productItem} cart={cart} setCart={setCart} setCartCookie={setCartCookie} cartCookie={cartCookie} goRemoveCart={goRemoveCart} />)}
-                            </tbody>
-                        </table>
+                        <div>
+                            {cart.map(productItem => <CartItem product={productItem} cart={cart} setCart={setCart} setCartCookie={setCartCookie} cartCookie={cartCookie} goRemoveCart={goRemoveCart} />)}
+                        </div>
                         {isLoading && <Loading />}
                         <hr className="pb-6 mt-6" />
                         <div className=' p-5  border-[1px] rounded-md mb-4'>

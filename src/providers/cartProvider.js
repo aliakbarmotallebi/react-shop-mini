@@ -26,6 +26,7 @@ function CartProvider({ children }) {
         if (typeof (product.UnitFew) == 'number') {
             addItemToCart({
                 Name: product.Name,
+                Image: product.Image,
                 ErpCode: product.ErpCode,
                 LastBuyPrice: product.LastBuyPrice,
                 quantity: itemnumber
@@ -33,6 +34,7 @@ function CartProvider({ children }) {
         } else {
             addItemToCart({
                 Name: product.Name,
+                Image: product.Image,
                 ErpCode: product.ErpCode,
                 LastBuyPrice: product.LastBuyPrice,
                 quantity: floatitemNumber,
