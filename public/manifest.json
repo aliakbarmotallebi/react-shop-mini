@@ -1,6 +1,8 @@
 {
   "short_name": "فروشگاه شهروند",
   "name": "فروشگاه آنلاین شهروند مهاجر",
+  "lang": "fa-IR",
+  "orientation": "any",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +20,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "fullscreen",
   "theme_color": "#ff5152",
   "background_color": "#c33334"
